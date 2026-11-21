@@ -1,10 +1,21 @@
+@keyframes cookieSlideIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 .banner {
     position: fixed;
     bottom: 20px;
     left: 20px;
     right: 20px;
     max-width: 580px;
-    background: rgba(24, 18, 45, 0.97);
+    background: rgba(20, 15, 38, 0.97);
     backdrop-filter: blur(18px);
     border: 1px solid rgba(254, 245, 121, 0.35);
     border-radius: 14px;
@@ -12,17 +23,12 @@
     color: #fff;
     z-index: 10002;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(254, 245, 121, 0.12);
-    transform: translateY(150%);
-    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
     max-height: calc(100dvh - 40px);
     overflow-y: auto;
-}
-
-.visible {
-    transform: translateY(0);
+    animation: cookieSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .headerRow {
@@ -34,9 +40,10 @@
     margin-bottom: 0.6rem;
 }
 
-.content h3 {
+.title {
     margin: 0;
     font-size: 1.08rem;
+    font-weight: 700;
     color: var(--accent-primary);
 }
 
@@ -45,16 +52,18 @@
     border: none;
     color: var(--accent-secondary);
     font-size: 0.84rem;
+    font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
     padding: 0;
 }
 
-.detailsToggle:hover {
+.detailsToggle:hover,
+.detailsToggle:focus-visible {
     color: #fff;
 }
 
-.content p {
+.description {
     font-size: 0.88rem;
     color: var(--text-secondary);
     line-height: 1.55;
@@ -75,25 +84,29 @@
     padding: 0.75rem 0.9rem;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .categoryDisabled {
-    cursor: default;
-    opacity: 0.85;
+    opacity: 0.88;
 }
 
 .categoryHeader {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    cursor: pointer;
+}
+
+.categoryDisabled .categoryHeader {
+    cursor: default;
 }
 
 .categoryHeader input[type="checkbox"] {
     width: 16px;
     height: 16px;
     accent-color: var(--accent-primary);
+    flex-shrink: 0;
 }
 
 .categoryTitle {
@@ -123,7 +136,8 @@
     text-decoration: underline;
 }
 
-.link:hover {
+.link:hover,
+.link:focus-visible {
     color: #fff;
 }
 
@@ -136,29 +150,39 @@
 
 .button {
     flex: 1 1 140px;
-    padding: 0.75rem 1rem;
+    padding: 0.78rem 1rem;
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    border: 1px solid transparent;
     font-size: 0.88rem;
     text-align: center;
+}
+
+.button:focus-visible,
+.reopenButton:focus-visible,
+.detailsToggle:focus-visible,
+.link:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
 }
 
 .accept {
     background: var(--accent-primary);
     color: #140f26;
+    border-color: var(--accent-primary);
 }
 
 .accept:hover {
     background: #ffffff;
+    border-color: #ffffff;
     transform: translateY(-1px);
 }
 
 .saveSelection {
     background: rgba(254, 245, 121, 0.14);
-    border: 1px solid var(--accent-primary);
+    border-color: var(--accent-primary);
     color: #fff;
 }
 
@@ -167,23 +191,24 @@
 }
 
 .decline {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
 }
 
 .decline:hover {
-    border-color: #fff;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+    border-color: #ffffff;
+    transform: translateY(-1px);
 }
 
 .reopenButton {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background: rgba(41, 32, 69, 0.92);
+    background: rgba(41, 32, 69, 0.94);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(254, 245, 121, 0.4);
+    border: 1px solid rgba(254, 245, 121, 0.45);
     border-radius: 50%;
     width: 46px;
     height: 46px;
@@ -193,8 +218,14 @@
     cursor: pointer;
     z-index: 9999;
     color: var(--accent-primary);
-    transition: all 0.3s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.reopenHidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
 }
 
 .reopenButton:hover {
@@ -207,6 +238,17 @@
     width: 22px;
     height: 22px;
     fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .banner {
+        animation: none;
+    }
+
+    .button,
+    .reopenButton {
+        transition: none;
+    }
 }
 
 @media (max-width: 600px) {

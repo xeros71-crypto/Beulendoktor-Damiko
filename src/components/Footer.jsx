@@ -101,6 +101,15 @@ const Footer = () => {
                     <ul className={styles.legalLinks}>
                         <li><Link to="/impressum">Impressum</Link></li>
                         <li><Link to="/datenschutz">Datenschutz</Link></li>
+                        <li>
+                            <button
+                                type="button"
+                                onClick={() => window.dispatchEvent(new Event('openCookieSettings'))}
+                                className={styles.cookieLink}
+                            >
+                                Cookie-Einstellungen
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>

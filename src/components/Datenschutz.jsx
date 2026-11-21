@@ -76,7 +76,17 @@ const Datenschutz = () => {
                     zu dem jeweiligen Anbieter her.
                 </p>
 
-                <h2>6. Ihre Rechte als betroffene Person</h2>
+                <h2>6. Cookies &amp; Local Storage (Einwilligungsverwaltung)</h2>
+                <p>
+                    Wir nutzen technisch notwendigen Local Storage (<code>damiko_cookie_consent_v1</code>), um Ihre Auswahl im
+                    Cookie-Banner lokal in Ihrem Browser zu speichern (§ 25 Abs. 2 Nr. 2 TDDDG). Optionale Kategorien
+                    (Statistik &amp; Reichweite sowie externe Inhalte) werden ausschließlich nach Ihrer ausdrücklichen
+                    Einwilligung aktiviert (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Sie können Ihre Entscheidung
+                    jederzeit über das Cookie-Symbol unten links oder den Link „Cookie-Einstellungen“ im Footer ändern oder
+                    widerrufen.
+                </p>
+
+                <h2>7. Ihre Rechte als betroffene Person</h2>
                 <p>
                     Sie haben jederzeit das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO),
                     Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO), Widerspruch (Art. 21 DSGVO)

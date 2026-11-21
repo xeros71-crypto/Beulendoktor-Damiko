@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import MainLayout from './components/MainLayout';
 import Home from './pages/Home';
+import CookieConsent from './components/CookieConsent';
 import ErrorBoundary from './components/ErrorBoundary';
 import { services } from './data/services';
 import { regionalPages } from './data/regionalPages';
@@ -47,6 +48,7 @@ function App() {
           </Routes>
         </Suspense>
       </ErrorBoundary>
+      <CookieConsent />
     </HelmetProvider>
   );
 }
