@@ -1,0 +1,274 @@
+.hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 7rem 2rem 3.5rem;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 25%, #292045, #140f26);
+    z-index: -1;
+}
+
+.background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/lackierung-kabine.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.34;
+    filter: saturate(0.85) contrast(1.1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(20, 15, 38, 0.72) 0%,
+        rgba(41, 32, 69, 0.74) 48%,
+        rgba(20, 15, 38, 0.98) 100%
+    );
+    z-index: 1;
+}
+
+.inner {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.content {
+    text-align: center;
+    max-width: 840px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroLogoContainer {
+    width: min(100%, 220px);
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroLogo {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 10px 30px rgba(0, 180, 230, 0.32)) drop-shadow(0 0 18px rgba(254, 245, 121, 0.22));
+    animation: logoFloat 7s infinite ease-in-out;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-4px) scale(1.015);
+    }
+}
+
+.kicker {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent-primary);
+    margin-bottom: 0.85rem;
+}
+
+.title {
+    font-size: clamp(2rem, 4.4vw, 3.25rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.15;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.description {
+    font-size: clamp(1rem, 1.5vw, 1.22rem);
+    color: #e4e0f2;
+    margin-bottom: 2.25rem;
+    max-width: 720px;
+    line-height: 1.65;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctaPrimary {
+    padding: 1rem 2.2rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #140f26;
+    background: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 26px rgba(254, 245, 121, 0.25);
+}
+
+.ctaPrimary:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(254, 245, 121, 0.35);
+}
+
+.ctaSecondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent-primary);
+    background: rgba(41, 32, 69, 0.65);
+    border: 1px solid rgba(254, 245, 121, 0.5);
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+}
+
+.ctaSecondary svg {
+    width: 18px;
+    height: 18px;
+}
+
+.ctaSecondary:hover {
+    background: rgba(254, 245, 121, 0.14);
+    color: #fff;
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.ctaWhatsapp {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 1.6rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #e4f8ff;
+    background: rgba(0, 180, 230, 0.14);
+    border: 1px solid rgba(0, 180, 230, 0.55);
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+}
+
+.ctaWhatsapp:hover {
+    background: var(--accent-secondary);
+    color: #091321;
+    border-color: var(--accent-secondary);
+    transform: translateY(-2px);
+}
+
+.uspStrip {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.uspCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.35rem 1.5rem;
+    background: rgba(30, 23, 54, 0.72);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(254, 245, 121, 0.22);
+    border-radius: 12px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.uspCard:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-primary);
+}
+
+.uspIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(254, 245, 121, 0.12);
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.uspIcon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.uspTitle {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.uspDesc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+@media (max-width: 960px) {
+    .uspStrip {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6.25rem 1.25rem 3rem;
+    }
+
+    .heroLogoContainer {
+        width: 165px;
+        margin-bottom: 1.15rem;
+    }
+
+    .actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary,
+    .ctaWhatsapp {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+    }
+}

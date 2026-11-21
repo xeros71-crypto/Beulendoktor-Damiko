@@ -1,0 +1,412 @@
+/* PageLayout.module.css - Einheitliches Layout für alle Leistungs- und Unterseiten */
+
+.pageContent {
+    padding: 8.5rem 2rem 6rem;
+    color: var(--text-primary);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kicker {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent-primary);
+    margin-bottom: 0.85rem;
+}
+
+.mainTitle {
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    font-weight: 800;
+    line-height: 1.18;
+    margin-bottom: 2rem;
+    background: var(--gradient-heading);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.imageContainer {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--border-color);
+    aspect-ratio: 16 / 10;
+    background: var(--bg-card);
+}
+
+.imageContainerPortrait {
+    aspect-ratio: 4 / 3;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.imageContain {
+    object-fit: contain;
+    padding: 1.5rem;
+    background: radial-gradient(circle at center, rgba(254, 245, 121, 0.1), rgba(41, 32, 69, 0.6));
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionHeading {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.75rem;
+    text-align: left;
+    color: #fff;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+}
+
+.infoCard {
+    background: rgba(41, 32, 69, 0.48);
+    padding: 2rem;
+    border-radius: 14px;
+    border: 1px solid rgba(254, 245, 121, 0.14);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.infoCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(254, 245, 121, 0.48);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), 0 0 22px rgba(254, 245, 121, 0.14);
+    background: rgba(41, 32, 69, 0.72);
+}
+
+.infoCard h3 {
+    margin-bottom: 0.85rem;
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+}
+
+.infoCard p {
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.faqGrid {
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.seoBlock {
+    margin-top: 5rem;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seoBlock p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.seoBlock p + p {
+    margin-top: 1.25rem;
+}
+
+.ctaSection {
+    margin-top: 5rem;
+    text-align: center;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(41, 32, 69, 0.85) 0%, rgba(20, 15, 38, 0.92) 70%, rgba(0, 180, 230, 0.16) 100%);
+    border: 1px solid var(--border-color);
+}
+
+.ctaSection h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.ctaSection p {
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.ctaDesc {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+}
+
+.ctaActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.primaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 2rem;
+    background: var(--accent-primary);
+    color: #140f26;
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.primaryButton:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(254, 245, 121, 0.3);
+}
+
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.85rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.secondaryButton:hover {
+    background: rgba(254, 245, 121, 0.14);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.featureBox {
+    background: rgba(254, 245, 121, 0.08);
+    padding: 1.4rem 1.6rem;
+    border-radius: 10px;
+    margin-bottom: 1.85rem;
+    border-left: 4px solid var(--accent-primary);
+}
+
+.featureBox p {
+    color: var(--accent-primary);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.introText {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+    color: var(--text-secondary);
+}
+
+.subHeading {
+    font-size: 1.55rem;
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+}
+
+.serviceList {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.serviceItem {
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    color: #e8e4f5;
+    line-height: 1.6;
+}
+
+.checkmark {
+    color: var(--accent-primary);
+    margin-right: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.closingText {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+}
+
+.sectionSpacer {
+    margin-top: 5rem;
+}
+
+.twoImageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    margin-top: 3rem;
+}
+
+.legalContent {
+    padding: clamp(6rem, 10vw, 8.5rem) clamp(1rem, 4vw, 2rem) 5rem;
+    max-width: 860px;
+    margin: 0 auto;
+    color: var(--text-primary);
+    overflow-wrap: break-word;
+}
+
+.legalContent h1 {
+    margin-bottom: 2rem;
+    background: var(--gradient-heading);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.legalContent h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+    font-size: 1.45rem;
+}
+
+.legalContent h3 {
+    margin-top: 1.6rem;
+    margin-bottom: 0.65rem;
+    color: #fff;
+    font-size: 1.12rem;
+}
+
+.legalContent p,
+.legalContent li {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 0.85rem;
+}
+
+.legalContent ul {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.legalContent a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
+
+.legalNotice {
+    background: rgba(0, 180, 230, 0.12);
+    border: 1px solid rgba(0, 180, 230, 0.35);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0 2rem;
+    color: #e4f7ff;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .pageContent {
+        padding: 7.5rem 2rem 5rem;
+    }
+
+    .heroGrid {
+        gap: 2.5rem;
+    }
+
+    .sectionSpacer {
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pageContent {
+        padding: 6.5rem 1.25rem 4rem;
+    }
+
+    .mainTitle {
+        text-align: center;
+    }
+
+    .kicker {
+        display: block;
+        text-align: center;
+    }
+
+    .heroGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .twoImageGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionHeading {
+        font-size: 1.55rem;
+        text-align: center;
+    }
+
+    .cardGrid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .ctaSection {
+        margin-top: 3.5rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .ctaSection h2 {
+        font-size: 1.5rem;
+    }
+
+    .sectionSpacer {
+        margin-top: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pageContent {
+        padding: 5.8rem 1rem 3.5rem;
+    }
+
+    .infoCard {
+        padding: 1.35rem;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+    }
+}

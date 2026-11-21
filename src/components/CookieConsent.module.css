@@ -1,0 +1,228 @@
+.banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 580px;
+    background: rgba(24, 18, 45, 0.97);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(254, 245, 121, 0.35);
+    border-radius: 14px;
+    padding: 1.5rem;
+    color: #fff;
+    z-index: 10002;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(254, 245, 121, 0.12);
+    transform: translateY(150%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+}
+
+.visible {
+    transform: translateY(0);
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+}
+
+.content h3 {
+    margin: 0;
+    font-size: 1.08rem;
+    color: var(--accent-primary);
+}
+
+.detailsToggle {
+    background: transparent;
+    border: none;
+    color: var(--accent-secondary);
+    font-size: 0.84rem;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.detailsToggle:hover {
+    color: #fff;
+}
+
+.content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.categories {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.categoryItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.categoryDisabled {
+    cursor: default;
+    opacity: 0.85;
+}
+
+.categoryHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.categoryHeader input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-primary);
+}
+
+.categoryTitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.categoryDesc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    padding-left: 1.6rem;
+}
+
+.legalLinks {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.link {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 0.25rem;
+}
+
+.button {
+    flex: 1 1 140px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.accept {
+    background: var(--accent-primary);
+    color: #140f26;
+}
+
+.accept:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+.saveSelection {
+    background: rgba(254, 245, 121, 0.14);
+    border: 1px solid var(--accent-primary);
+    color: #fff;
+}
+
+.saveSelection:hover {
+    background: rgba(254, 245, 121, 0.26);
+}
+
+.decline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--text-secondary);
+}
+
+.decline:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.reopenButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(41, 32, 69, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(254, 245, 121, 0.4);
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    color: var(--accent-primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.reopenButton:hover {
+    background: var(--accent-primary);
+    color: #140f26;
+    transform: scale(1.08);
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+@media (max-width: 600px) {
+    .banner {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 1.25rem;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .button {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}
