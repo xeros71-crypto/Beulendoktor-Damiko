@@ -54,8 +54,8 @@ const Hero = () => {
                     <div className={styles.heroLogoContainer}>
                         <div className={styles.logoAura} aria-hidden="true" />
                         <img
-                            src="/images/damiko-logo-shield.png"
-                            alt="Beulendoktor Damiko – Dellen, Lack, Leasing"
+                            src="/images/damiko-lack-beulendoktor-logo.png"
+                            alt="Lack- & Beulendoktor Damiko – Dellen, Lack, Leasing"
                             className={styles.heroLogo}
                             width={220}
                             height={262}

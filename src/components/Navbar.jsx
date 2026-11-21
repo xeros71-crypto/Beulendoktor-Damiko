@@ -34,14 +34,14 @@ const Navbar = () => {
             <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Hauptnavigation">
                 <Link to="/" className={styles.brand} onClick={handleHomeClick}>
                     <img
-                        src="/images/damiko-logo-shield.png"
-                        alt="Beulendoktor Damiko Emblem"
+                        src="/images/damiko-lack-beulendoktor-logo.png"
+                        alt="Lack- & Beulendoktor Damiko Emblem"
                         className={styles.brandIcon}
-                        width={37}
+                        width={36}
                         height={44}
                     />
                     <span className={styles.brandText}>
-                        <span className={styles.brandName}>Beulendoktor</span>
+                        <span className={styles.brandName}>Lack- &amp; Beulendoktor</span>
                         <span className={styles.brandAccent} translate="no">Damiko</span>
                     </span>
                 </Link>

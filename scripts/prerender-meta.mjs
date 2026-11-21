@@ -65,7 +65,7 @@ function buildAllRoutes() {
             noindex: true,
             title: 'Impressum',
             description: `Impressum und gesetzliche Anbieterkennzeichnung von ${BUSINESS_INFO.name} (${BUSINESS_INFO.legalName}), ${BUSINESS_INFO.street}, ${BUSINESS_INFO.postalCode} ${BUSINESS_INFO.city}.`,
-            image: '/images/damiko-logo-shield.png',
+            image: '/images/damiko-lack-beulendoktor-logo.png',
             imageAlt: 'Beulendoktor Damiko Logo',
         },
         {
@@ -73,7 +73,7 @@ function buildAllRoutes() {
             noindex: true,
             title: 'Datenschutzerklärung',
             description: `Datenschutzerklärung gemäß DSGVO und TDDDG für ${BUSINESS_INFO.name} (damiko.de).`,
-            image: '/images/damiko-logo-shield.png',
+            image: '/images/damiko-lack-beulendoktor-logo.png',
             imageAlt: 'Beulendoktor Damiko Logo',
         },
         {
@@ -81,7 +81,7 @@ function buildAllRoutes() {
             noindex: true,
             title: 'Galerie-Verwaltung',
             description: `Geschützter Verwaltungsbereich für die Galerie von ${BUSINESS_INFO.name}.`,
-            image: '/images/damiko-logo-shield.png',
+            image: '/images/damiko-lack-beulendoktor-logo.png',
             imageAlt: 'Beulendoktor Damiko Logo',
         },
     ];

@@ -47,7 +47,7 @@ export const IMPRESSUM_SEO = {
     title: 'Impressum | Beulendoktor Damiko',
     description:
         'Impressum und Anbieterkennzeichnung von Beulendoktor Damiko (Damiko Dellentechnik), Hagebuttenweg 2, 60433 Frankfurt am Main.',
-    image: '/images/damiko-logo-shield.png',
+    image: '/images/damiko-lack-beulendoktor-logo.png',
     imageAlt: DEFAULT_OG_IMAGE_ALT,
     noindex: true,
 };
@@ -56,7 +56,7 @@ export const DATENSCHUTZ_SEO = {
     title: 'Datenschutzerklärung | Beulendoktor Damiko',
     description:
         'Datenschutzerklärung gemäß DSGVO und TDDDG für Beulendoktor Damiko (damiko.de) in Frankfurt am Main.',
-    image: '/images/damiko-logo-shield.png',
+    image: '/images/damiko-lack-beulendoktor-logo.png',
     imageAlt: DEFAULT_OG_IMAGE_ALT,
     noindex: true,
 };
@@ -235,7 +235,7 @@ export function buildOrganizationNode({ url, image, description, areaServed, inc
         image: image || `${SITE_URL}${DEFAULT_OG_IMAGE}`,
         logo: {
             '@type': 'ImageObject',
-            url: `${SITE_URL}/images/damiko-logo-shield.png`,
+            url: `${SITE_URL}/images/damiko-lack-beulendoktor-logo.png`,
             width: 755,
             height: 900,
         },

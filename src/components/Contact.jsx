@@ -189,8 +189,8 @@ const Contact = () => {
                 <div className={styles.layout}>
                     <div className={`${styles.infoPanel} reveal-left`}>
                         <img
-                            src="/images/damiko-logo-shield.png"
-                            alt="Beulendoktor Damiko"
+                            src="/images/damiko-lack-beulendoktor-logo.png"
+                            alt="Lack- & Beulendoktor Damiko"
                             className={styles.panelLogo}
                             width={130}
                             height={155}
