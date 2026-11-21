@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import styles from './Contact.module.css';
+import { LOGO_FALLBACK_SRC, LOGO_WEBP_320 } from '../utils/responsiveImage';
 
 const TOKEN_REFRESH_AFTER_MS = 90 * 60 * 1000;
 const PHONE_PATTERN = /^[+\d][\d\s\-/()]{4,39}$/;
@@ -188,15 +189,18 @@ const Contact = () => {
 
                 <div className={styles.layout}>
                     <div className={`${styles.infoPanel} reveal-left`}>
-                        <img
-                            src="/images/damiko-lack-beulendoktor-logo.png"
-                            alt="Lack- & Beulendoktor Damiko"
-                            className={styles.panelLogo}
-                            width={130}
-                            height={155}
-                            loading="lazy"
-                            decoding="async"
-                        />
+                        <picture>
+                            <source type="image/webp" srcSet={LOGO_WEBP_320} />
+                            <img
+                                src={LOGO_FALLBACK_SRC}
+                                alt="Lack- & Beulendoktor Damiko"
+                                className={styles.panelLogo}
+                                width={130}
+                                height={159}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </picture>
 
                         <h3>Direkter Kontakt</h3>
                         <p className={styles.panelText}>

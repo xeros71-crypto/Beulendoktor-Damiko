@@ -5,6 +5,7 @@ import BackButton from '../components/BackButton';
 import { BUSINESS_INFO, buildRegionalPageSchema } from '../data/businessSchema';
 import { services } from '../data/services';
 import { getNearbyRegionalPages } from '../data/regionalPages';
+import { getResponsiveWebpSrcSet } from '../utils/responsiveImage';
 import styles from '../styles/PageLayout.module.css';
 
 const servicesBySlug = new Map(services.map((service) => [service.slug, service]));
@@ -97,16 +98,25 @@ const RegionalLandingPage = ({ page }) => {
                     </div>
 
                     <div className={styles.imageContainer}>
-                        <img
-                            src={page.image}
-                            alt={imageAlt}
-                            className={styles.image}
-                            width={960}
-                            height={600}
-                            loading="eager"
-                            fetchPriority="high"
-                            decoding="async"
-                        />
+                        <picture>
+                            {getResponsiveWebpSrcSet(page.image) && (
+                                <source
+                                    type="image/webp"
+                                    srcSet={getResponsiveWebpSrcSet(page.image)}
+                                    sizes="(max-width: 768px) 92vw, 560px"
+                                />
+                            )}
+                            <img
+                                src={page.image}
+                                alt={imageAlt}
+                                className={styles.image}
+                                width={960}
+                                height={600}
+                                loading="eager"
+                                fetchPriority="high"
+                                decoding="async"
+                            />
+                        </picture>
                     </div>
                 </div>
 

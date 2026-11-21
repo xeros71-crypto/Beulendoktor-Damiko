@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import { REGIONAL_GROUPS } from '../data/regionalPages';
+import { LOGO_FALLBACK_SRC, LOGO_WEBP_320 } from '../utils/responsiveImage';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -8,15 +9,18 @@ const Footer = () => {
         <footer id="site-footer" className={styles.footer}>
             <div className={styles.brandBar}>
                 <Link to="/" className={styles.logoLink} aria-label="Beulendoktor Damiko Startseite">
-                    <img
-                        src="/images/damiko-lack-beulendoktor-logo.png"
-                        alt="Lack- & Beulendoktor Damiko – Dellen, Lack, Leasing"
-                        className={styles.logoImage}
-                        width={160}
-                        height={191}
-                        loading="lazy"
-                        decoding="async"
-                    />
+                    <picture>
+                        <source type="image/webp" srcSet={LOGO_WEBP_320} />
+                        <img
+                            src={LOGO_FALLBACK_SRC}
+                            alt="Lack- & Beulendoktor Damiko – Dellen, Lack, Leasing"
+                            className={styles.logoImage}
+                            width={160}
+                            height={195}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </picture>
                 </Link>
 
                 <div className={styles.socialLinks} role="group" aria-label="Social Media">

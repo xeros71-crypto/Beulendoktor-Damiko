@@ -2,6 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import styles from './Navbar.module.css';
+import { LOGO_FALLBACK_SRC, LOGO_WEBP_96 } from '../utils/responsiveImage';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -33,13 +34,17 @@ const Navbar = () => {
         <header>
             <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Hauptnavigation">
                 <Link to="/" className={styles.brand} onClick={handleHomeClick}>
-                    <img
-                        src="/images/damiko-lack-beulendoktor-logo.png"
-                        alt="Lack- & Beulendoktor Damiko Emblem"
-                        className={styles.brandIcon}
-                        width={36}
-                        height={44}
-                    />
+                    <picture>
+                        <source type="image/webp" srcSet={LOGO_WEBP_96} />
+                        <img
+                            src={LOGO_FALLBACK_SRC}
+                            alt="Lack- & Beulendoktor Damiko Emblem"
+                            className={styles.brandIcon}
+                            width={36}
+                            height={44}
+                            decoding="async"
+                        />
+                    </picture>
                     <span className={styles.brandText}>
                         <span className={styles.brandName}>Lack- &amp; Beulendoktor</span>
                         <span className={styles.brandAccent} translate="no">Damiko</span>

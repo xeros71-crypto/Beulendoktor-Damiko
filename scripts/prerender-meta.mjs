@@ -167,15 +167,35 @@ function injectRouteHtml(templateHtml, route, appHtml, cssBundles) {
     const seenPreloadHrefs = new Set();
     const preloadLinks = [];
 
-    // Ensure the route's actual LCP hero image gets exclusive fetchpriority="high"
+    // Ensure the route's actual LCP hero image gets exclusive fetchpriority="high" (prefer responsive WebP)
     if (route.image && !route.image.startsWith('http') && !route.noindex) {
-        seenPreloadHrefs.add(route.image);
-        preloadLinks.push(`<link rel="preload" as="image" href="${escapeHtml(route.image)}" fetchpriority="high">`);
+        if (/^\/(?:images|gallery)\/[^/]+\.jpg$/i.test(route.image)) {
+            const base = route.image.replace(/\.jpg$/i, '');
+            const webp640 = `${base}-640w.webp`;
+            const webp960 = `${base}-960w.webp`;
+            seenPreloadHrefs.add(route.image);
+            seenPreloadHrefs.add(webp640);
+            seenPreloadHrefs.add(webp960);
+            if (route.slug === '') {
+                preloadLinks.push(`<link rel="preload" as="image" type="image/webp" href="${escapeHtml(webp960)}">`);
+            } else {
+                preloadLinks.push(
+                    `<link rel="preload" as="image" type="image/webp" imagesrcset="${escapeHtml(webp640)} 640w, ${escapeHtml(webp960)} 960w" imagesizes="(max-width: 768px) 92vw, 560px" fetchpriority="high">`,
+                );
+            }
+        } else {
+            seenPreloadHrefs.add(route.image);
+            preloadLinks.push(`<link rel="preload" as="image" href="${escapeHtml(route.image)}" fetchpriority="high">`);
+        }
     }
 
     const cleanedAppHtml = appHtml.replace(/<link\s+rel="preload"[^>]*\/?>/gi, (match) => {
         const hrefMatch = match.match(/href="([^"]+)"/i);
         const href = hrefMatch ? hrefMatch[1] : null;
+        // Skip preloading heavy fallback PNGs/JPEGs when responsive WebP <picture> sources handle them
+        if (href && /\.(?:png|jpe?g)$/i.test(href) && /^\/(?:images|gallery)\//i.test(href)) {
+            return '';
+        }
         if (href && seenPreloadHrefs.has(href)) {
             return '';
         }

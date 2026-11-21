@@ -5,6 +5,7 @@ import BackButton from '../components/BackButton';
 import { BUSINESS_INFO, buildServicePageSchema } from '../data/businessSchema';
 import { services } from '../data/services';
 import { CORE_HUB_SLUGS, regionalPages } from '../data/regionalPages';
+import { getResponsiveWebpSrcSet } from '../utils/responsiveImage';
 import styles from '../styles/PageLayout.module.css';
 
 const coreHubSet = new Set(CORE_HUB_SLUGS);
@@ -66,16 +67,25 @@ const ServiceDetailPage = ({ service }) => {
                     </div>
 
                     <div className={styles.imageContainer}>
-                        <img
-                            src={service.heroImage}
-                            alt={service.heroImageAlt}
-                            className={styles.image}
-                            width={960}
-                            height={600}
-                            loading="eager"
-                            fetchPriority="high"
-                            decoding="async"
-                        />
+                        <picture>
+                            {getResponsiveWebpSrcSet(service.heroImage) && (
+                                <source
+                                    type="image/webp"
+                                    srcSet={getResponsiveWebpSrcSet(service.heroImage)}
+                                    sizes="(max-width: 768px) 92vw, 560px"
+                                />
+                            )}
+                            <img
+                                src={service.heroImage}
+                                alt={service.heroImageAlt}
+                                className={styles.image}
+                                width={960}
+                                height={600}
+                                loading="eager"
+                                fetchPriority="high"
+                                decoding="async"
+                            />
+                        </picture>
                     </div>
                 </div>
 
@@ -112,15 +122,24 @@ const ServiceDetailPage = ({ service }) => {
                 {service.secondaryImage && (
                     <section className={styles.twoImageGrid} aria-label="WhatsApp Foto-Check">
                         <div className={`${styles.imageContainer} ${styles.imageContainerPortrait}`}>
-                            <img
-                                src={service.secondaryImage}
-                                alt={service.secondaryImageAlt}
-                                className={`${styles.image} ${service.secondaryContain ? styles.imageContain : ''}`}
-                                width={800}
-                                height={600}
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture>
+                                {getResponsiveWebpSrcSet(service.secondaryImage) && (
+                                    <source
+                                        type="image/webp"
+                                        srcSet={getResponsiveWebpSrcSet(service.secondaryImage)}
+                                        sizes="(max-width: 768px) 92vw, 560px"
+                                    />
+                                )}
+                                <img
+                                    src={service.secondaryImage}
+                                    alt={service.secondaryImageAlt}
+                                    className={`${styles.image} ${service.secondaryContain ? styles.imageContain : ''}`}
+                                    width={800}
+                                    height={600}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                         <div className={styles.infoCard} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className={styles.subHeading}>Schneller Foto-Check per WhatsApp</h2>

@@ -303,6 +303,12 @@
     aspect-ratio: 4 / 3;
 }
 
+.imageContainer picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .image {
     width: 100%;
     height: 100%;

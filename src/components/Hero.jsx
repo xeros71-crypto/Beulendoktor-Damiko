@@ -1,4 +1,5 @@
 import { BUSINESS_INFO } from '../data/businessSchema';
+import { LOGO_FALLBACK_SRC, LOGO_WEBP_320, LOGO_WEBP_480 } from '../utils/responsiveImage';
 import styles from './Hero.module.css';
 
 const usps = [
@@ -53,15 +54,22 @@ const Hero = () => {
                 <div className={styles.content}>
                     <div className={styles.heroLogoContainer}>
                         <div className={styles.logoAura} aria-hidden="true" />
-                        <img
-                            src="/images/damiko-lack-beulendoktor-logo.png"
-                            alt="Lack- & Beulendoktor Damiko – Dellen, Lack, Leasing"
-                            className={styles.heroLogo}
-                            width={220}
-                            height={262}
-                            fetchPriority="high"
-                            decoding="async"
-                        />
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcSet={`${LOGO_WEBP_320} 320w, ${LOGO_WEBP_480} 480w`}
+                                sizes="(max-width: 768px) 180px, 220px"
+                            />
+                            <img
+                                src={LOGO_FALLBACK_SRC}
+                                alt="Lack- & Beulendoktor Damiko – Dellen, Lack, Leasing"
+                                className={styles.heroLogo}
+                                width={220}
+                                height={269}
+                                fetchPriority="high"
+                                decoding="async"
+                            />
+                        </picture>
                     </div>
 
                     <p className={styles.kicker}>

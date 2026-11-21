@@ -22,7 +22,7 @@
 .bgImage {
     position: absolute;
     inset: 0;
-    background-image: url('/images/lackierung-kabine.jpg');
+    background-image: url('/images/lackierung-kabine-960w.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.32;

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
+import { getResponsiveWebpSrcSet } from '../utils/responsiveImage';
 import styles from './ServicesOverview.module.css';
 
 const ServicesOverview = () => {
@@ -19,15 +20,24 @@ const ServicesOverview = () => {
                     {services.map((service) => (
                         <Link key={service.slug} to={`/${service.slug}`} className={styles.card}>
                             <div className={styles.imageWrap}>
-                                <img
-                                    src={service.heroImage}
-                                    alt={service.heroImageAlt}
-                                    className={styles.cardImage}
-                                    width={640}
-                                    height={426}
-                                    loading="lazy"
-                                    decoding="async"
-                                />
+                                <picture>
+                                    {getResponsiveWebpSrcSet(service.heroImage) && (
+                                        <source
+                                            type="image/webp"
+                                            srcSet={getResponsiveWebpSrcSet(service.heroImage)}
+                                            sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 380px"
+                                        />
+                                    )}
+                                    <img
+                                        src={service.heroImage}
+                                        alt={service.heroImageAlt}
+                                        className={styles.cardImage}
+                                        width={640}
+                                        height={426}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </picture>
                                 <div className={styles.imageVignette} aria-hidden="true" />
                                 <span className={styles.badge}>{service.navLabel}</span>
                             </div>

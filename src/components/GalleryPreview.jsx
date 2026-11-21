@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useGalleryItems from '../hooks/useGalleryItems';
+import { getResponsiveWebpSrcSet } from '../utils/responsiveImage';
 import styles from './Gallery.module.css';
 
 const GalleryPreview = () => {
@@ -37,7 +38,16 @@ const GalleryPreview = () => {
                             onClick={() => setSelectedImage(item)}
                             aria-label={`${item.title} vergrößert ansehen`}
                         >
-                            <img src={item.src} alt={item.alt} width={640} height={640} loading="lazy" decoding="async" />
+                            <picture>
+                                {getResponsiveWebpSrcSet(item.src) && (
+                                    <source
+                                        type="image/webp"
+                                        srcSet={getResponsiveWebpSrcSet(item.src)}
+                                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 380px"
+                                    />
+                                )}
+                                <img src={item.src} alt={item.alt} width={640} height={640} loading="lazy" decoding="async" />
+                            </picture>
                             <div className={styles.captionBar}>
                                 <span className={styles.category}>{item.category}</span>
                                 <span className={styles.itemTitle}>{item.title}</span>

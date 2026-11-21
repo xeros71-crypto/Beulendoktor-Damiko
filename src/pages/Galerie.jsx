@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import BackButton from '../components/BackButton';
 import useGalleryItems from '../hooks/useGalleryItems';
 import { GALERIE_SEO, buildGallerySchema } from '../data/businessSchema';
+import { getResponsiveWebpSrcSet } from '../utils/responsiveImage';
 import pageStyles from '../styles/PageLayout.module.css';
 import galleryStyles from '../components/Gallery.module.css';
 
@@ -56,15 +57,24 @@ const Galerie = () => {
                             onClick={() => setSelectedImage(item)}
                             aria-label={`${item.title} vergrößert ansehen`}
                         >
-                            <img
-                                src={item.src}
-                                alt={item.alt}
-                                width={640}
-                                height={640}
-                                loading={index < 3 ? 'eager' : 'lazy'}
-                                fetchPriority={index < 3 ? 'high' : 'auto'}
-                                decoding="async"
-                            />
+                            <picture>
+                                {getResponsiveWebpSrcSet(item.src) && (
+                                    <source
+                                        type="image/webp"
+                                        srcSet={getResponsiveWebpSrcSet(item.src)}
+                                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 380px"
+                                    />
+                                )}
+                                <img
+                                    src={item.src}
+                                    alt={item.alt}
+                                    width={640}
+                                    height={640}
+                                    loading={index < 3 ? 'eager' : 'lazy'}
+                                    fetchPriority={index < 3 ? 'high' : 'auto'}
+                                    decoding="async"
+                                />
+                            </picture>
                             <div className={galleryStyles.captionBar}>
                                 <span className={galleryStyles.category}>{item.category}</span>
                                 <span className={galleryStyles.itemTitle}>{item.title}</span>
