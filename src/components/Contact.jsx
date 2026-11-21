@@ -1,7 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import styles from './Contact.module.css';
+
+const TOKEN_REFRESH_AFTER_MS = 90 * 60 * 1000;
+const PHONE_PATTERN = /^[+\d][\d\s\-/()]{4,39}$/;
+
+function isValidClientPhone(rawPhone) {
+    const phone = rawPhone.trim();
+    if (!phone) return true;
+    if (!PHONE_PATTERN.test(phone) || phone.indexOf('+', 1) !== -1) return false;
+    const digits = phone.replace(/\D/g, '');
+    return digits.length >= 6 && digits.length <= 20;
+}
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -15,6 +26,53 @@ const Contact = () => {
     const [status, setStatus] = useState({ type: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const tokenRef = useRef({ value: '', fetchedAt: 0 });
+    const tokenRequestRef = useRef(null);
+
+    const fetchFormToken = useCallback(async () => {
+        if (tokenRequestRef.current) {
+            return tokenRequestRef.current;
+        }
+
+        const request = (async () => {
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'GET',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                    credentials: 'same-origin',
+                    cache: 'no-store',
+                });
+                if (!response.ok) return '';
+                const data = await response.json().catch(() => null);
+                if (data && typeof data.token === 'string' && data.token.length > 0) {
+                    tokenRef.current = { value: data.token, fetchedAt: Date.now() };
+                    return data.token;
+                }
+            } catch {
+                // Silent fallback (e.g. offline or local Vite dev without serverless API)
+            } finally {
+                tokenRequestRef.current = null;
+            }
+            return '';
+        })();
+
+        tokenRequestRef.current = request;
+        return request;
+    }, []);
+
+    useEffect(() => {
+        fetchFormToken();
+    }, [fetchFormToken]);
+
+    const handleFormFocus = () => {
+        const { value, fetchedAt } = tokenRef.current;
+        if (!value || Date.now() - fetchedAt > TOKEN_REFRESH_AFTER_MS) {
+            fetchFormToken();
+        }
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
@@ -23,22 +81,64 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (isSubmitting) return;
+
+        const trimmedName = formData.name.trim();
+        const trimmedEmail = formData.email.trim();
+        const trimmedMessage = formData.message.trim();
+
+        if (trimmedName.length < 2) {
+            setStatus({
+                type: 'error',
+                message: 'Bitte geben Sie einen gültigen Namen ein (mindestens 2 Zeichen).',
+            });
+            return;
+        }
+
+        if (!isValidClientPhone(formData.phone)) {
+            setStatus({
+                type: 'error',
+                message: 'Bitte geben Sie eine gültige Telefonnummer an (oder lassen Sie das Feld leer).',
+            });
+            return;
+        }
+
+        if (trimmedMessage.length < 10) {
+            setStatus({
+                type: 'error',
+                message: 'Bitte beschreiben Sie Ihr Anliegen etwas genauer (mindestens 10 Zeichen).',
+            });
+            return;
+        }
+
         setIsSubmitting(true);
         setStatus({ type: '', message: '' });
 
         try {
+            let currentToken = tokenRef.current.value;
+            if (!currentToken) {
+                currentToken = await fetchFormToken();
+            }
+
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
                 },
-                body: JSON.stringify(formData),
+                credentials: 'same-origin',
+                body: JSON.stringify({
+                    ...formData,
+                    name: trimmedName,
+                    email: trimmedEmail,
+                    message: trimmedMessage,
+                    formToken: currentToken,
+                }),
             });
 
             if (response.ok) {
                 setStatus({
                     type: 'success',
-                    message: 'Vielen Dank! Deine Anfrage wurde erfolgreich übermittelt. Wir melden uns kurzfristig bei dir.',
+                    message: 'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns kurzfristig bei Ihnen.',
                 });
                 setFormData({
                     name: '',
@@ -48,8 +148,18 @@ const Contact = () => {
                     message: '',
                     website: '',
                 });
+                tokenRef.current = { value: '', fetchedAt: 0 };
+                fetchFormToken();
             } else {
                 const errData = await response.json().catch(() => ({}));
+                if (
+                    errData.code === 'TOKEN_EXPIRED' ||
+                    errData.code === 'TOKEN_REPLAY' ||
+                    errData.code === 'INVALID_TOKEN'
+                ) {
+                    tokenRef.current = { value: '', fetchedAt: 0 };
+                    fetchFormToken();
+                }
                 throw new Error(errData.error || 'Fehler beim Senden');
             }
         } catch (error) {
@@ -57,7 +167,7 @@ const Contact = () => {
                 type: 'error',
                 message:
                     error.message ||
-                    `Es gab ein Problem beim Senden. Bitte ruf uns direkt unter ${BUSINESS_INFO.phoneDisplay} an oder schreib per WhatsApp.`,
+                    `Es gab ein Problem beim Senden. Bitte rufen Sie uns direkt unter ${BUSINESS_INFO.phoneDisplay} an oder schreiben Sie per WhatsApp.`,
             });
         } finally {
             setIsSubmitting(false);
@@ -129,19 +239,20 @@ const Contact = () => {
                         </a>
                     </div>
 
-                    <form className={`${styles.form} reveal-right`} onSubmit={handleSubmit}>
+                    <form
+                        className={`${styles.form} reveal-right`}
+                        onSubmit={handleSubmit}
+                        onFocus={handleFormFocus}
+                    >
                         {/* Honeypot gegen automatisierte Bots */}
-                        <div
-                            style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}
-                            aria-hidden="true"
-                        >
+                        <div className={styles.hpField} aria-hidden="true">
                             <label htmlFor="website">Website</label>
                             <input
                                 type="text"
                                 id="website"
                                 name="website"
-                                tabIndex="-1"
-                                autoComplete="off"
+                                tabIndex={-1}
+                                autoComplete="new-password"
                                 value={formData.website}
                                 onChange={handleChange}
                             />
@@ -155,7 +266,9 @@ const Contact = () => {
                                 name="name"
                                 className={styles.input}
                                 required
+                                minLength={2}
                                 maxLength={120}
+                                autoComplete="name"
                                 placeholder="Ihr Name"
                                 value={formData.name}
                                 onChange={handleChange}
@@ -172,6 +285,7 @@ const Contact = () => {
                                     className={styles.input}
                                     required
                                     maxLength={180}
+                                    autoComplete="email"
                                     placeholder="ihre@email.de"
                                     value={formData.email}
                                     onChange={handleChange}
@@ -221,6 +335,7 @@ const Contact = () => {
                                 className={styles.textarea}
                                 rows="5"
                                 required
+                                minLength={10}
                                 maxLength={4000}
                                 placeholder="Fahrzeugmodell, Art des Schadens (z. B. Kratzer Stoßstange, Parkdelle Tür, Leasingrückgabe) und Wunschzeitraum..."
                                 value={formData.message}
@@ -229,12 +344,11 @@ const Contact = () => {
                         </div>
 
                         <p className={styles.privacyHint}>
-                            Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Angaben zur Bearbeitung Ihrer Anfrage
-                            gemäß unserer{' '}
+                            Informationen zur Verarbeitung Ihrer Angaben zur Bearbeitung Ihrer Anfrage finden Sie in unserer{' '}
                             <Link to="/datenschutz" className={styles.privacyLink}>
                                 Datenschutzerklärung
-                            </Link>{' '}
-                            einverstanden.
+                            </Link>
+                            .
                         </p>
 
                         <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
