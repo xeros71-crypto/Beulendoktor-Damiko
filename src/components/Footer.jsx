@@ -9,7 +9,7 @@ const Footer = () => {
             <div className={styles.brandBar}>
                 <Link to="/" className={styles.logoLink} aria-label="Beulendoktor Damiko Startseite">
                     <img
-                        src="/images/damiko-logo.png"
+                        src="/images/damiko-logo-shield.png"
                         alt="Beulendoktor Damiko – Dellen, Lack, Leasing"
                         className={styles.logoImage}
                         width={220}

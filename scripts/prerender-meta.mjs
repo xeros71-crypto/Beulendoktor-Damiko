@@ -59,13 +59,13 @@ function buildAllRoutes() {
             slug: 'impressum',
             title: 'Impressum',
             description: 'Impressum und gesetzliche Angaben von Beulendoktor Damiko (Damiko Dellentechnik), Frankfurt am Main.',
-            image: '/images/damiko-logo.png',
+            image: '/images/damiko-logo-shield.png',
         },
         {
             slug: 'datenschutz',
             title: 'Datenschutzerklärung',
             description: 'Datenschutzerklärung gemäß DSGVO und TDDDG für Beulendoktor Damiko (damiko.de).',
-            image: '/images/damiko-logo.png',
+            image: '/images/damiko-logo-shield.png',
         },
     ];
 

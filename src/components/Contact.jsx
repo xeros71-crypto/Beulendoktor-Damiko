@@ -77,7 +77,7 @@ const Contact = () => {
                 <div className={styles.layout}>
                     <div className={styles.infoPanel}>
                         <img
-                            src="/images/damiko-logo.png"
+                            src="/images/damiko-logo-shield.png"
                             alt="Beulendoktor Damiko"
                             className={styles.panelLogo}
                             width={130}

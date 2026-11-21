@@ -71,7 +71,7 @@ export const services = [
         seoKeywords: 'Beulendoktor Frankfurt, Mobiler Ausbeulservice, Dellen entfernen ohne Lackieren, PDR Dellentechnik, Parkdelle entfernen Wetterau',
         heroImage: '/gallery/arbeit-2-porsche-911.jpg',
         heroImageAlt: 'Lackschadenfreie Dellenentfernung an einem Porsche 911 durch Beulendoktor Damiko',
-        secondaryImage: '/images/damiko-hero.png',
+        secondaryImage: '/images/damiko-hero-shield.png',
         secondaryImageAlt: 'Beulendoktor Damiko Dellentechnik-Spezialist mit Ausbeulwerkzeug',
         secondaryContain: true,
         highlightBox: 'Bis zu 75 % Kostenersparnis gegenüber herkömmlicher Instandsetzung mit Teiletausch und Neulackierung – bei vollem Erhalt des Originallacks.',
