@@ -23,11 +23,11 @@ const Navbar = () => {
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Hauptnavigation">
             <Link to="/" className={styles.brand} onClick={closeMenu}>
                 <img
-                    src="/favicon.png"
+                    src="/images/damiko-logo.png"
                     alt="Beulendoktor Damiko Emblem"
                     className={styles.brandIcon}
-                    width={38}
-                    height={38}
+                    width={37}
+                    height={44}
                 />
                 <span className={styles.brandText}>
                     <span className={styles.brandName}>Beulendoktor</span>
