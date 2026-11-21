@@ -121,8 +121,26 @@ export const ALL_AREAS_SERVED = [
     { '@type': 'City', name: 'Offenbach am Main' },
     { '@type': 'City', name: 'Oberursel (Taunus)' },
     { '@type': 'City', name: 'Eschborn' },
-    { '@type': 'City', name: 'Friedberg (Hessen)' },
     { '@type': 'City', name: 'Karben' },
+    { '@type': 'City', name: 'Friedrichsdorf' },
+    { '@type': 'City', name: 'Rosbach vor der Höhe' },
+    { '@type': 'City', name: 'Friedberg (Hessen)' },
+    { '@type': 'City', name: 'Bad Nauheim' },
+    { '@type': 'City', name: 'Kronberg im Taunus' },
+    { '@type': 'City', name: 'Königstein im Taunus' },
+    { '@type': 'City', name: 'Schwalbach am Taunus' },
+    { '@type': 'City', name: 'Bad Soden am Taunus' },
+    { '@type': 'City', name: 'Kelkheim (Taunus)' },
+    { '@type': 'City', name: 'Hofheim am Taunus' },
+    { '@type': 'City', name: 'Hattersheim am Main' },
+    { '@type': 'City', name: 'Neu-Isenburg' },
+    { '@type': 'City', name: 'Dreieich' },
+    { '@type': 'City', name: 'Langen (Hessen)' },
+    { '@type': 'City', name: 'Kelsterbach' },
+    { '@type': 'City', name: 'Dietzenbach' },
+    { '@type': 'City', name: 'Maintal' },
+    { '@type': 'City', name: 'Hanau' },
+    { '@type': 'City', name: 'Mühlheim am Main' },
 ];
 
 export const CORE_OFFERS = [
@@ -342,12 +360,17 @@ export function buildServicePageSchema(service) {
 
 export function buildRegionalPageSchema(page) {
     const pageUrl = `${SITE_URL}/${page.slug}`;
+    const regionalArea = {
+        '@type': page.areaType || 'City',
+        name: page.areaServed,
+    };
+
     return buildGraphSchema([
         buildOrganizationNode({
             url: pageUrl,
             image: `${SITE_URL}${page.image}`,
             description: page.description,
-            areaServed: page.areaServed,
+            areaServed: [regionalArea],
             includeOfferCatalog: true,
         }),
         {
@@ -359,10 +382,7 @@ export function buildRegionalPageSchema(page) {
             url: pageUrl,
             image: `${SITE_URL}${page.image}`,
             provider: { '@id': BUSINESS_ID },
-            areaServed: {
-                '@type': page.areaType || 'City',
-                name: page.areaServed,
-            },
+            areaServed: regionalArea,
         },
         buildBreadcrumbNode([
             { name: 'Startseite', url: `${SITE_URL}/` },

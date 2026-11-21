@@ -95,13 +95,13 @@ function buildAllRoutes() {
     for (const p of regionalPages) {
         routes.push({
             slug: p.slug,
-            priority: p.slug === 'autolackiererei-frankfurt' ? '0.95' : '0.8',
+            priority: p.priority || (p.slug === 'autolackiererei-frankfurt' ? '0.95' : '0.8'),
             changefreq: 'monthly',
             title: p.title,
             description: p.description,
             keywords: p.keywords,
             image: p.image,
-            imageAlt: `Autolackierer & Beulendoktor Damiko für ${p.city}`,
+            imageAlt: p.imageAlt || `Autolackierer & Beulendoktor Damiko für ${p.city}`,
             schema: buildRegionalPageSchema(p),
         });
     }

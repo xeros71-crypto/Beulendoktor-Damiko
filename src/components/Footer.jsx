@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BUSINESS_INFO } from '../data/businessSchema';
-import { regionalPages } from '../data/regionalPages';
+import { REGIONAL_GROUPS } from '../data/regionalPages';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -101,15 +101,24 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className={styles.regionsBar}>
-                <span className={styles.regionsLabel}>Einzugsgebiet:</span>
-                {regionalPages.map((page, index) => (
-                    <span key={page.slug} style={{ display: 'contents' }}>
-                        {index > 0 && <span>·</span>}
-                        <Link to={`/${page.slug}`}>{page.city}</Link>
-                    </span>
-                ))}
-            </div>
+            <nav className={styles.regionsSection} aria-label="Einzugsgebiet im 30 km Umkreis um Frankfurt">
+                <p className={styles.regionsHeading}>Einzugsgebiet (30 km Umkreis Frankfurt am Main)</p>
+                <div className={styles.regionsGroups}>
+                    {REGIONAL_GROUPS.map((group) => (
+                        <div key={group.id} className={styles.regionsRow}>
+                            <span className={styles.regionsLabel}>{group.label}:</span>
+                            <div className={styles.regionsLinks}>
+                                {group.pages.map((page, index) => (
+                                    <span key={page.slug} style={{ display: 'contents' }}>
+                                        {index > 0 && <span className={styles.regionSep} aria-hidden="true">·</span>}
+                                        <Link to={`/${page.slug}`}>{page.shortCity || page.city}</Link>
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </nav>
 
             <div className={styles.bottom}>
                 <p>&copy; {new Date().getFullYear()} {BUSINESS_INFO.name} · {BUSINESS_INFO.legalName}. Alle Rechte vorbehalten.</p>

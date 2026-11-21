@@ -194,34 +194,66 @@
     color: var(--accent-primary);
 }
 
-.regionsBar {
+.regionsSection {
     max-width: 1200px;
-    margin: 0 auto 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 0 auto 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.regionsHeading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.regionsGroups {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.regionsRow {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 0.35rem;
-    font-size: 0.85rem;
+    gap: 0.2rem 0.35rem;
+    font-size: 0.84rem;
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .regionsLabel {
     color: var(--text-secondary);
     font-weight: 600;
-    margin-right: 0.35rem;
+    margin-right: 0.3rem;
 }
 
-.regionsBar a {
+.regionsLinks {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.15rem 0.3rem;
+}
+
+.regionSep {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.regionsLinks a {
     color: var(--text-muted);
-    padding: 0.3rem 0.45rem;
+    padding: 0.15rem 0.3rem;
     display: inline-block;
     transition: color 0.2s ease;
 }
 
-.regionsBar a:hover {
+.regionsLinks a:hover {
     color: var(--accent-primary);
 }
 

@@ -362,6 +362,51 @@
     line-height: 1.65;
 }
 
+.caseBadge {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent-primary);
+    background: rgba(254, 245, 121, 0.1);
+    border: 1px solid rgba(254, 245, 121, 0.28);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.9rem;
+}
+
+.quickFactsBar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+    margin-top: 2.75rem;
+    padding: 1.35rem 1.5rem;
+    border-radius: 14px;
+    background: rgba(41, 32, 69, 0.45);
+    border: 1px solid var(--border-color);
+}
+
+.quickFactItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+
+.quickFactLabel {
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.quickFactValue {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
 .faqBlock {
     max-width: 920px;
     margin-left: auto;
