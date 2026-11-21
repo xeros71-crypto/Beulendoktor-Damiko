@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import BackButton from '../components/BackButton';
+import { GALERIE_SEO, buildGallerySchema } from '../data/businessSchema';
 import { galleryItems, workshopHighlights } from '../data/gallery';
 import pageStyles from '../styles/PageLayout.module.css';
 import galleryStyles from '../components/Gallery.module.css';
 
 const allImages = [...galleryItems, ...workshopHighlights];
+const gallerySchema = buildGallerySchema();
 
 const Galerie = () => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -22,12 +25,21 @@ const Galerie = () => {
     return (
         <>
             <SEO
-                title="Galerie & Referenzen"
-                description="Einblicke in echte Arbeiten von Beulendoktor Damiko: Vorher-Nachher-Ergebnisse aus Dellentechnik, Smart Repair, Autolackierung und Aufbereitung."
-                keywords="Galerie Beulendoktor Damiko, Vorher Nachher Dellenentfernung, Autolackierung Beispiele Frankfurt, Smart Repair Ergebnisse"
+                title={GALERIE_SEO.title}
+                description={GALERIE_SEO.description}
+                canonicalPath="/galerie"
+                image={GALERIE_SEO.image}
+                imageAlt={GALERIE_SEO.imageAlt}
+                schema={gallerySchema}
             />
 
             <div className={pageStyles.pageContent}>
+                <nav className={pageStyles.breadcrumb} aria-label="Breadcrumb">
+                    <Link to="/">Startseite</Link>
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page">Galerie</span>
+                </nav>
+
                 <span className={pageStyles.kicker}>Referenzen &amp; Einblicke</span>
                 <h1 className={pageStyles.mainTitle}>Galerie – Einige unserer Arbeiten</h1>
                 <p style={{ color: 'var(--text-secondary)', maxWidth: '720px', marginBottom: '3rem', fontSize: '1.08rem', lineHeight: 1.7 }}>
@@ -47,6 +59,8 @@ const Galerie = () => {
                             <img
                                 src={item.src}
                                 alt={item.alt}
+                                width={640}
+                                height={640}
                                 loading={index < 3 ? 'eager' : 'lazy'}
                                 fetchPriority={index < 3 ? 'high' : 'auto'}
                                 decoding="async"

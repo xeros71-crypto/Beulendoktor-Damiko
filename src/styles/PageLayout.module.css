@@ -7,6 +7,259 @@
     margin: 0 auto;
 }
 
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-primary);
+}
+
+.crossLinkList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.crossLinkPill,
+.crossLinkPillMuted {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.crossLinkPill {
+    background: rgba(41, 32, 69, 0.6);
+    border: 1px solid rgba(254, 245, 121, 0.28);
+    color: var(--accent-primary);
+}
+
+.crossLinkPill:hover {
+    background: var(--accent-primary);
+    color: #140f26;
+    transform: translateY(-2px);
+}
+
+.crossLinkPillMuted {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: var(--text-secondary);
+}
+
+.crossLinkPillMuted:hover {
+    border-color: var(--accent-secondary);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+}
+
+.breadcrumbs a {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-primary);
+}
+
+.breadcrumbCurrent {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.priceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.priceCard {
+    background: rgba(41, 32, 69, 0.5);
+    border: 1px solid rgba(254, 245, 121, 0.18);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.priceHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.priceService {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.priceValue {
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    white-space: nowrap;
+}
+
+.priceNote {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.processGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.25rem;
+}
+
+.processCard {
+    background: rgba(23, 18, 43, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+.processStep {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #140f26;
+    background: var(--accent-primary);
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    margin-bottom: 0.8rem;
+}
+
+.processCard h3 {
+    font-size: 1.08rem;
+    color: #ffffff;
+    margin-bottom: 0.55rem;
+}
+
+.processCard p {
+    font-size: 0.94rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.districtBox {
+    background: rgba(41, 32, 69, 0.45);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+}
+
+.districtIntro {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.districtTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.districtTag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #ece8f8;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(254, 245, 121, 0.2);
+    padding: 0.34rem 0.75rem;
+    border-radius: 999px;
+}
+
+.relatedGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.15rem;
+}
+
+.relatedCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    background: rgba(41, 32, 69, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    padding: 1.35rem 1.5rem;
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.relatedCard:hover {
+    transform: translateY(-3px);
+    border-color: rgba(254, 245, 121, 0.5);
+    background: rgba(41, 32, 69, 0.72);
+}
+
+.relatedCardTitle {
+    color: var(--accent-primary);
+    font-weight: 700;
+    font-size: 1.02rem;
+}
+
+.relatedCardDesc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.regionPillGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.regionPill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #e8e4f5;
+    background: rgba(41, 32, 69, 0.55);
+    border: 1px solid rgba(254, 245, 121, 0.22);
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.regionPill:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: rgba(254, 245, 121, 0.1);
+}
+
 .kicker {
     display: inline-block;
     font-size: 0.85rem;
@@ -368,8 +621,13 @@
         gap: 2rem;
     }
 
-    .twoImageGrid {
+    .twoImageGrid,
+    .priceGrid {
         grid-template-columns: 1fr;
+    }
+
+    .districtBox {
+        padding: 1.35rem;
     }
 
     .sectionHeading {

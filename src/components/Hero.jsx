@@ -102,17 +102,17 @@ const Hero = () => {
 
                     <p className={styles.kicker}>
                         <span className={styles.kickerLine} aria-hidden="true" />
-                        <span>Seit {BUSINESS_INFO.foundedYear} · Frankfurt · Wetterau · Rhein-Main</span>
+                        <span>Seit {BUSINESS_INFO.foundedYear} · Autolackiererei Frankfurt (60433) · Wetterau · Rhein-Main</span>
                         <span className={styles.kickerLine} aria-hidden="true" />
                     </p>
 
                     <h1 className={styles.title}>
-                        Autolackierung, Smart Repair &amp; Beulendoktor
+                        Autolackierer in Frankfurt – Lackierung, Smart Repair &amp; Beulendoktor
                     </h1>
 
                     <p className={styles.description}>
-                        Smart Repair · Lackierung · Mobiler Ausbeulservice · Leasingrückläufer-Service.
-                        Präzises Handwerk für makellosen Lack und spürbaren Werterhalt – auch bequem mit Hol- &amp; Bringservice.
+                        Professionelle Autolackierung, Teillackierung, Smart Repair, mobiler Ausbeulservice &amp; Leasingrückläufer-Service
+                        in Frankfurt am Main. Exakte Farbanpassung in der modernen Lackierkabine – auch bequem mit Hol- &amp; Bringservice.
                     </p>
 
                     <div className={styles.actions}>

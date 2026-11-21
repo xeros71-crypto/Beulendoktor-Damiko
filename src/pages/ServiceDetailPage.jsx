@@ -2,37 +2,33 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import BackButton from '../components/BackButton';
-import { BUSINESS_INFO, SITE_URL, buildFaqSchema } from '../data/businessSchema';
+import { BUSINESS_INFO, buildServicePageSchema } from '../data/businessSchema';
+import { services } from '../data/services';
+import { regionalPages } from '../data/regionalPages';
 import styles from '../styles/PageLayout.module.css';
 
 const ServiceDetailPage = ({ service }) => {
-    const schema = [
-        {
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: service.shortTitle,
-            description: service.seoDescription,
-            provider: {
-                '@type': 'AutoRepair',
-                name: BUSINESS_INFO.name,
-                url: SITE_URL,
-                telephone: '+4915140333375',
-            },
-            areaServed: ['Frankfurt am Main', 'Wetteraukreis', 'Rhein-Main-Gebiet'],
-        },
-        ...(service.faqs && service.faqs.length > 0 ? [buildFaqSchema(service.faqs)] : []),
-    ];
+    const schema = buildServicePageSchema(service);
+    const relatedServices = services.filter((item) => item.slug !== service.slug);
 
     return (
         <>
             <SEO
                 title={service.seoTitle}
                 description={service.seoDescription}
-                keywords={service.seoKeywords}
+                canonicalPath={`/${service.slug}`}
+                image={service.heroImage}
+                imageAlt={service.heroImageAlt}
                 schema={schema}
             />
 
             <div className={styles.pageContent}>
+                <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+                    <Link to="/">Startseite</Link>
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page">{service.navLabel}</span>
+                </nav>
+
                 <span className={styles.kicker}>{service.kicker}</span>
                 <h1 className={styles.mainTitle}>{service.heroTitle}</h1>
 
@@ -71,7 +67,10 @@ const ServiceDetailPage = ({ service }) => {
                             src={service.heroImage}
                             alt={service.heroImageAlt}
                             className={styles.image}
+                            width={960}
+                            height={600}
                             loading="eager"
+                            fetchPriority="high"
                             decoding="async"
                         />
                     </div>
@@ -108,18 +107,20 @@ const ServiceDetailPage = ({ service }) => {
                 )}
 
                 {service.secondaryImage && (
-                    <div className={styles.twoImageGrid}>
+                    <section className={styles.twoImageGrid} aria-label="WhatsApp Foto-Check">
                         <div className={`${styles.imageContainer} ${styles.imageContainerPortrait}`}>
                             <img
                                 src={service.secondaryImage}
                                 alt={service.secondaryImageAlt}
                                 className={`${styles.image} ${service.secondaryContain ? styles.imageContain : ''}`}
+                                width={800}
+                                height={600}
                                 loading="lazy"
                                 decoding="async"
                             />
                         </div>
                         <div className={styles.infoCard} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h3>Schneller Foto-Check per WhatsApp</h3>
+                            <h2 className={styles.subHeading}>Schneller Foto-Check per WhatsApp</h2>
                             <p style={{ marginBottom: '1.25rem' }}>
                                 Senden Sie uns 2–3 Fotos des Schadens aus verschiedenen Blickwinkeln – wir teilen Ihnen
                                 kurzfristig mit, welches Verfahren am sinnvollsten und wirtschaftlichsten ist.
@@ -135,7 +136,7 @@ const ServiceDetailPage = ({ service }) => {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 )}
 
                 {service.seoParagraphs && service.seoParagraphs.length > 0 && (
@@ -160,6 +161,22 @@ const ServiceDetailPage = ({ service }) => {
                         </div>
                     </section>
                 )}
+
+                <section className={styles.sectionSpacer}>
+                    <h2 className={styles.sectionHeading}>Weitere Leistungen &amp; Einsatzgebiete</h2>
+                    <div className={styles.crossLinkList}>
+                        {relatedServices.map((item) => (
+                            <Link key={item.slug} to={`/${item.slug}`} className={styles.crossLinkPill}>
+                                {item.shortTitle} &rarr;
+                            </Link>
+                        ))}
+                        {regionalPages.map((region) => (
+                            <Link key={region.slug} to={`/${region.slug}`} className={styles.crossLinkPillMuted}>
+                                {region.city}
+                            </Link>
+                        ))}
+                    </div>
+                </section>
 
                 <section className={styles.ctaSection}>
                     <h2>Jetzt unverbindlich beraten lassen</h2>
@@ -191,12 +208,12 @@ const ServiceDetailPage = ({ service }) => {
 ServiceDetailPage.propTypes = {
     service: PropTypes.shape({
         slug: PropTypes.string.isRequired,
+        navLabel: PropTypes.string.isRequired,
         shortTitle: PropTypes.string.isRequired,
         kicker: PropTypes.string.isRequired,
         heroTitle: PropTypes.string.isRequired,
         seoTitle: PropTypes.string.isRequired,
         seoDescription: PropTypes.string.isRequired,
-        seoKeywords: PropTypes.string,
         heroImage: PropTypes.string.isRequired,
         heroImageAlt: PropTypes.string.isRequired,
         secondaryImage: PropTypes.string,

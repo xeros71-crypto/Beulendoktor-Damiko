@@ -36,6 +36,8 @@ const useScrollReveal = (key) => {
             }
         });
 
+        document.documentElement.classList.add('js-reveal');
+
         return () => observer.disconnect();
     }, [key]);
 };

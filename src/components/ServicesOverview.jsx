@@ -7,11 +7,11 @@ const ServicesOverview = () => {
         <section id="leistungen" className={styles.section}>
             <div className={styles.inner}>
                 <div className="reveal">
-                    <span className={styles.kicker}>Unser Leistungsumfang</span>
-                    <h2 className={styles.heading}>Lackierung, Dellentechnik &amp; Smart Repair aus einer Hand</h2>
+                    <span className={styles.kicker}>Autolackierer &amp; Dellentechnik in Frankfurt</span>
+                    <h2 className={styles.heading}>Autolackierung, Smart Repair &amp; Beulendoktor aus einer Hand</h2>
                     <p className={styles.subtitle}>
-                        Von der exakten Teillackierung in der Lackierkabine über lackschadenfreies Ausbeulen
-                        bis zum kompletten Leasingrückläufer-Service – präzise, transparent und fair kalkuliert.
+                        Von der exakten Teillackierung (Stoßstange, Kotflügel, Tür) in unserer Lackierkabine über
+                        Smart Repair und lackschadenfreies Ausbeulen bis zum kompletten Leasingrückläufer-Service in Frankfurt am Main.
                     </p>
                 </div>
 
@@ -23,6 +23,8 @@ const ServicesOverview = () => {
                                     src={service.heroImage}
                                     alt={service.heroImageAlt}
                                     className={styles.cardImage}
+                                    width={640}
+                                    height={426}
                                     loading="lazy"
                                     decoding="async"
                                 />

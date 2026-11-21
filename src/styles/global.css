@@ -65,33 +65,39 @@ button {
     will-change: transform;
 }
 
-/* Choreographed Scroll Reveal System */
+/* Choreographed Scroll Reveal System (Progressive Enhancement — SSR & Crawler Safe) */
+html.js-reveal .reveal:not(.active),
+html.js-reveal .reveal-left:not(.active),
+html.js-reveal .reveal-right:not(.active),
+html.js-reveal .reveal-scale:not(.active) {
+    opacity: 0;
+    filter: blur(4px);
+    will-change: opacity, transform, filter;
+}
+
 .reveal,
 .reveal-left,
 .reveal-right,
 .reveal-scale {
-    opacity: 0;
-    filter: blur(4px);
     transition:
         opacity 0.85s var(--ease-luxury),
         transform 0.85s var(--ease-luxury),
         filter 0.85s var(--ease-luxury);
-    will-change: opacity, transform, filter;
 }
 
-.reveal {
+html.js-reveal .reveal:not(.active) {
     transform: translateY(36px);
 }
 
-.reveal-left {
+html.js-reveal .reveal-left:not(.active) {
     transform: translateX(-38px);
 }
 
-.reveal-right {
+html.js-reveal .reveal-right:not(.active) {
     transform: translateX(38px);
 }
 
-.reveal-scale {
+html.js-reveal .reveal-scale:not(.active) {
     transform: translateY(28px) scale(0.96);
 }
 
@@ -105,15 +111,18 @@ button {
 }
 
 /* Staggered Cascade Children */
-.reveal-stagger > * {
+html.js-reveal .reveal-stagger:not(.active) > * {
     opacity: 0;
     transform: translateY(32px) scale(0.975);
     filter: blur(3px);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-stagger > * {
     transition:
         opacity 0.78s var(--ease-luxury),
         transform 0.78s var(--ease-luxury),
         filter 0.78s var(--ease-luxury);
-    will-change: opacity, transform, filter;
 }
 
 .reveal-stagger.active > * {

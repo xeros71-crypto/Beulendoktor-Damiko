@@ -24,12 +24,12 @@ const About = () => {
                 <div className={`${styles.content} reveal-right`}>
                     <span className={styles.kicker}>Über uns · Seit {BUSINESS_INFO.foundedYear}</span>
                     <h2 className={styles.subHeading}>
-                        Ihr Spezialist für Autolackierung &amp; mobilen Kfz-Ausbeulservice
+                        Ihr Autolackierer &amp; mobiler Kfz-Ausbeulservice in Frankfurt am Main
                     </h2>
                     <p className={styles.text}>
                         Seit <strong>{BUSINESS_INFO.foundedYear}</strong> steht <strong>{BUSINESS_INFO.name}</strong> in{' '}
-                        <strong>Frankfurt am Main</strong> für präzises Handwerk rund um Autolackierungen,
-                        Smart Repair und lackschadenfreie Dellentechnik – im gesamten Raum Frankfurt,
+                        <strong>Frankfurt am Main (60433)</strong> für präzises Handwerk rund um Autolackierungen,
+                        Teillackierungen, Smart Repair und lackschadenfreie Dellentechnik – im gesamten Raum Frankfurt,
                         der Wetterau und im Rhein-Main-Gebiet.
                     </p>
                     <p className={styles.text}>

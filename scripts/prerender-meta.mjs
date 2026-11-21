@@ -1,18 +1,25 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { services } from '../src/data/services.js';
 import { regionalPages } from '../src/data/regionalPages.js';
+import { galleryItems, workshopHighlights } from '../src/data/gallery.js';
 import {
-    ALL_AREAS_SERVED,
+    BUSINESS_INFO,
+    HOME_FAQS,
+    HOME_SEO,
     SITE_URL,
-    buildAutoRepairSchema,
-    buildFaqSchema,
+    buildGalleryPageSchema,
+    buildHomeSchema,
+    buildRegionalPageSchema,
+    buildServicePageSchema,
 } from '../src/data/businessSchema.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
+const ssrDir = path.join(rootDir, 'dist-ssr');
+const publicDir = path.join(rootDir, 'public');
 
 function escapeHtml(str) {
     return String(str)
@@ -23,148 +30,186 @@ function escapeHtml(str) {
 }
 
 function formatTitle(title) {
-    if (!title) return 'Beulendoktor Damiko | Autolackierung, Smart Repair & Dellentechnik';
-    return title.includes('Beulendoktor Damiko') || title.includes('Damiko')
-        ? title
-        : `${title} | Beulendoktor Damiko`;
+    if (!title) return HOME_SEO.title;
+    return title.includes('Damiko') ? title : `${title} | ${BUSINESS_INFO.name}`;
 }
 
 function buildAllRoutes() {
     const routes = [
         {
             slug: '',
-            title: 'Autolackierung, Smart Repair & Beulendoktor in Frankfurt',
-            description:
-                'Beulendoktor Damiko in Frankfurt am Main: Professionelle Autolackierungen, Smart Repair, mobiler Ausbeulservice ohne Lackieren, Hagelschäden & Leasingrückläufer-Service seit 2014.',
-            keywords:
-                'Autolackiererei Frankfurt, Beulendoktor Frankfurt, Smart Repair Frankfurt, Mobiler Ausbeulservice, Hagelschaden Frankfurt, Leasingrückläufer Rhein-Main, Damiko',
-            image: '/images/lackierung-kabine.jpg',
-            schema: buildAutoRepairSchema({
-                url: `${SITE_URL}/`,
-                image: `${SITE_URL}/images/lackierung-kabine.jpg`,
-                description:
-                    'Seit 2014 Ihr Spezialist für Autolackierungen, Smart Repair, mobilen Ausbeulservice, Hagelschäden und Leasingrückläufer in Frankfurt, Wetterau & Rhein-Main.',
-                areaServed: ALL_AREAS_SERVED,
-            }),
+            priority: '1.0',
+            changefreq: 'weekly',
+            title: HOME_SEO.title,
+            description: HOME_SEO.description,
+            keywords: HOME_SEO.keywords,
+            image: HOME_SEO.image,
+            imageAlt: HOME_SEO.imageAlt,
+            schema: buildHomeSchema(HOME_FAQS),
         },
         {
             slug: 'galerie',
-            title: 'Galerie & Referenzen',
+            priority: '0.8',
+            changefreq: 'monthly',
+            title: 'Referenzen & Galerie – Autolackierer Frankfurt',
             description:
-                'Vorher-Nachher-Referenzen von Beulendoktor Damiko: Dellenentfernung ohne Lackieren, Smart Repair, Autolackierung und Fahrzeugaufbereitung.',
-            keywords: 'Galerie Beulendoktor Damiko, Vorher Nachher Dellen, Autolackierung Frankfurt Bilder',
+                'Vorher-Nachher-Referenzen von Beulendoktor Damiko in Frankfurt: Autolackierung, Teillackierung, Smart Repair & lackschadenfreie Dellenentfernung.',
+            keywords:
+                'Galerie Autolackierer Frankfurt, Vorher Nachher Autolackierung Frankfurt, Beulendoktor Damiko Referenzen, Smart Repair Ergebnisse Frankfurt',
             image: '/gallery/arbeit-2-porsche-911.jpg',
+            imageAlt: 'Vorher-Nachher-Referenzen für Autolackierung und Dellentechnik in Frankfurt',
+            schema: buildGalleryPageSchema([...galleryItems, ...workshopHighlights]),
         },
         {
             slug: 'impressum',
+            noindex: true,
             title: 'Impressum',
-            description: 'Impressum und gesetzliche Angaben von Beulendoktor Damiko (Damiko Dellentechnik), Frankfurt am Main.',
+            description: `Impressum und gesetzliche Anbieterkennzeichnung von ${BUSINESS_INFO.name} (${BUSINESS_INFO.legalName}), ${BUSINESS_INFO.street}, ${BUSINESS_INFO.postalCode} ${BUSINESS_INFO.city}.`,
             image: '/images/damiko-logo-shield.png',
+            imageAlt: 'Beulendoktor Damiko Logo',
         },
         {
             slug: 'datenschutz',
+            noindex: true,
             title: 'Datenschutzerklärung',
-            description: 'Datenschutzerklärung gemäß DSGVO und TDDDG für Beulendoktor Damiko (damiko.de).',
+            description: `Datenschutzerklärung gemäß DSGVO und TDDDG für ${BUSINESS_INFO.name} (damiko.de).`,
             image: '/images/damiko-logo-shield.png',
+            imageAlt: 'Beulendoktor Damiko Logo',
         },
     ];
 
     for (const s of services) {
         routes.push({
             slug: s.slug,
+            priority: s.slug === 'lackierungen' ? '0.95' : '0.9',
+            changefreq: 'monthly',
             title: s.seoTitle,
             description: s.seoDescription,
             keywords: s.seoKeywords,
             image: s.heroImage,
-            schema: s.faqs && s.faqs.length > 0 ? buildFaqSchema(s.faqs) : null,
+            imageAlt: s.heroImageAlt,
+            schema: buildServicePageSchema(s),
         });
     }
 
     for (const p of regionalPages) {
-        const schemaList = [
-            buildAutoRepairSchema({
-                url: `${SITE_URL}/${p.slug}`,
-                image: `${SITE_URL}${p.image}`,
-                description: p.description,
-                areaServed: p.areaServed,
-            }),
-        ];
-        if (p.faqs && p.faqs.length > 0) {
-            schemaList.push(buildFaqSchema(p.faqs));
-        }
-
         routes.push({
             slug: p.slug,
+            priority: p.slug === 'autolackiererei-frankfurt' ? '0.95' : '0.8',
+            changefreq: 'monthly',
             title: p.title,
             description: p.description,
             keywords: p.keywords,
             image: p.image,
-            schema: schemaList,
+            imageAlt: `Autolackierer & Beulendoktor Damiko für ${p.city}`,
+            schema: buildRegionalPageSchema(p),
         });
     }
 
     return routes;
 }
 
-function injectMeta(templateHtml, route) {
+function injectRouteHtml(templateHtml, route, appHtml) {
     const fullTitle = escapeHtml(formatTitle(route.title));
-    const desc = escapeHtml(
-        route.description ||
-            'Beulendoktor Damiko in Frankfurt am Main: Autolackierungen, Smart Repair, mobiler Ausbeulservice & Leasingrückläufer-Service.',
-    );
+    const desc = escapeHtml(route.description || HOME_SEO.description);
     const keywords = escapeHtml(route.keywords || '');
     const canonicalUrl = route.slug ? `${SITE_URL}/${route.slug}` : `${SITE_URL}/`;
     const imageUrl = route.image?.startsWith('http')
         ? route.image
-        : `${SITE_URL}${route.image || '/images/lackierung-kabine.jpg'}`;
+        : `${SITE_URL}${route.image || HOME_SEO.image}`;
+    const imageAlt = escapeHtml(route.imageAlt || HOME_SEO.imageAlt);
     const safeJsonLd = route.schema
         ? JSON.stringify(route.schema).replace(/</g, '\\u003c')
         : '';
 
+    const robotsContent = route.noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
     const metaTags = [
-        `<meta name="description" content="${desc}" />`,
-        keywords ? `<meta name="keywords" content="${keywords}" />` : '',
-        `<link rel="canonical" href="${canonicalUrl}" />`,
-        `<meta property="og:title" content="${fullTitle}" />`,
-        `<meta property="og:description" content="${desc}" />`,
-        `<meta property="og:url" content="${canonicalUrl}" />`,
-        `<meta property="og:type" content="website" />`,
-        `<meta property="og:image" content="${imageUrl}" />`,
-        `<meta name="twitter:card" content="summary_large_image" />`,
-        `<meta name="twitter:title" content="${fullTitle}" />`,
-        `<meta name="twitter:description" content="${desc}" />`,
+        `<meta name="description" content="${desc}" data-rh="true" />`,
+        keywords ? `<meta name="keywords" content="${keywords}" data-rh="true" />` : '',
+        `<meta name="robots" content="${robotsContent}" data-rh="true" />`,
+        !route.noindex ? `<link rel="canonical" href="${canonicalUrl}" data-rh="true" />` : '',
+        `<meta property="og:locale" content="de_DE" data-rh="true" />`,
+        `<meta property="og:site_name" content="${escapeHtml(BUSINESS_INFO.name)}" data-rh="true" />`,
+        `<meta property="og:title" content="${fullTitle}" data-rh="true" />`,
+        `<meta property="og:description" content="${desc}" data-rh="true" />`,
+        !route.noindex ? `<meta property="og:url" content="${canonicalUrl}" data-rh="true" />` : '',
+        `<meta property="og:type" content="website" data-rh="true" />`,
+        `<meta property="og:image" content="${imageUrl}" data-rh="true" />`,
+        `<meta property="og:image:alt" content="${imageAlt}" data-rh="true" />`,
+        `<meta name="twitter:card" content="summary_large_image" data-rh="true" />`,
+        `<meta name="twitter:title" content="${fullTitle}" data-rh="true" />`,
+        `<meta name="twitter:description" content="${desc}" data-rh="true" />`,
+        `<meta name="twitter:image" content="${imageUrl}" data-rh="true" />`,
         safeJsonLd ? `<script type="application/ld+json" data-rh="true">${safeJsonLd}</script>` : '',
     ]
         .filter(Boolean)
         .join('\n  ');
 
-    let html = templateHtml.replace(/<title>[\s\S]*?<\/title>/, `<title>${fullTitle}</title>`);
+    let html = templateHtml.replace(/<title>[\s\S]*?<\/title>/, `<title data-rh="true">${fullTitle}</title>`);
     html = html.replace('</head>', `  ${metaTags}\n</head>`);
+    html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
     return html;
 }
 
-function main() {
+function buildSitemapXml(routes) {
+    const today = new Date().toISOString().slice(0, 10);
+    const urls = routes
+        .filter((route) => !route.noindex)
+        .map((route) => {
+            const loc = route.slug ? `${SITE_URL}/${route.slug}` : `${SITE_URL}/`;
+            return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${route.changefreq || 'monthly'}</changefreq>\n    <priority>${route.priority || '0.7'}</priority>\n  </url>`;
+        })
+        .join('\n');
+
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+}
+
+async function main() {
     const indexPath = path.join(distDir, 'index.html');
+    const ssrEntryPath = path.join(ssrDir, 'entry-server.js');
+
     if (!fs.existsSync(indexPath)) {
         console.error('dist/index.html not found. Run vite build first.');
         process.exit(1);
     }
 
+    if (!fs.existsSync(ssrEntryPath)) {
+        console.error('dist-ssr/entry-server.js not found. Run vite build --ssr first.');
+        process.exit(1);
+    }
+
+    const { render } = await import(pathToFileURL(ssrEntryPath).href);
     const templateHtml = fs.readFileSync(indexPath, 'utf8');
     const routes = buildAllRoutes();
 
     for (const route of routes) {
-        const html = injectMeta(templateHtml, route);
+        const routeUrl = route.slug ? `/${route.slug}` : '/';
+        const { html: appHtml } = render(routeUrl);
+        const fullHtml = injectRouteHtml(templateHtml, route, appHtml);
+
         if (!route.slug) {
-            fs.writeFileSync(indexPath, html, 'utf8');
+            fs.writeFileSync(indexPath, fullHtml, 'utf8');
         } else {
-            const targetDir = path.join(distDir, route.slug);
-            fs.mkdirSync(targetDir, { recursive: true });
-            fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
+            // Write flat <slug>.html for Vercel cleanUrls: true & trailingSlash: false (HTTP 200 without 308 redirect)
+            fs.writeFileSync(path.join(distDir, `${route.slug}.html`), fullHtml, 'utf8');
         }
     }
 
-    console.log(`Prerendered SEO meta tags for ${routes.length} routes.`);
+    // Keep sitemap.xml synced in both dist/ and public/
+    const sitemapXml = buildSitemapXml(routes);
+    fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf8');
+    fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf8');
+
+    // Clean up temporary SSR build folder
+    fs.rmSync(ssrDir, { recursive: true, force: true });
+
+    console.log(`Prerendered full static HTML & SEO metadata for ${routes.length} routes + updated sitemap.xml.`);
 }
 
-main();
+main().catch((err) => {
+    console.error('Prerender failed:', err);
+    process.exit(1);
+});

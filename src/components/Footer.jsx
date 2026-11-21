@@ -12,8 +12,8 @@ const Footer = () => {
                         src="/images/damiko-logo-shield.png"
                         alt="Beulendoktor Damiko – Dellen, Lack, Leasing"
                         className={styles.logoImage}
-                        width={220}
-                        height={262}
+                        width={160}
+                        height={191}
                         loading="lazy"
                         decoding="async"
                     />
@@ -64,7 +64,7 @@ const Footer = () => {
 
             <div className={styles.container}>
                 <div className={styles.column}>
-                    <h4 className={styles.title}>Über Damiko</h4>
+                    <p className={styles.title}>Über Damiko</p>
                     <p className={styles.text}>
                         Seit {BUSINESS_INFO.foundedYear} Ihr Spezialist für Autolackierungen, Smart Repair,
                         lackschadenfreie Dellentechnik, Hagelschäden und Leasingrückläufer in Frankfurt am Main,
@@ -74,7 +74,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.column}>
-                    <h4 className={styles.title}>Leistungen</h4>
+                    <p className={styles.title}>Leistungen</p>
                     <ul className={styles.links}>
                         <li><Link to="/lackierungen">Autolackierungen</Link></li>
                         <li><Link to="/ausbeulservice">Mobiler Ausbeulservice</Link></li>
@@ -86,7 +86,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.column}>
-                    <h4 className={styles.title}>Kontakt &amp; Rechtliches</h4>
+                    <p className={styles.title}>Kontakt &amp; Rechtliches</p>
                     <p>{BUSINESS_INFO.name}</p>
                     <p>{BUSINESS_INFO.street}</p>
                     <p>{BUSINESS_INFO.postalCode} {BUSINESS_INFO.city}</p>
@@ -97,15 +97,6 @@ const Footer = () => {
                     <ul className={styles.legalLinks}>
                         <li><Link to="/impressum">Impressum</Link></li>
                         <li><Link to="/datenschutz">Datenschutz</Link></li>
-                        <li>
-                            <button
-                                type="button"
-                                onClick={() => window.dispatchEvent(new Event('openCookieSettings'))}
-                                className={styles.cookieLink}
-                            >
-                                Cookie-Einstellungen
-                            </button>
-                        </li>
                     </ul>
                 </div>
             </div>

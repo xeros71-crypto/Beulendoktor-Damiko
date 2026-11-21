@@ -2,30 +2,33 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import BackButton from '../components/BackButton';
-import { BUSINESS_INFO, SITE_URL, buildAutoRepairSchema, buildFaqSchema } from '../data/businessSchema';
+import { BUSINESS_INFO, buildRegionalPageSchema } from '../data/businessSchema';
+import { services } from '../data/services';
+import { regionalPages } from '../data/regionalPages';
 import styles from '../styles/PageLayout.module.css';
 
 const RegionalLandingPage = ({ page }) => {
-    const schema = [
-        buildAutoRepairSchema({
-            url: `${SITE_URL}/${page.slug}`,
-            image: `${SITE_URL}${page.image}`,
-            description: page.description,
-            areaServed: page.areaServed,
-        }),
-        ...(page.faqs && page.faqs.length > 0 ? [buildFaqSchema(page.faqs)] : []),
-    ];
+    const schema = buildRegionalPageSchema(page);
+    const otherRegions = regionalPages.filter((item) => item.slug !== page.slug);
 
     return (
         <>
             <SEO
                 title={page.title}
                 description={page.description}
-                keywords={page.keywords}
+                canonicalPath={`/${page.slug}`}
+                image={page.image}
+                imageAlt={`Beulendoktor Damiko – Autolackierung & Dellentechnik für ${page.city}`}
                 schema={schema}
             />
 
             <div className={styles.pageContent}>
+                <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+                    <Link to="/">Startseite</Link>
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page">{page.city}</span>
+                </nav>
+
                 <span className={styles.kicker}>Regionaler Service · {page.city}</span>
                 <h1 className={styles.mainTitle}>{page.heroHeading}</h1>
 
@@ -58,11 +61,35 @@ const RegionalLandingPage = ({ page }) => {
                             src={page.image}
                             alt={`Beulendoktor Damiko – Autolackierung & Dellentechnik für ${page.city}`}
                             className={styles.image}
+                            width={960}
+                            height={600}
                             loading="eager"
+                            fetchPriority="high"
                             decoding="async"
                         />
                     </div>
                 </div>
+
+                {page.localContext && page.localContext.length > 0 && (
+                    <section className={styles.seoBlock}>
+                        <h2 className={styles.sectionHeading}>Ihr Ansprechpartner für {page.city} &amp; Umgebung</h2>
+                        {page.localContext.map((paragraph) => (
+                            <p key={paragraph}>{paragraph}</p>
+                        ))}
+                    </section>
+                )}
+
+                <section className={styles.sectionSpacer}>
+                    <h2 className={styles.sectionHeading}>Unsere Leistungen für {page.city}</h2>
+                    <div className={styles.cardGrid}>
+                        {services.map((service) => (
+                            <Link key={service.slug} to={`/${service.slug}`} className={styles.infoCard}>
+                                <h3>{service.shortTitle}</h3>
+                                <p>{service.shortDesc}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
 
                 {page.faqs && page.faqs.length > 0 && (
                     <section className={styles.sectionSpacer}>
@@ -77,6 +104,17 @@ const RegionalLandingPage = ({ page }) => {
                         </div>
                     </section>
                 )}
+
+                <section className={styles.sectionSpacer}>
+                    <h2 className={styles.sectionHeading}>Weitere Einsatzgebiete im Rhein-Main-Gebiet</h2>
+                    <div className={styles.crossLinkList}>
+                        {otherRegions.map((region) => (
+                            <Link key={region.slug} to={`/${region.slug}`} className={styles.crossLinkPill}>
+                                Beulendoktor &amp; Lackierung {region.city} &rarr;
+                            </Link>
+                        ))}
+                    </div>
+                </section>
 
                 <section className={styles.ctaSection}>
                     <h2>Termin vereinbaren für {page.city}</h2>
@@ -110,12 +148,13 @@ RegionalLandingPage.propTypes = {
         slug: PropTypes.string.isRequired,
         city: PropTypes.string.isRequired,
         areaServed: PropTypes.string.isRequired,
+        areaType: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        keywords: PropTypes.string,
         image: PropTypes.string.isRequired,
         heroHeading: PropTypes.string.isRequired,
         intro: PropTypes.string.isRequired,
+        localContext: PropTypes.arrayOf(PropTypes.string),
         highlights: PropTypes.arrayOf(PropTypes.string).isRequired,
         faqs: PropTypes.arrayOf(
             PropTypes.shape({
