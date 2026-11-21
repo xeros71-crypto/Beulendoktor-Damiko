@@ -6,23 +6,30 @@ import ScrollProgress from './ScrollProgress';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 const MainLayout = () => {
-    const { hash, pathname } = useLocation();
+    const { hash, pathname, key } = useLocation();
 
     useScrollReveal(pathname);
 
     useEffect(() => {
-        if (hash) {
-            const element = document.getElementById(hash.replace('#', ''));
-            if (element) {
-                const timer = setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-                return () => clearTimeout(timer);
-            }
-        } else {
-            window.scrollTo(0, 0);
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
         }
-    }, [hash, pathname]);
+    }, []);
+
+    useEffect(() => {
+        if (hash) {
+            const targetId = hash.replace('#', '');
+            const timer = setTimeout(() => {
+                const element = document.getElementById(targetId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 80);
+            return () => clearTimeout(timer);
+        }
+
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, [hash, pathname, key]);
 
     return (
         <div className="app">

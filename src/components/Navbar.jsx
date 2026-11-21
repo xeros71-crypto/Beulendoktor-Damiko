@@ -24,11 +24,15 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
     const closeMenu = () => setIsOpen(false);
+    const handleHomeClick = () => {
+        setIsOpen(false);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    };
 
     return (
         <header>
             <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Hauptnavigation">
-                <Link to="/" className={styles.brand} onClick={closeMenu}>
+                <Link to="/" className={styles.brand} onClick={handleHomeClick}>
                     <img
                         src="/images/damiko-logo-shield.png"
                         alt="Beulendoktor Damiko Emblem"
@@ -56,7 +60,7 @@ const Navbar = () => {
 
                 <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
                     <li>
-                        <NavLink to="/" end className={({ isActive }) => (isActive ? styles.active : '')} onClick={closeMenu}>
+                        <NavLink to="/" end className={({ isActive }) => (isActive ? styles.active : '')} onClick={handleHomeClick}>
                             Home
                         </NavLink>
                     </li>
@@ -91,7 +95,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <Link to="/#contact" className={styles.ctaLink} onClick={closeMenu}>
+                        <Link to="/#contact" onClick={closeMenu}>
                             Kontakt
                         </Link>
                     </li>

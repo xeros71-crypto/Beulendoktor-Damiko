@@ -100,24 +100,6 @@
     color: var(--accent-primary);
 }
 
-.ctaLink {
-    padding: 0.55rem 1.15rem;
-    border: 1px solid var(--accent-primary);
-    border-radius: 5px;
-    color: var(--accent-primary) !important;
-    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease !important;
-}
-
-.ctaLink::after {
-    display: none;
-}
-
-.ctaLink:hover {
-    background: var(--accent-primary);
-    color: #140f26 !important;
-    transform: translateY(-1px);
-}
-
 .mobilePhoneItem {
     display: none;
 }
@@ -224,11 +206,6 @@
         display: inline-block;
         font-size: clamp(1rem, 4.2vw, 1.25rem);
         line-height: 1.4;
-    }
-
-    .ctaLink {
-        margin-top: 0.5rem;
-        padding: 0.75rem 2rem;
     }
 
     .mobilePhoneItem {
