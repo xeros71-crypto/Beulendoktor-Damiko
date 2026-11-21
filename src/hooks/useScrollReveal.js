@@ -27,14 +27,7 @@ const useScrollReveal = (key) => {
             { rootMargin: '80px 0px -40px 0px', threshold: 0.05 },
         );
 
-        elements.forEach((el) => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.95) {
-                el.classList.add('active');
-            } else {
-                observer.observe(el);
-            }
-        });
+        elements.forEach((el) => observer.observe(el));
 
         document.documentElement.classList.add('js-reveal');
 

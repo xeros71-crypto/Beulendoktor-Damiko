@@ -7,7 +7,8 @@ const ScrollProgress = ({ routeKey }) => {
 
     useEffect(() => {
         let rafId = null;
-        let maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        let measureRafId = null;
+        let maxScroll = 0;
 
         const updateBar = () => {
             rafId = null;
@@ -17,9 +18,16 @@ const ScrollProgress = ({ routeKey }) => {
             bar.style.transform = `scaleX(${progress})`;
         };
 
-        const measure = () => {
-            maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-            updateBar();
+        const scheduleMeasure = (observedHeight) => {
+            if (measureRafId !== null) return;
+            measureRafId = window.requestAnimationFrame(() => {
+                measureRafId = null;
+                const docHeight = typeof observedHeight === 'number'
+                    ? observedHeight
+                    : document.documentElement.scrollHeight;
+                maxScroll = Math.max(0, docHeight - window.innerHeight);
+                updateBar();
+            });
         };
 
         const onScroll = () => {
@@ -28,21 +36,27 @@ const ScrollProgress = ({ routeKey }) => {
             }
         };
 
-        measure();
+        const onResize = () => scheduleMeasure();
+
+        scheduleMeasure();
         window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', measure, { passive: true });
+        window.addEventListener('resize', onResize, { passive: true });
 
         let resizeObserver;
         if (typeof ResizeObserver !== 'undefined') {
-            resizeObserver = new ResizeObserver(measure);
+            resizeObserver = new ResizeObserver((entries) => {
+                const entry = entries[0];
+                scheduleMeasure(entry?.contentRect?.height);
+            });
             resizeObserver.observe(document.body);
         }
 
         return () => {
             window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', measure);
+            window.removeEventListener('resize', onResize);
             if (resizeObserver) resizeObserver.disconnect();
             if (rafId !== null) window.cancelAnimationFrame(rafId);
+            if (measureRafId !== null) window.cancelAnimationFrame(measureRafId);
         };
     }, [routeKey]);
 

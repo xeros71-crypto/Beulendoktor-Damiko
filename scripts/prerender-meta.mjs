@@ -168,7 +168,15 @@ function injectRouteHtml(templateHtml, route, appHtml, cssBundles) {
     const preloadLinks = [];
 
     // Ensure the route's actual LCP hero image gets exclusive fetchpriority="high" (prefer responsive WebP)
-    if (route.image && !route.image.startsWith('http') && !route.noindex) {
+    if (route.slug === '') {
+        preloadLinks.push(
+            '<link rel="preload" as="image" type="image/webp" imagesrcset="/images/damiko-lack-beulendoktor-logo-320w.webp 320w, /images/damiko-lack-beulendoktor-logo-480w.webp 480w" imagesizes="(max-width: 768px) 180px, 220px" fetchpriority="high">',
+        );
+        preloadLinks.push('<link rel="preload" as="image" type="image/webp" href="/images/lackierung-kabine-960w.webp">');
+        seenPreloadHrefs.add('/images/damiko-lack-beulendoktor-logo.png');
+        seenPreloadHrefs.add('/images/lackierung-kabine.jpg');
+        seenPreloadHrefs.add('/images/lackierung-kabine-960w.webp');
+    } else if (route.image && !route.image.startsWith('http') && !route.noindex) {
         if (/^\/(?:images|gallery)\/[^/]+\.jpg$/i.test(route.image)) {
             const base = route.image.replace(/\.jpg$/i, '');
             const webp640 = `${base}-640w.webp`;
@@ -176,13 +184,9 @@ function injectRouteHtml(templateHtml, route, appHtml, cssBundles) {
             seenPreloadHrefs.add(route.image);
             seenPreloadHrefs.add(webp640);
             seenPreloadHrefs.add(webp960);
-            if (route.slug === '') {
-                preloadLinks.push(`<link rel="preload" as="image" type="image/webp" href="${escapeHtml(webp960)}">`);
-            } else {
-                preloadLinks.push(
-                    `<link rel="preload" as="image" type="image/webp" imagesrcset="${escapeHtml(webp640)} 640w, ${escapeHtml(webp960)} 960w" imagesizes="(max-width: 768px) 92vw, 560px" fetchpriority="high">`,
-                );
-            }
+            preloadLinks.push(
+                `<link rel="preload" as="image" type="image/webp" imagesrcset="${escapeHtml(webp640)} 640w, ${escapeHtml(webp960)} 960w" imagesizes="(max-width: 768px) 92vw, 560px" fetchpriority="high">`,
+            );
         } else {
             seenPreloadHrefs.add(route.image);
             preloadLinks.push(`<link rel="preload" as="image" href="${escapeHtml(route.image)}" fetchpriority="high">`);
