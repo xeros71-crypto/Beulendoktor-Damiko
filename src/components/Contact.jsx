@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import styles from './Contact.module.css';
@@ -62,10 +62,6 @@ const Contact = () => {
         tokenRequestRef.current = request;
         return request;
     }, []);
-
-    useEffect(() => {
-        fetchFormToken();
-    }, [fetchFormToken]);
 
     const handleFormFocus = () => {
         const { value, fetchedAt } = tokenRef.current;
