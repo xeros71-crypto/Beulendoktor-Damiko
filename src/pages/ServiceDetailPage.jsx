@@ -149,7 +149,7 @@ const ServiceDetailPage = ({ service }) => {
                 )}
 
                 {service.faqs && service.faqs.length > 0 && (
-                    <section className={styles.sectionSpacer}>
+                    <section className={`${styles.sectionSpacer} ${styles.faqBlock}`}>
                         <h2 className={styles.sectionHeading}>Häufige Fragen</h2>
                         <div className={styles.faqGrid}>
                             {service.faqs.map((faq) => (

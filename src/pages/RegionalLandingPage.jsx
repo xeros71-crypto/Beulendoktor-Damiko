@@ -92,7 +92,7 @@ const RegionalLandingPage = ({ page }) => {
                 </section>
 
                 {page.faqs && page.faqs.length > 0 && (
-                    <section className={styles.sectionSpacer}>
+                    <section className={`${styles.sectionSpacer} ${styles.faqBlock}`}>
                         <h2 className={styles.sectionHeading}>Häufige Fragen aus {page.city}</h2>
                         <div className={styles.faqGrid}>
                             {page.faqs.map((faq) => (
