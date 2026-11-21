@@ -10,6 +10,7 @@ import { regionalPages } from './data/regionalPages';
 const ServiceRoute = lazy(() => import('./pages/ServiceRoute'));
 const RegionalRoute = lazy(() => import('./pages/RegionalRoute'));
 const Galerie = lazy(() => import('./pages/Galerie'));
+const AdminGallery = lazy(() => import('./pages/AdminGallery'));
 const Impressum = lazy(() => import('./components/Impressum'));
 const Datenschutz = lazy(() => import('./components/Datenschutz'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -37,6 +38,7 @@ function App() {
                 />
               ))}
               <Route path="galerie" element={<Galerie />} />
+              <Route path="admin" element={<AdminGallery />} />
               <Route path="impressum" element={<Impressum />} />
               <Route path="datenschutz" element={<Datenschutz />} />
               <Route path="datenschutzerklaerung" element={<Navigate to="/datenschutz" replace />} />

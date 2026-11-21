@@ -20,10 +20,12 @@ Für das Kontaktformular (`api/contact.js`) müssen in den Vercel Project Settin
 
 | Variable | Pflicht | Beschreibung |
 | :--- | :---: | :--- |
-| `FIREBASE_SERVICE_ACCOUNT` | Ja | Kompletter JSON-String des Firebase Service Accounts (für Firestore-Collection `inquiries`) |
+| `FIREBASE_SERVICE_ACCOUNT` | Ja | Kompletter JSON-String des Firebase Service Accounts (für Firestore-Collections `inquiries` & `gallery`) |
 | `RESEND_API_KEY` | Ja | API-Schlüssel aus dem Resend Dashboard |
 | `RESEND_FROM_EMAIL` | Empfohlen | Verifizierter Absender, z. B. `Beulendoktor Damiko <kontakt@damiko.de>` |
 | `CONTACT_TO_EMAIL` | Empfohlen | Ziel-E-Mail-Adresse für eingehende Kundenanfragen, z. B. `info@damiko.de` |
+| `ADMIN_PASSWORD` | Für `/admin` | Passwort für den geschützten Galerie-Admin-Zugang unter `/admin` |
+| `ADMIN_SESSION_SECRET` | Optional | Zusätzliches Zufalls-Secret für die HMAC-Signatur der Admin-Session-Cookies |
 | `ALLOWED_ORIGINS` | Optional | Kommagetrennte erlaubte Origins (z. B. `https://damiko.de,https://www.damiko.de`) |
 | `CONTACT_TOKEN_SECRET` | Optional | Eigenes Zufalls-Secret (mind. 32 Zeichen) für signierte Anti-Bot-Formular-Tokens (wird sonst automatisch sicher aus `RESEND_API_KEY` abgeleitet) |
 

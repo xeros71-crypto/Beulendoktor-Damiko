@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { galleryItems } from '../data/gallery';
+import useGalleryItems from '../hooks/useGalleryItems';
 import styles from './Gallery.module.css';
 
 const GalleryPreview = () => {
+    const galleryItems = useGalleryItems('referenzen');
     const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {

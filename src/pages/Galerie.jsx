@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import BackButton from '../components/BackButton';
+import useGalleryItems from '../hooks/useGalleryItems';
 import { GALERIE_SEO, buildGallerySchema } from '../data/businessSchema';
-import { galleryItems, workshopHighlights } from '../data/gallery';
 import pageStyles from '../styles/PageLayout.module.css';
 import galleryStyles from '../components/Gallery.module.css';
 
-const allImages = [...galleryItems, ...workshopHighlights];
 const gallerySchema = buildGallerySchema();
 
 const Galerie = () => {
+    const allImages = useGalleryItems();
     const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {

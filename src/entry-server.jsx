@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ServiceRoute from './pages/ServiceRoute';
 import RegionalRoute from './pages/RegionalRoute';
 import Galerie from './pages/Galerie';
+import AdminGallery from './pages/AdminGallery';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
 import NotFound from './pages/NotFound';
@@ -38,6 +39,7 @@ export function render(url) {
                                 />
                             ))}
                             <Route path="galerie" element={<Galerie />} />
+                            <Route path="admin" element={<AdminGallery />} />
                             <Route path="impressum" element={<Impressum />} />
                             <Route path="datenschutz" element={<Datenschutz />} />
                             <Route path="datenschutzerklaerung" element={<Navigate to="/datenschutz" replace />} />
