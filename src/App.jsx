@@ -1,9 +1,8 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import MainLayout from './components/MainLayout';
 import Home from './pages/Home';
-import CookieConsent from './components/CookieConsent';
 import ErrorBoundary from './components/ErrorBoundary';
 import { services } from './data/services';
 import { regionalPages } from './data/regionalPages';
@@ -40,13 +39,12 @@ function App() {
               <Route path="galerie" element={<Galerie />} />
               <Route path="impressum" element={<Impressum />} />
               <Route path="datenschutz" element={<Datenschutz />} />
-              <Route path="datenschutzerklaerung" element={<Datenschutz />} />
+              <Route path="datenschutzerklaerung" element={<Navigate to="/datenschutz" replace />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </Suspense>
       </ErrorBoundary>
-      <CookieConsent />
     </HelmetProvider>
   );
 }

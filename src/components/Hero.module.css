@@ -79,7 +79,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: heroFadeIn 0.9s var(--ease-luxury) both;
 }
 
 .logoAura {
@@ -171,7 +170,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    animation: heroFadeIn 0.95s 0.18s var(--ease-luxury) both;
 }
 
 .description {

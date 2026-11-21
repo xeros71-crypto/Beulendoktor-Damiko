@@ -104,6 +104,7 @@
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(254, 245, 121, 0.22);
+    aspect-ratio: 16 / 10;
     flex: 1;
     min-height: 240px;
 }

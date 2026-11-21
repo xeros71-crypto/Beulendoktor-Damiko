@@ -36,7 +36,7 @@ const GalleryPreview = () => {
                             onClick={() => setSelectedImage(item)}
                             aria-label={`${item.title} vergrößert ansehen`}
                         >
-                            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+                            <img src={item.src} alt={item.alt} width={640} height={640} loading="lazy" decoding="async" />
                             <div className={styles.captionBar}>
                                 <span className={styles.category}>{item.category}</span>
                                 <span className={styles.itemTitle}>{item.title}</span>

@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import styles from '../styles/PageLayout.module.css';
 
 const NotFound = () => {
     return (
         <>
-            <Helmet>
-                <title>Seite nicht gefunden | Beulendoktor Damiko</title>
-                <meta name="robots" content="noindex, nofollow" />
-            </Helmet>
+            <SEO
+                title="Seite nicht gefunden | Beulendoktor Damiko"
+                description="Die angeforderte Seite existiert leider nicht oder wurde verschoben."
+                noindex
+            />
             <div className={styles.pageContent} style={{ textAlign: 'center', paddingTop: '9rem', paddingBottom: '6rem' }}>
                 <p style={{ color: 'var(--accent-primary)', fontWeight: 800, letterSpacing: '0.18em', marginBottom: '0.75rem' }}>
                     404

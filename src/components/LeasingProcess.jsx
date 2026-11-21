@@ -54,6 +54,8 @@ const LeasingProcess = () => {
                             <img
                                 src="/images/leasing.jpg"
                                 alt="Leasingrückläufer Beratung und Vorbereitung bei Beulendoktor Damiko"
+                                width={640}
+                                height={426}
                                 loading="lazy"
                                 decoding="async"
                             />
