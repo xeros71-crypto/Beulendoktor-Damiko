@@ -20,6 +20,10 @@ const SEO = ({
     schema,
 }) => {
     const { pathname } = useLocation();
+    if (typeof document === 'undefined') {
+        return null;
+    }
+
     const fullTitle = formatSeoTitle(title);
 
     const normalizedPath = canonicalPath !== undefined

@@ -159,9 +159,9 @@ const RegionalLandingPage = ({ page }) => {
                                 <p className={styles.districtIntro}>{page.directionsNote}</p>
                             )}
                             {page.districts && page.districts.length > 0 && (
-                                <div className={styles.districtTags} aria-label={`Stadtteile und Ortsteile in ${page.city}`}>
+                                <div className={styles.districtTags} role="list" aria-label={`Stadtteile und Ortsteile in ${page.city}`}>
                                     {page.districts.map((district) => (
-                                        <span key={district} className={styles.districtTag}>
+                                        <span key={district} className={styles.districtTag} role="listitem">
                                             {district}
                                         </span>
                                     ))}

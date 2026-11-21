@@ -19,7 +19,7 @@ const Footer = () => {
                     />
                 </Link>
 
-                <div className={styles.socialLinks} aria-label="Social Media">
+                <div className={styles.socialLinks} role="group" aria-label="Social Media">
                     <a
                         href={BUSINESS_INFO.instagramUrl}
                         target="_blank"

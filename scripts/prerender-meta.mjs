@@ -134,7 +134,15 @@ function injectRouteHtml(templateHtml, route, appHtml) {
         ? 'noindex, nofollow'
         : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
+    // Move React 19 hoisted <link rel="preload"> tags out of <div id="root"> into <head>
+    const preloadLinks = [];
+    const cleanedAppHtml = appHtml.replace(/<link\s+rel="preload"[^>]*\/?>/gi, (match) => {
+        preloadLinks.push(match.replace(/fetchPriority=/g, 'fetchpriority=').replace(/\/>$/, '>'));
+        return '';
+    });
+
     const metaTags = [
+        ...preloadLinks,
         `<meta name="description" content="${desc}" data-rh="true" />`,
         keywords ? `<meta name="keywords" content="${keywords}" data-rh="true" />` : '',
         `<meta name="robots" content="${robotsContent}" data-rh="true" />`,
@@ -158,7 +166,7 @@ function injectRouteHtml(templateHtml, route, appHtml) {
 
     let html = templateHtml.replace(/<title>[\s\S]*?<\/title>/, `<title data-rh="true">${fullTitle}</title>`);
     html = html.replace('</head>', `  ${metaTags}\n</head>`);
-    html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+    html = html.replace('<div id="root"></div>', `<div id="root">${cleanedAppHtml}</div>`);
     return html;
 }
 
