@@ -1,8 +1,17 @@
 @font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    ascent-override: 90.49%;
+    descent-override: 22.56%;
+    line-gap-override: 0%;
+    size-adjust: 107.06%;
+}
+
+@font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
-    font-display: swap;
+    font-display: optional;
     src: url('/fonts/inter-v18-latin-300.woff2') format('woff2');
 }
 
@@ -10,7 +19,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
+    font-display: optional;
     src: url('/fonts/inter-v18-latin-400.woff2') format('woff2');
 }
 
@@ -18,7 +27,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-display: swap;
+    font-display: optional;
     src: url('/fonts/inter-v18-latin-600.woff2') format('woff2');
 }
 
@@ -26,7 +35,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-display: swap;
+    font-display: optional;
     src: url('/fonts/inter-v18-latin-700.woff2') format('woff2');
 }
 
@@ -34,7 +43,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-display: swap;
+    font-display: optional;
     src: url('/fonts/inter-v18-latin-800.woff2') format('woff2');
 }
 
@@ -66,7 +75,7 @@
     --shadow-luxury: 0 24px 55px rgba(0, 0, 0, 0.52);
 
     /* Typography */
-    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-main: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
 
     /* Spacing */
     --spacing-sm: 0.5rem;
