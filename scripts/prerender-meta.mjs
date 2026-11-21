@@ -76,6 +76,14 @@ function buildAllRoutes() {
             image: '/images/damiko-logo-shield.png',
             imageAlt: 'Beulendoktor Damiko Logo',
         },
+        {
+            slug: 'admin',
+            noindex: true,
+            title: 'Galerie-Verwaltung',
+            description: `Geschützter Verwaltungsbereich für die Galerie von ${BUSINESS_INFO.name}.`,
+            image: '/images/damiko-logo-shield.png',
+            imageAlt: 'Beulendoktor Damiko Logo',
+        },
     ];
 
     for (const s of services) {

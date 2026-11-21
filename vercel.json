@@ -71,7 +71,7 @@
   "rewrites": [
     {
       "source": "/((?!\\.well-known|api|.*\\.(?:json|xml|txt|yaml|yml|html)$).*)",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ]
 }
