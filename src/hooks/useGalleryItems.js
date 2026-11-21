@@ -61,11 +61,31 @@ export default function useGalleryItems(sectionFilter) {
 
     useEffect(() => {
         let active = true;
-        fetchGalleryOnce().then((loaded) => {
-            if (active) setItems(loaded);
-        });
+        let idleId = null;
+        let timerId = null;
+
+        const runFetch = () => {
+            fetchGalleryOnce().then((loaded) => {
+                if (active) setItems(loaded);
+            });
+        };
+
+        if (cachedItems) {
+            runFetch();
+        } else if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+            idleId = window.requestIdleCallback(runFetch, { timeout: 2000 });
+        } else {
+            timerId = setTimeout(runFetch, 1200);
+        }
+
         return () => {
             active = false;
+            if (idleId !== null && typeof window !== 'undefined' && 'cancelIdleCallback' in window) {
+                window.cancelIdleCallback(idleId);
+            }
+            if (timerId !== null) {
+                clearTimeout(timerId);
+            }
         };
     }, []);
 

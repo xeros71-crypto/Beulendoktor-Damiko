@@ -58,7 +58,7 @@ const Hero = () => {
                             <source
                                 type="image/webp"
                                 srcSet={`${LOGO_WEBP_320} 320w, ${LOGO_WEBP_480} 480w`}
-                                sizes="(max-width: 768px) 180px, 220px"
+                                sizes="(max-width: 768px) 165px, 220px"
                             />
                             <img
                                 src={LOGO_FALLBACK_SRC}

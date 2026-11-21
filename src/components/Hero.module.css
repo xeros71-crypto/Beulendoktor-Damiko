@@ -358,6 +358,10 @@
 }
 
 @media (max-width: 768px) {
+    .bgImage {
+        background-image: url('/images/lackierung-kabine-640w.webp');
+    }
+
     .hero {
         padding: 6.25rem 1.25rem 2.5rem;
     }

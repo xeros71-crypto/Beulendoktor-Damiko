@@ -170,9 +170,8 @@ function injectRouteHtml(templateHtml, route, appHtml, cssBundles) {
     // Ensure the route's actual LCP hero image gets exclusive fetchpriority="high" (prefer responsive WebP)
     if (route.slug === '') {
         preloadLinks.push(
-            '<link rel="preload" as="image" type="image/webp" imagesrcset="/images/damiko-lack-beulendoktor-logo-320w.webp 320w, /images/damiko-lack-beulendoktor-logo-480w.webp 480w" imagesizes="(max-width: 768px) 180px, 220px" fetchpriority="high">',
+            '<link rel="preload" as="image" type="image/webp" imagesrcset="/images/damiko-lack-beulendoktor-logo-320w.webp 320w, /images/damiko-lack-beulendoktor-logo-480w.webp 480w" imagesizes="(max-width: 768px) 165px, 220px" fetchpriority="high">',
         );
-        preloadLinks.push('<link rel="preload" as="image" type="image/webp" href="/images/lackierung-kabine-960w.webp">');
         seenPreloadHrefs.add('/images/damiko-lack-beulendoktor-logo.png');
         seenPreloadHrefs.add('/images/lackierung-kabine.jpg');
         seenPreloadHrefs.add('/images/lackierung-kabine-960w.webp');

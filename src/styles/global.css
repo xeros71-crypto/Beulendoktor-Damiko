@@ -17,6 +17,18 @@ body {
     overflow-x: hidden;
 }
 
+#leistungen,
+#autolackierer-frankfurt,
+#ueber-uns,
+#leasing,
+#arbeiten,
+#faq,
+#contact,
+#site-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+}
+
 a {
     text-decoration: none;
     color: inherit;
