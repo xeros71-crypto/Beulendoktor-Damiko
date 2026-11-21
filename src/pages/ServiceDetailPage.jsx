@@ -4,12 +4,9 @@ import SEO from '../components/SEO';
 import BackButton from '../components/BackButton';
 import { BUSINESS_INFO, buildServicePageSchema } from '../data/businessSchema';
 import { services } from '../data/services';
-import { CORE_HUB_SLUGS, regionalPages } from '../data/regionalPages';
+import { CORE_HUB_NAV } from '../data/regionalNav';
 import { getResponsiveWebpSrcSet } from '../utils/responsiveImage';
 import styles from '../styles/PageLayout.module.css';
-
-const coreHubSet = new Set(CORE_HUB_SLUGS);
-const coreRegionalHubs = regionalPages.filter((region) => coreHubSet.has(region.slug));
 
 const ServiceDetailPage = ({ service }) => {
     const schema = buildServicePageSchema(service);
@@ -192,7 +189,7 @@ const ServiceDetailPage = ({ service }) => {
                                 {item.shortTitle} &rarr;
                             </Link>
                         ))}
-                        {coreRegionalHubs.map((region) => (
+                        {CORE_HUB_NAV.map((region) => (
                             <Link key={region.slug} to={`/${region.slug}`} className={styles.crossLinkPillMuted}>
                                 {region.city}
                             </Link>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BUSINESS_INFO } from '../data/businessSchema';
-import { REGIONAL_GROUPS } from '../data/regionalPages';
+import { REGIONAL_NAV_GROUPS } from '../data/regionalNav';
 import { LOGO_FALLBACK_SRC, LOGO_WEBP_320 } from '../utils/responsiveImage';
 import styles from './Footer.module.css';
 
@@ -117,7 +117,7 @@ const Footer = () => {
             <nav className={styles.regionsSection} aria-label="Einzugsgebiet im 30 km Umkreis um Frankfurt">
                 <p className={styles.regionsHeading}>Einzugsgebiet (30 km Umkreis Frankfurt am Main)</p>
                 <div className={styles.regionsGroups}>
-                    {REGIONAL_GROUPS.map((group) => (
+                    {REGIONAL_NAV_GROUPS.map((group) => (
                         <div key={group.id} className={styles.regionsRow}>
                             <span className={styles.regionsLabel}>{group.label}:</span>
                             <div className={styles.regionsLinks}>

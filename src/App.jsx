@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import CookieConsent from './components/CookieConsent';
 import ErrorBoundary from './components/ErrorBoundary';
 import { services } from './data/services';
-import { regionalPages } from './data/regionalPages';
+import { REGIONAL_SLUGS } from './data/regionalNav';
 
 const ServiceRoute = lazy(() => import('./pages/ServiceRoute'));
 const RegionalRoute = lazy(() => import('./pages/RegionalRoute'));
@@ -31,11 +31,11 @@ function App() {
                   element={<ServiceRoute slug={service.slug} />}
                 />
               ))}
-              {regionalPages.map((page) => (
+              {REGIONAL_SLUGS.map((slug) => (
                 <Route
-                  key={page.slug}
-                  path={page.slug}
-                  element={<RegionalRoute slug={page.slug} />}
+                  key={slug}
+                  path={slug}
+                  element={<RegionalRoute slug={slug} />}
                 />
               ))}
               <Route path="galerie" element={<Galerie />} />
