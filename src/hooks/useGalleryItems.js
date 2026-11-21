@@ -61,8 +61,6 @@ export default function useGalleryItems(sectionFilter) {
 
     useEffect(() => {
         let active = true;
-        let idleId = null;
-        let timerId = null;
 
         const runFetch = () => {
             fetchGalleryOnce().then((loaded) => {
@@ -72,22 +70,42 @@ export default function useGalleryItems(sectionFilter) {
 
         if (cachedItems) {
             runFetch();
-        } else if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
-            idleId = window.requestIdleCallback(runFetch, { timeout: 2000 });
-        } else {
-            timerId = setTimeout(runFetch, 1200);
+            return () => {
+                active = false;
+            };
         }
 
+        // On the homepage preview ('referenzen'), static items are already prerendered below the fold;
+        // wait until the user scrolls or interacts before calling the serverless /api/gallery endpoint.
+        if (sectionFilter === 'referenzen' && typeof window !== 'undefined') {
+            const onFirstInteraction = () => {
+                cleanupListeners();
+                runFetch();
+            };
+
+            const cleanupListeners = () => {
+                window.removeEventListener('scroll', onFirstInteraction);
+                window.removeEventListener('pointerdown', onFirstInteraction);
+                window.removeEventListener('touchstart', onFirstInteraction);
+                window.removeEventListener('keydown', onFirstInteraction);
+            };
+
+            window.addEventListener('scroll', onFirstInteraction, { passive: true, once: true });
+            window.addEventListener('pointerdown', onFirstInteraction, { passive: true, once: true });
+            window.addEventListener('touchstart', onFirstInteraction, { passive: true, once: true });
+            window.addEventListener('keydown', onFirstInteraction, { passive: true, once: true });
+
+            return () => {
+                active = false;
+                cleanupListeners();
+            };
+        }
+
+        runFetch();
         return () => {
             active = false;
-            if (idleId !== null && typeof window !== 'undefined' && 'cancelIdleCallback' in window) {
-                window.cancelIdleCallback(idleId);
-            }
-            if (timerId !== null) {
-                clearTimeout(timerId);
-            }
         };
-    }, []);
+    }, [sectionFilter]);
 
     if (!sectionFilter) return items;
     const filtered = items.filter((item) => (item.section || 'referenzen') === sectionFilter);
