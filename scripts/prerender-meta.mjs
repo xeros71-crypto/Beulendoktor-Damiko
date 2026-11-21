@@ -117,7 +117,36 @@ function buildAllRoutes() {
     return routes;
 }
 
-function injectRouteHtml(templateHtml, route, appHtml) {
+function loadInlineCssBundles(templateHtml) {
+    const assetsDir = path.join(distDir, 'assets');
+    const stylesheetRegex = /<link\s+rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*\/?>/i;
+    const match = templateHtml.match(stylesheetRegex);
+
+    let mainCss = '';
+    if (match) {
+        const cssPath = path.join(distDir, match[1].replace(/^\//, ''));
+        if (fs.existsSync(cssPath)) {
+            mainCss = fs.readFileSync(cssPath, 'utf8');
+        }
+    }
+
+    const assetFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir) : [];
+    const subpageCssParts = [];
+    for (const prefix of ['PageLayout-', 'BackButton-']) {
+        const fileName = assetFiles.find((f) => f.startsWith(prefix) && f.endsWith('.css'));
+        if (fileName) {
+            subpageCssParts.push(fs.readFileSync(path.join(assetsDir, fileName), 'utf8'));
+        }
+    }
+
+    return {
+        stylesheetRegex,
+        mainCss,
+        subpageCss: subpageCssParts.join('\n'),
+    };
+}
+
+function injectRouteHtml(templateHtml, route, appHtml, cssBundles) {
     const fullTitle = escapeHtml(formatTitle(route.title));
     const desc = escapeHtml(route.description || HOME_SEO.description);
     const keywords = escapeHtml(route.keywords || '');
@@ -134,10 +163,30 @@ function injectRouteHtml(templateHtml, route, appHtml) {
         ? 'noindex, nofollow'
         : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
-    // Move React 19 hoisted <link rel="preload"> tags out of <div id="root"> into <head>
+    // Strip React 19 hoisted <link rel="preload"> tags from <div id="root"> and deduplicate into <head>
+    const seenPreloadHrefs = new Set();
     const preloadLinks = [];
+
+    // Ensure the route's actual LCP hero image gets exclusive fetchpriority="high"
+    if (route.image && !route.image.startsWith('http') && !route.noindex) {
+        seenPreloadHrefs.add(route.image);
+        preloadLinks.push(`<link rel="preload" as="image" href="${escapeHtml(route.image)}" fetchpriority="high">`);
+    }
+
     const cleanedAppHtml = appHtml.replace(/<link\s+rel="preload"[^>]*\/?>/gi, (match) => {
-        preloadLinks.push(match.replace(/fetchPriority=/g, 'fetchpriority=').replace(/\/>$/, '>'));
+        const hrefMatch = match.match(/href="([^"]+)"/i);
+        const href = hrefMatch ? hrefMatch[1] : null;
+        if (href && seenPreloadHrefs.has(href)) {
+            return '';
+        }
+        if (href) {
+            seenPreloadHrefs.add(href);
+        }
+        // Only the LCP hero image above keeps fetchpriority="high"
+        const normalized = match
+            .replace(/\s*fetchPriority="[^"]*"/gi, '')
+            .replace(/\/>$/, '>');
+        preloadLinks.push(normalized);
         return '';
     });
 
@@ -165,6 +214,16 @@ function injectRouteHtml(templateHtml, route, appHtml) {
         .join('\n  ');
 
     let html = templateHtml.replace(/<title>[\s\S]*?<\/title>/, `<title data-rh="true">${fullTitle}</title>`);
+
+    // Inline CSS directly into <head> to eliminate render-blocking stylesheet network requests & subpage FOUC
+    if (cssBundles.mainCss) {
+        const combinedCss = route.slug && cssBundles.subpageCss
+            ? `${cssBundles.mainCss}\n${cssBundles.subpageCss}`
+            : cssBundles.mainCss;
+        const safeCss = combinedCss.replace(/<\/style/gi, '<\\/style');
+        html = html.replace(cssBundles.stylesheetRegex, `<style data-inline-css="true">${safeCss}</style>`);
+    }
+
     html = html.replace('</head>', `  ${metaTags}\n</head>`);
     html = html.replace('<div id="root"></div>', `<div id="root">${cleanedAppHtml}</div>`);
     return html;
@@ -199,12 +258,13 @@ async function main() {
 
     const { render } = await import(pathToFileURL(ssrEntryPath).href);
     const templateHtml = fs.readFileSync(indexPath, 'utf8');
+    const cssBundles = loadInlineCssBundles(templateHtml);
     const routes = buildAllRoutes();
 
     for (const route of routes) {
         const routeUrl = route.slug ? `/${route.slug}` : '/';
         const { html: appHtml } = render(routeUrl);
-        const fullHtml = injectRouteHtml(templateHtml, route, appHtml);
+        const fullHtml = injectRouteHtml(templateHtml, route, appHtml, cssBundles);
 
         if (!route.slug) {
             fs.writeFileSync(indexPath, fullHtml, 'utf8');
