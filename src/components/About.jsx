@@ -4,21 +4,24 @@ import styles from './About.module.css';
 const About = () => {
     return (
         <section id="about" className={styles.about}>
-            <div className={`${styles.container} reveal`}>
-                <div className={styles.imageWrapper}>
-                    <img
-                        src="/images/smart-repair-1.jpg"
-                        alt="Präzise Autolackierung und Smart Repair bei Beulendoktor Damiko"
-                        className={styles.image}
-                        width={640}
-                        height={426}
-                        loading="lazy"
-                        decoding="async"
-                    />
-                    <div className={styles.imageDecor}></div>
+            <div className={styles.container}>
+                <div className={`${styles.imageWrapper} reveal-left`}>
+                    <div className={styles.imageFrame}>
+                        <img
+                            src="/images/smart-repair-1.jpg"
+                            alt="Präzise Autolackierung und Smart Repair bei Beulendoktor Damiko"
+                            className={styles.image}
+                            width={640}
+                            height={426}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <div className={styles.imageSheen} aria-hidden="true" />
+                    </div>
+                    <div className={styles.imageDecor} aria-hidden="true"></div>
                 </div>
 
-                <div className={styles.content}>
+                <div className={`${styles.content} reveal-right`}>
                     <span className={styles.kicker}>Über uns · Seit {BUSINESS_INFO.foundedYear}</span>
                     <h2 className={styles.subHeading}>
                         Ihr Spezialist für Autolackierung &amp; mobilen Kfz-Ausbeulservice
@@ -36,7 +39,7 @@ const About = () => {
                         Weiterempfehlungsrate zeichnen unsere Arbeit aus.
                     </p>
 
-                    <div className={styles.stats}>
+                    <div className={`${styles.stats} reveal-stagger`}>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>Seit 2014</span>
                             <span className={styles.statLabel}>Erfahrung in Frankfurt &amp; Rhein-Main</span>

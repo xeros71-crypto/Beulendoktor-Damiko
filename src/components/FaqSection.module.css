@@ -1,6 +1,7 @@
 .section {
-    padding: 5.5rem 2rem;
-    background: #18122d;
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #0d0a1a 0%, #140f26 100%);
+    border-top: 1px solid rgba(254, 245, 121, 0.1);
 }
 
 .inner {

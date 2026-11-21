@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import styles from './Hero.module.css';
 
@@ -33,31 +34,77 @@ const usps = [
 ];
 
 const Hero = () => {
+    const bgImageRef = useRef(null);
+    const contentRef = useRef(null);
+
+    useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        let rafId = null;
+        const applyParallax = () => {
+            rafId = null;
+            const y = window.scrollY;
+            if (y > window.innerHeight * 1.4) return;
+
+            if (bgImageRef.current) {
+                bgImageRef.current.style.transform = `translate3d(0, ${y * 0.24}px, 0) scale(${1.06 + y * 0.00018})`;
+            }
+            if (contentRef.current) {
+                const opacity = Math.max(0.15, 1 - y / (window.innerHeight * 0.85));
+                contentRef.current.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
+                contentRef.current.style.opacity = String(opacity);
+            }
+        };
+
+        const onScroll = () => {
+            if (rafId === null) {
+                rafId = window.requestAnimationFrame(applyParallax);
+            }
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            if (rafId !== null) window.cancelAnimationFrame(rafId);
+        };
+    }, []);
+
     const scrollToContact = () => {
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const scrollToServices = () => {
+        document.getElementById('leistungen')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
         <section className={styles.hero}>
             <div className={styles.background}>
-                <div className={styles.overlay}></div>
+                <div ref={bgImageRef} className={styles.bgImage} aria-hidden="true" />
+                <div className={styles.lightSweep} aria-hidden="true" />
+                <div className={styles.overlay} aria-hidden="true" />
             </div>
 
             <div className={styles.inner}>
-                <div className={styles.content}>
+                <div ref={contentRef} className={styles.content}>
                     <div className={styles.heroLogoContainer}>
+                        <div className={styles.logoAura} aria-hidden="true" />
                         <img
                             src="/images/damiko-logo-shield.png"
                             alt="Beulendoktor Damiko – Dellen, Lack, Leasing"
                             className={styles.heroLogo}
-                            width={240}
-                            height={286}
+                            width={220}
+                            height={262}
                             fetchPriority="high"
                             decoding="async"
                         />
                     </div>
 
-                    <p className={styles.kicker}>Seit {BUSINESS_INFO.foundedYear} · Frankfurt · Wetterau · Rhein-Main</p>
+                    <p className={styles.kicker}>
+                        <span className={styles.kickerLine} aria-hidden="true" />
+                        <span>Seit {BUSINESS_INFO.foundedYear} · Frankfurt · Wetterau · Rhein-Main</span>
+                        <span className={styles.kickerLine} aria-hidden="true" />
+                    </p>
 
                     <h1 className={styles.title}>
                         Autolackierung, Smart Repair &amp; Beulendoktor
@@ -70,7 +117,7 @@ const Hero = () => {
 
                     <div className={styles.actions}>
                         <button type="button" className={styles.ctaPrimary} onClick={scrollToContact}>
-                            Individuelles Angebot anfragen
+                            <span>Individuelles Angebot anfragen</span>
                         </button>
                         <a href={BUSINESS_INFO.phoneHref} className={styles.ctaSecondary}>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -89,7 +136,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className={styles.uspStrip} aria-label="Unsere Qualitätsversprechen">
+                <div className={`${styles.uspStrip} reveal-stagger`} aria-label="Unsere Qualitätsversprechen">
                     {usps.map((usp) => (
                         <div key={usp.title} className={styles.uspCard}>
                             <div className={styles.uspIcon}>{usp.icon}</div>
@@ -100,6 +147,16 @@ const Hero = () => {
                         </div>
                     ))}
                 </div>
+
+                <button
+                    type="button"
+                    className={styles.scrollCue}
+                    onClick={scrollToServices}
+                    aria-label="Nach unten zu den Leistungen scrollen"
+                >
+                    <span>Entdecken</span>
+                    <span className={styles.scrollLine} aria-hidden="true" />
+                </button>
             </div>
         </section>
     );

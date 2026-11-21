@@ -6,10 +6,12 @@ const FaqSection = ({ title = 'Häufige Fragen', kicker = 'Gut zu wissen', faqs 
 
     return (
         <section className={styles.section}>
-            <div className={`${styles.inner} reveal`}>
-                {kicker && <span className={styles.kicker}>{kicker}</span>}
-                <h2 className={styles.heading}>{title}</h2>
-                <div className={styles.list}>
+            <div className={styles.inner}>
+                <div className="reveal">
+                    {kicker && <span className={styles.kicker}>{kicker}</span>}
+                    <h2 className={styles.heading}>{title}</h2>
+                </div>
+                <div className={`${styles.list} reveal-stagger`}>
                     {faqs.map((item) => (
                         <details key={item.q} className={styles.item}>
                             <summary className={styles.question}>{item.q}</summary>

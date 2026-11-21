@@ -1,8 +1,8 @@
 .section {
-    padding: 6.5rem 2rem;
-    background: linear-gradient(180deg, #1c1535 0%, #241b42 50%, #161129 100%);
-    border-top: 1px solid rgba(254, 245, 121, 0.1);
-    border-bottom: 1px solid rgba(254, 245, 121, 0.1);
+    padding: 7rem 2rem;
+    background: linear-gradient(180deg, #0d0a1a 0%, #1b1433 50%, #0d0a1a 100%);
+    border-top: 1px solid rgba(254, 245, 121, 0.14);
+    border-bottom: 1px solid rgba(254, 245, 121, 0.14);
 }
 
 .container {
@@ -57,18 +57,20 @@
 }
 
 .stepCard {
-    background: rgba(20, 15, 38, 0.72);
-    border: 1px solid rgba(254, 245, 121, 0.16);
-    border-radius: 14px;
-    padding: 1.65rem;
+    background: var(--gradient-glass);
+    border: 1px solid rgba(254, 245, 121, 0.18);
+    border-radius: 16px;
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.35s var(--ease-luxury), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
 .stepCard:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    border-color: rgba(254, 245, 121, 0.55);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5), 0 0 24px rgba(254, 245, 121, 0.12);
 }
 
 .stepNumber {

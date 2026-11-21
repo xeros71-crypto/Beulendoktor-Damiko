@@ -67,15 +67,17 @@ const Contact = () => {
     return (
         <section id="contact" className={styles.contactSection}>
             <div className={styles.inner}>
-                <span className={styles.kicker}>Direkt &amp; Unverbindlich</span>
-                <h2 className={styles.heading}>Holen Sie sich Ihr individuelles Angebot</h2>
-                <p className={styles.subtitle}>
-                    Beschreiben Sie kurz Ihren Schaden oder senden Sie uns direkt Fotos per WhatsApp –
-                    wir melden uns schnell mit einer realistischen Einschätzung.
-                </p>
+                <div className="reveal">
+                    <span className={styles.kicker}>Direkt &amp; Unverbindlich</span>
+                    <h2 className={styles.heading}>Holen Sie sich Ihr individuelles Angebot</h2>
+                    <p className={styles.subtitle}>
+                        Beschreiben Sie kurz Ihren Schaden oder senden Sie uns direkt Fotos per WhatsApp –
+                        wir melden uns schnell mit einer realistischen Einschätzung.
+                    </p>
+                </div>
 
                 <div className={styles.layout}>
-                    <div className={styles.infoPanel}>
+                    <div className={`${styles.infoPanel} reveal-left`}>
                         <img
                             src="/images/damiko-logo-shield.png"
                             alt="Beulendoktor Damiko"
@@ -127,7 +129,7 @@ const Contact = () => {
                         </a>
                     </div>
 
-                    <form className={styles.form} onSubmit={handleSubmit}>
+                    <form className={`${styles.form} reveal-right`} onSubmit={handleSubmit}>
                         {/* Honeypot gegen automatisierte Bots */}
                         <div
                             style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}

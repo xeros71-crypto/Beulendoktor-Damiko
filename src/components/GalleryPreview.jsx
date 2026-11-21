@@ -17,15 +17,17 @@ const GalleryPreview = () => {
 
     return (
         <section id="arbeiten" className={styles.gallery}>
-            <div className={`${styles.inner} reveal`}>
-                <span className={styles.kicker}>Referenzen · Vorher &amp; Nachher</span>
-                <h2 className={styles.heading}>Einige unserer Arbeiten</h2>
-                <p className={styles.subtitle}>
-                    Echte Ergebnisse aus unserer täglichen Praxis – von der lackschadenfreien Dellenentfernung
-                    über Smart Repair bis zur präzisen Lackinstandsetzung. Zum Vergrößern einfach anklicken.
-                </p>
+            <div className={styles.inner}>
+                <div className="reveal">
+                    <span className={styles.kicker}>Referenzen · Vorher &amp; Nachher</span>
+                    <h2 className={styles.heading}>Einige unserer Arbeiten</h2>
+                    <p className={styles.subtitle}>
+                        Echte Ergebnisse aus unserer täglichen Praxis – von der lackschadenfreien Dellenentfernung
+                        über Smart Repair bis zur präzisen Lackinstandsetzung. Zum Vergrößern einfach anklicken.
+                    </p>
+                </div>
 
-                <div className={styles.grid}>
+                <div className={`${styles.grid} reveal-stagger`}>
                     {galleryItems.map((item) => (
                         <button
                             key={item.id}

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ScrollProgress from './ScrollProgress';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 const MainLayout = () => {
@@ -33,7 +34,7 @@ const MainLayout = () => {
 
             const moveX = (e.clientX - window.innerWidth / 2) * 0.04;
             const moveY = (e.clientY - window.innerHeight / 2) * 0.04;
-            bg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            bg.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
         };
 
         window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -42,6 +43,7 @@ const MainLayout = () => {
 
     return (
         <div className="app">
+            <ScrollProgress />
             <div ref={parallaxRef} className="bg-parallax" />
             <Navbar />
             <main>

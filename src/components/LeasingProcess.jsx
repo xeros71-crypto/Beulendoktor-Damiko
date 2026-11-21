@@ -28,8 +28,8 @@ const steps = [
 const LeasingProcess = () => {
     return (
         <section id="leasing-service" className={styles.section}>
-            <div className={`${styles.container} reveal`}>
-                <div className={styles.header}>
+            <div className={styles.container}>
+                <div className={`${styles.header} reveal`}>
                     <span className={styles.kicker}>Leasing Fahrzeug Rückgabe</span>
                     <h2 className={styles.heading}>Unser 4-Schritte Sorglos-Service</h2>
                     <p className={styles.subtitle}>
@@ -39,7 +39,7 @@ const LeasingProcess = () => {
                 </div>
 
                 <div className={styles.grid}>
-                    <div className={styles.stepsGrid}>
+                    <div className={`${styles.stepsGrid} reveal-stagger`}>
                         {steps.map((step) => (
                             <div key={step.number} className={styles.stepCard}>
                                 <span className={styles.stepNumber}>{step.number}</span>
@@ -49,7 +49,7 @@ const LeasingProcess = () => {
                         ))}
                     </div>
 
-                    <div className={styles.visualCol}>
+                    <div className={`${styles.visualCol} reveal-right`}>
                         <div className={styles.imageCard}>
                             <img
                                 src="/images/leasing.jpg"

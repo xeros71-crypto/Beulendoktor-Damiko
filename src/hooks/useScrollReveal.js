@@ -1,12 +1,17 @@
 import { useEffect } from 'react';
 
+const REVEAL_SELECTOR = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger';
+
 const useScrollReveal = (key) => {
     useEffect(() => {
-        const reveals = document.querySelectorAll('.reveal');
-        if (!reveals.length) return;
+        const elements = Array.from(document.querySelectorAll(REVEAL_SELECTOR));
+        if (!elements.length) return;
 
-        if (typeof IntersectionObserver === 'undefined') {
-            reveals.forEach((el) => el.classList.add('active'));
+        if (
+            typeof IntersectionObserver === 'undefined' ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ) {
+            elements.forEach((el) => el.classList.add('active'));
             return;
         }
 
@@ -19,10 +24,17 @@ const useScrollReveal = (key) => {
                     }
                 }
             },
-            { rootMargin: '100px 0px 60px 0px', threshold: 0.01 },
+            { rootMargin: '80px 0px -40px 0px', threshold: 0.05 },
         );
 
-        reveals.forEach((el) => observer.observe(el));
+        elements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.95) {
+                el.classList.add('active');
+            } else {
+                observer.observe(el);
+            }
+        });
 
         return () => observer.disconnect();
     }, [key]);

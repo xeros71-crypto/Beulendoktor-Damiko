@@ -39,28 +39,31 @@
 }
 
 :root {
-    /* Damiko Brand Colors (aufgebaut auf damiko.de & offiziellem Wappen-Logo) */
-    --bg-dark: #140f26;
+    /* Exklusive Damiko Brand Palette (Obsidian-Indigo, Signature Gold-Gelb & Logo Cyan) */
+    --bg-dark: #0d0a1a;
+    --bg-deep: #090714;
     --bg-brand: #292045;
-    --bg-card: #1e1736;
-    --bg-card-hover: #271f44;
+    --bg-card: #17122b;
+    --bg-card-hover: #211a3b;
     --text-primary: #ffffff;
-    --text-heading: #f4f4f4;
+    --text-heading: #f7f6fb;
     --text-secondary: #cfcbe0;
-    --text-muted: #9e98b8;
+    --text-muted: #9891b3;
 
     --accent-primary: #fef579;
     --accent-primary-strong: #f2cb07;
     --accent-secondary: #00b4e6;
     --accent-navy: #0d3b82;
 
-    /* Gradients */
-    --gradient-heading: linear-gradient(90deg, #ffffff 0%, #fef579 100%);
-    --gradient-accent: linear-gradient(135deg, #fef579 0%, #f2cb07 100%);
+    /* Luxury Gradients */
+    --gradient-heading: linear-gradient(110deg, #ffffff 0%, #fff8c4 48%, #fef579 82%, #f2cb07 100%);
+    --gradient-accent: linear-gradient(135deg, #fff69a 0%, #fef579 50%, #f2cb07 100%);
+    --gradient-glass: linear-gradient(160deg, rgba(41, 32, 69, 0.56) 0%, rgba(16, 12, 32, 0.78) 100%);
     --gradient-brand-bar: linear-gradient(130deg, #292046 72%, rgba(254, 245, 121, 0.22) 100%);
 
-    --border-color: rgba(254, 245, 121, 0.18);
-    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(254, 245, 121, 0.2);
+    --border-subtle: rgba(255, 255, 255, 0.09);
+    --shadow-luxury: 0 24px 55px rgba(0, 0, 0, 0.52);
 
     /* Typography */
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
@@ -78,6 +81,7 @@
     --breakpoint-wide: 1440px;
 
     /* Animation */
-    --transition-fast: 0.2s ease;
-    --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-fast: 0.22s ease;
+    --transition-smooth: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
