@@ -8,6 +8,7 @@
     justify-content: center;
     overflow: hidden;
     padding: 7.25rem 2rem 2.75rem;
+    contain: layout paint;
 }
 
 .background {
@@ -20,14 +21,11 @@
 
 .bgImage {
     position: absolute;
-    inset: -6%;
+    inset: 0;
     background-image: url('/images/lackierung-kabine.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.34;
-    filter: saturate(0.8) contrast(1.14);
-    transform: scale(1.06);
-    will-change: transform;
+    opacity: 0.32;
 }
 
 .lightSweep {
@@ -35,7 +33,7 @@
     inset: 0;
     background:
         radial-gradient(ellipse 65% 40% at 50% 0%, rgba(254, 245, 121, 0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 45% at 85% 30%, rgba(0, 180, 230, 0.14) 0%, transparent 72%);
+        radial-gradient(ellipse 50% 45% at 85% 30%, rgba(0, 180, 230, 0.13) 0%, transparent 72%);
     z-index: 1;
     pointer-events: none;
 }
@@ -46,8 +44,8 @@
     background: linear-gradient(
         180deg,
         rgba(9, 7, 20, 0.68) 0%,
-        rgba(28, 21, 52, 0.68) 46%,
-        rgba(13, 10, 26, 0.98) 100%
+        rgba(28, 21, 52, 0.72) 48%,
+        rgba(13, 10, 26, 0.99) 100%
     );
     z-index: 2;
 }
@@ -69,7 +67,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    will-change: transform, opacity;
 }
 
 .heroLogoContainer {
@@ -83,17 +80,15 @@
 
 .logoAura {
     position: absolute;
-    inset: -16%;
+    inset: -28%;
     border-radius: 50%;
     background: radial-gradient(
         circle,
-        rgba(0, 180, 230, 0.28) 0%,
-        rgba(254, 245, 121, 0.14) 45%,
-        transparent 72%
+        rgba(0, 180, 230, 0.24) 0%,
+        rgba(254, 245, 121, 0.12) 38%,
+        transparent 70%
     );
-    filter: blur(22px);
     pointer-events: none;
-    animation: auraPulse 6s ease-in-out infinite;
 }
 
 .heroLogo {
@@ -102,42 +97,7 @@
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 18px rgba(0, 180, 230, 0.24));
-    animation: logoFloat 7s infinite ease-in-out;
-}
-
-@keyframes auraPulse {
-    0%, 100% {
-        opacity: 0.72;
-        transform: scale(0.96);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.06);
-    }
-}
-
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0) scale(1);
-    }
-
-    50% {
-        transform: translateY(-5px) scale(1.015);
-    }
-}
-
-@keyframes heroFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
 }
 
 .kicker {
@@ -150,7 +110,6 @@
     letter-spacing: 0.22em;
     color: var(--accent-primary);
     margin-bottom: 0.95rem;
-    animation: heroFadeIn 0.9s 0.1s var(--ease-luxury) both;
 }
 
 .kickerLine {
@@ -169,7 +128,6 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
 .description {
@@ -178,7 +136,6 @@
     margin-bottom: 2.25rem;
     max-width: 700px;
     line-height: 1.7;
-    animation: heroFadeIn 0.95s 0.26s var(--ease-luxury) both;
 }
 
 .actions {
@@ -187,7 +144,6 @@
     gap: 0.95rem;
     justify-content: center;
     align-items: center;
-    animation: heroFadeIn 0.95s 0.34s var(--ease-luxury) both;
 }
 
 .ctaPrimary {
@@ -202,8 +158,8 @@
     background: var(--gradient-accent);
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 6px;
-    transition: transform 0.3s var(--ease-luxury), box-shadow 0.3s ease;
-    box-shadow: 0 12px 32px rgba(254, 245, 121, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition: transform 0.25s var(--ease-luxury), box-shadow 0.25s ease;
+    box-shadow: 0 10px 28px rgba(254, 245, 121, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .ctaPrimary::after {
@@ -215,12 +171,12 @@
     height: 100%;
     background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.65) 50%, transparent 80%);
     transform: skewX(-18deg);
-    transition: left 0.75s var(--ease-luxury);
+    transition: left 0.7s var(--ease-luxury);
 }
 
 .ctaPrimary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 18px 40px rgba(254, 245, 121, 0.42), inset 0 1px 0 #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(254, 245, 121, 0.38), inset 0 1px 0 #ffffff;
 }
 
 .ctaPrimary:hover::after {
@@ -236,12 +192,11 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--accent-primary);
-    background: rgba(24, 18, 45, 0.65);
-    border: 1px solid rgba(254, 245, 121, 0.45);
+    background: rgba(20, 15, 38, 0.88);
+    border: 1px solid rgba(254, 245, 121, 0.48);
     border-radius: 6px;
-    backdrop-filter: blur(12px);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    transition: all 0.28s var(--ease-luxury);
+    transition: transform 0.25s var(--ease-luxury), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .ctaSecondary svg {
@@ -250,11 +205,10 @@
 }
 
 .ctaSecondary:hover {
-    background: rgba(254, 245, 121, 0.14);
+    background: rgba(254, 245, 121, 0.16);
     color: #fff;
     border-color: var(--accent-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
 }
 
 .ctaWhatsapp {
@@ -265,20 +219,18 @@
     font-weight: 700;
     letter-spacing: 0.03em;
     color: #e6f9ff;
-    background: rgba(0, 180, 230, 0.14);
-    border: 1px solid rgba(0, 180, 230, 0.55);
+    background: rgba(11, 42, 66, 0.85);
+    border: 1px solid rgba(0, 180, 230, 0.58);
     border-radius: 6px;
-    backdrop-filter: blur(12px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    transition: all 0.28s var(--ease-luxury);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: transform 0.25s var(--ease-luxury), background-color 0.25s ease, color 0.25s ease;
 }
 
 .ctaWhatsapp:hover {
     background: var(--accent-secondary);
     color: #091321;
     border-color: var(--accent-secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 26px rgba(0, 180, 230, 0.32);
+    transform: translateY(-2px);
 }
 
 .uspStrip {
@@ -295,12 +247,11 @@
     align-items: flex-start;
     gap: 1rem;
     padding: 1.4rem 1.55rem;
-    background: var(--gradient-glass);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(254, 245, 121, 0.18);
+    background: linear-gradient(160deg, rgba(35, 27, 62, 0.92) 0%, rgba(16, 12, 32, 0.95) 100%);
+    border: 1px solid rgba(254, 245, 121, 0.2);
     border-radius: 14px;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: transform 0.35s var(--ease-luxury), border-color 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s var(--ease-luxury), border-color 0.3s ease;
 }
 
 .uspCard::before {
@@ -315,9 +266,8 @@
 }
 
 .uspCard:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: rgba(254, 245, 121, 0.55);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 24px rgba(254, 245, 121, 0.12);
 }
 
 .uspIcon {
@@ -357,7 +307,7 @@
     align-items: center;
     gap: 0.5rem;
     margin-top: 0.25rem;
-    color: rgba(254, 245, 121, 0.75);
+    color: rgba(254, 245, 121, 0.78);
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -375,7 +325,7 @@
     height: 44px;
     background: linear-gradient(180deg, var(--accent-primary), transparent);
     transform-origin: top;
-    animation: scrollPulse 2.2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation: scrollPulse 2.4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
 
 @keyframes scrollPulse {
@@ -390,19 +340,12 @@
     }
 
     100% {
-        transform: translateY(18px) scaleY(0);
+        transform: translateY(16px) scaleY(0);
         opacity: 0;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .heroLogoContainer,
-    .kicker,
-    .title,
-    .description,
-    .actions,
-    .heroLogo,
-    .logoAura,
     .scrollLine {
         animation: none;
     }

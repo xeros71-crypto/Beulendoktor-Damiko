@@ -4,12 +4,11 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(ellipse 80% 45% at 75% 8%, rgba(254, 245, 121, 0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 45% at 18% 45%, rgba(0, 180, 230, 0.06) 0%, transparent 55%);
     color: var(--text-primary);
     font-family: var(--font-main);
     line-height: 1.6;
@@ -40,7 +39,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #3f326b, #261e45);
+    background: #352a5c;
     border-radius: 4px;
 }
 
@@ -48,57 +47,31 @@ button {
     background: var(--accent-primary);
 }
 
-/* Luxury Ambient Showroom Parallax Glow */
-.bg-parallax {
-    position: fixed;
-    top: -12%;
-    left: -12%;
-    width: 124%;
-    height: 124%;
-    background:
-        radial-gradient(circle at 78% 18%, rgba(254, 245, 121, 0.07) 0%, transparent 40%),
-        radial-gradient(circle at 18% 78%, rgba(0, 180, 230, 0.085) 0%, transparent 46%),
-        radial-gradient(circle at 50% 45%, rgba(41, 32, 69, 0.38) 0%, transparent 68%);
-    pointer-events: none;
-    z-index: -1;
-    transition: transform 0.16s ease-out;
-    will-change: transform;
-}
-
-/* Choreographed Scroll Reveal System (Progressive Enhancement — SSR & Crawler Safe) */
-html.js-reveal .reveal:not(.active),
-html.js-reveal .reveal-left:not(.active),
-html.js-reveal .reveal-right:not(.active),
-html.js-reveal .reveal-scale:not(.active) {
-    opacity: 0;
-    filter: blur(4px);
-    will-change: opacity, transform, filter;
-}
-
+/* Pure GPU-Composited Scroll Reveal System (Zero Blur / Zero Layout Thrash) */
 .reveal,
 .reveal-left,
 .reveal-right,
 .reveal-scale {
+    opacity: 0;
     transition:
-        opacity 0.85s var(--ease-luxury),
-        transform 0.85s var(--ease-luxury),
-        filter 0.85s var(--ease-luxury);
+        opacity 0.55s var(--ease-luxury),
+        transform 0.55s var(--ease-luxury);
 }
 
-html.js-reveal .reveal:not(.active) {
-    transform: translateY(36px);
+.reveal {
+    transform: translate3d(0, 22px, 0);
 }
 
-html.js-reveal .reveal-left:not(.active) {
-    transform: translateX(-38px);
+.reveal-left {
+    transform: translate3d(-24px, 0, 0);
 }
 
-html.js-reveal .reveal-right:not(.active) {
-    transform: translateX(38px);
+.reveal-right {
+    transform: translate3d(24px, 0, 0);
 }
 
-html.js-reveal .reveal-scale:not(.active) {
-    transform: translateY(28px) scale(0.96);
+.reveal-scale {
+    transform: translate3d(0, 18px, 0) scale(0.98);
 }
 
 .reveal.active,
@@ -107,38 +80,30 @@ html.js-reveal .reveal-scale:not(.active) {
 .reveal-scale.active {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
 }
 
-/* Staggered Cascade Children */
-html.js-reveal .reveal-stagger:not(.active) > * {
-    opacity: 0;
-    transform: translateY(32px) scale(0.975);
-    filter: blur(3px);
-    will-change: opacity, transform, filter;
-}
-
+/* Lightweight Staggered Cascade Children */
 .reveal-stagger > * {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
     transition:
-        opacity 0.78s var(--ease-luxury),
-        transform 0.78s var(--ease-luxury),
-        filter 0.78s var(--ease-luxury);
+        opacity 0.5s var(--ease-luxury),
+        transform 0.5s var(--ease-luxury);
 }
 
 .reveal-stagger.active > * {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
+    transform: translate3d(0, 0, 0);
 }
 
-.reveal-stagger.active > *:nth-child(1) { transition-delay: 0.04s; }
-.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.12s; }
-.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.2s; }
-.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.28s; }
-.reveal-stagger.active > *:nth-child(5) { transition-delay: 0.36s; }
-.reveal-stagger.active > *:nth-child(6) { transition-delay: 0.44s; }
-.reveal-stagger.active > *:nth-child(7) { transition-delay: 0.52s; }
-.reveal-stagger.active > *:nth-child(8) { transition-delay: 0.6s; }
+.reveal-stagger.active > *:nth-child(1) { transition-delay: 0.03s; }
+.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.13s; }
+.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.18s; }
+.reveal-stagger.active > *:nth-child(5) { transition-delay: 0.23s; }
+.reveal-stagger.active > *:nth-child(6) { transition-delay: 0.28s; }
+.reveal-stagger.active > *:nth-child(7) { transition-delay: 0.33s; }
+.reveal-stagger.active > *:nth-child(8) { transition-delay: 0.38s; }
 
 @media (prefers-reduced-motion: reduce) {
     .reveal,
@@ -148,7 +113,6 @@ html.js-reveal .reveal-stagger:not(.active) > * {
     .reveal-stagger > * {
         opacity: 1;
         transform: none;
-        filter: none;
         transition: none;
     }
 }

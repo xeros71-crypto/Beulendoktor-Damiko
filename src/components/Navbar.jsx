@@ -1,17 +1,23 @@
 import { NavLink, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const scrolledRef = useRef(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 40);
+            const next = window.scrollY > 40;
+            if (next !== scrolledRef.current) {
+                scrolledRef.current = next;
+                setScrolled(next);
+            }
         };
 
+        handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);

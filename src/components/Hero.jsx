@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import { BUSINESS_INFO } from '../data/businessSchema';
 import styles from './Hero.module.css';
 
@@ -34,41 +33,6 @@ const usps = [
 ];
 
 const Hero = () => {
-    const bgImageRef = useRef(null);
-    const contentRef = useRef(null);
-
-    useEffect(() => {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-        let rafId = null;
-        const applyParallax = () => {
-            rafId = null;
-            const y = window.scrollY;
-            if (y > window.innerHeight * 1.4) return;
-
-            if (bgImageRef.current) {
-                bgImageRef.current.style.transform = `translate3d(0, ${y * 0.24}px, 0) scale(${1.06 + y * 0.00018})`;
-            }
-            if (contentRef.current) {
-                const opacity = Math.max(0.15, 1 - y / (window.innerHeight * 0.85));
-                contentRef.current.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
-                contentRef.current.style.opacity = String(opacity);
-            }
-        };
-
-        const onScroll = () => {
-            if (rafId === null) {
-                rafId = window.requestAnimationFrame(applyParallax);
-            }
-        };
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => {
-            window.removeEventListener('scroll', onScroll);
-            if (rafId !== null) window.cancelAnimationFrame(rafId);
-        };
-    }, []);
-
     const scrollToContact = () => {
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -80,13 +44,13 @@ const Hero = () => {
     return (
         <section className={styles.hero}>
             <div className={styles.background}>
-                <div ref={bgImageRef} className={styles.bgImage} aria-hidden="true" />
+                <div className={styles.bgImage} aria-hidden="true" />
                 <div className={styles.lightSweep} aria-hidden="true" />
                 <div className={styles.overlay} aria-hidden="true" />
             </div>
 
             <div className={styles.inner}>
-                <div ref={contentRef} className={styles.content}>
+                <div className={styles.content}>
                     <div className={styles.heroLogoContainer}>
                         <div className={styles.logoAura} aria-hidden="true" />
                         <img
