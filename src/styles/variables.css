@@ -34,31 +34,36 @@
 }
 
 :root {
-    /* Exklusive Damiko Brand Palette (Obsidian-Indigo, Signature Gold-Gelb & Logo Cyan) */
-    --bg-dark: #0d0a1a;
-    --bg-deep: #090714;
-    --bg-brand: #292045;
-    --bg-card: #17122b;
-    --bg-card-hover: #211a3b;
+    /* Exklusive Damiko Brand Palette (Helles Royal-Indigo, Champagne-Gold-Verlauf & Logo Cyan) */
+    --bg-dark: #17122e;
+    --bg-deep: #120e24;
+    --bg-brand: #2f2452;
+    --bg-card: #221b42;
+    --bg-card-hover: #2c2354;
     --text-primary: #ffffff;
-    --text-heading: #f7f6fb;
-    --text-secondary: #cfcbe0;
-    --text-muted: #9891b3;
+    --text-heading: #fdfcf7;
+    --text-secondary: #e2def2;
+    --text-muted: #b5afd0;
 
     --accent-primary: #fef579;
     --accent-primary-strong: #f2cb07;
     --accent-secondary: #00b4e6;
     --accent-navy: #0d3b82;
 
-    /* Luxury Gradients */
-    --gradient-heading: linear-gradient(110deg, #ffffff 0%, #fff8c4 48%, #fef579 82%, #f2cb07 100%);
-    --gradient-accent: linear-gradient(135deg, #fff69a 0%, #fef579 50%, #f2cb07 100%);
-    --gradient-glass: linear-gradient(160deg, rgba(41, 32, 69, 0.56) 0%, rgba(16, 12, 32, 0.78) 100%);
-    --gradient-brand-bar: linear-gradient(130deg, #292046 72%, rgba(254, 245, 121, 0.22) 100%);
+    /* Luxury Gradients mit edlem Gelb-/Champagner-Schimmer */
+    --gradient-heading: linear-gradient(110deg, #ffffff 0%, #fff9cc 42%, #fef579 78%, #f2cb07 100%);
+    --gradient-accent: linear-gradient(135deg, #fff8ad 0%, #fef579 50%, #f2cb07 100%);
+    --gradient-glass: linear-gradient(
+        155deg,
+        rgba(254, 245, 121, 0.09) 0%,
+        rgba(52, 40, 90, 0.76) 42%,
+        rgba(28, 21, 54, 0.9) 100%
+    );
+    --gradient-brand-bar: linear-gradient(130deg, #312657 65%, rgba(254, 245, 121, 0.28) 100%);
 
-    --border-color: rgba(254, 245, 121, 0.2);
-    --border-subtle: rgba(255, 255, 255, 0.09);
-    --shadow-luxury: 0 24px 55px rgba(0, 0, 0, 0.52);
+    --border-color: rgba(254, 245, 121, 0.28);
+    --border-subtle: rgba(254, 245, 121, 0.13);
+    --shadow-luxury: 0 22px 50px rgba(7, 5, 16, 0.42);
 
     /* Typography */
     --font-main: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;

@@ -1,6 +1,8 @@
 .about {
     padding: 7.5rem 2rem;
-    background-color: var(--bg-dark);
+    background:
+        radial-gradient(ellipse 70% 50% at 85% 30%, rgba(254, 245, 121, 0.1) 0%, transparent 68%),
+        linear-gradient(180deg, #191332 0%, #231b44 50%, #181330 100%);
 }
 
 .container {

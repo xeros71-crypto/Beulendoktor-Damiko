@@ -1,7 +1,9 @@
 .section {
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #0d0a1a 0%, #140f26 100%);
-    border-top: 1px solid rgba(254, 245, 121, 0.1);
+    background:
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(254, 245, 121, 0.09) 0%, transparent 68%),
+        linear-gradient(180deg, #191332 0%, #231b43 100%);
+    border-top: 1px solid rgba(254, 245, 121, 0.18);
 }
 
 .inner {

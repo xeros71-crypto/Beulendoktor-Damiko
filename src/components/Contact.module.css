@@ -1,6 +1,8 @@
 .contactSection {
     padding: 7.5rem 2rem;
-    background: linear-gradient(180deg, #0d0a1a 0%, #17112e 100%);
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 15%, rgba(254, 245, 121, 0.12) 0%, transparent 70%),
+        linear-gradient(180deg, #191332 0%, #261e47 55%, #1d1638 100%);
     scroll-margin-top: 5rem;
 }
 

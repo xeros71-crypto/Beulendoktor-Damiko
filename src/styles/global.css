@@ -7,8 +7,9 @@
 body {
     background-color: var(--bg-dark);
     background-image:
-        radial-gradient(ellipse 80% 45% at 75% 8%, rgba(254, 245, 121, 0.05) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 45% at 18% 45%, rgba(0, 180, 230, 0.06) 0%, transparent 55%);
+        radial-gradient(ellipse 90% 48% at 50% 0%, rgba(254, 245, 121, 0.14) 0%, rgba(242, 203, 7, 0.05) 45%, transparent 75%),
+        radial-gradient(ellipse 75% 48% at 82% 24%, rgba(254, 245, 121, 0.1) 0%, transparent 62%),
+        radial-gradient(ellipse 70% 48% at 16% 52%, rgba(0, 180, 230, 0.09) 0%, transparent 62%);
     color: var(--text-primary);
     font-family: var(--font-main);
     line-height: 1.6;
