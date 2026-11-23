@@ -1,9 +1,10 @@
 .section {
     padding: 6rem 2rem;
     background:
-        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(67, 50, 112, 0.22) 0%, transparent 68%),
-        linear-gradient(180deg, #0e0d14 0%, #14111f 100%);
-    border-top: 1px solid rgba(132, 104, 208, 0.18);
+        radial-gradient(ellipse 58% 42% at 18% 8%, rgba(254, 245, 121, 0.1) 0%, transparent 66%),
+        radial-gradient(ellipse 70% 45% at 78% 25%, rgba(88, 62, 158, 0.25) 0%, transparent 68%),
+        linear-gradient(180deg, #110f1a 0%, #161324 100%);
+    border-top: 1px solid rgba(132, 104, 208, 0.2);
 }
 
 .inner {

@@ -2,9 +2,10 @@
     padding: 6.5rem 2rem;
     position: relative;
     background:
-        radial-gradient(ellipse 65% 45% at 85% 20%, rgba(67, 50, 112, 0.26) 0%, transparent 68%),
-        linear-gradient(180deg, #0e0d14 0%, #151221 50%, #0e0d14 100%);
-    border-top: 1px solid rgba(132, 104, 208, 0.16);
+        radial-gradient(ellipse 62% 45% at 84% 14%, rgba(254, 245, 121, 0.13) 0%, rgba(242, 203, 7, 0.04) 42%, transparent 70%),
+        radial-gradient(ellipse 68% 50% at 22% 45%, rgba(88, 62, 158, 0.28) 0%, transparent 70%),
+        linear-gradient(180deg, #110f1a 0%, #181427 50%, #110f1a 100%);
+    border-top: 1px solid rgba(132, 104, 208, 0.18);
 }
 
 .inner {
@@ -172,8 +173,13 @@
 }
 
 .localBox {
-    background: linear-gradient(140deg, rgba(45, 34, 78, 0.78) 0%, rgba(20, 17, 32, 0.95) 100%);
-    border: 1px solid rgba(132, 104, 208, 0.32);
+    background: linear-gradient(
+        135deg,
+        rgba(254, 245, 121, 0.11) 0%,
+        rgba(52, 39, 90, 0.82) 44%,
+        rgba(21, 17, 34, 0.95) 100%
+    );
+    border: 1px solid rgba(254, 245, 121, 0.3);
     border-radius: 16px;
     padding: 2.25rem;
     display: grid;

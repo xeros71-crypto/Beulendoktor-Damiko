@@ -2,8 +2,9 @@
     position: relative;
     padding: 6.5rem 2rem;
     background:
-        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(67, 50, 112, 0.28) 0%, transparent 70%),
-        linear-gradient(180deg, #0e0d14 0%, #14121e 52%, #0e0d14 100%);
+        radial-gradient(ellipse 60% 42% at 15% 8%, rgba(254, 245, 121, 0.11) 0%, transparent 68%),
+        radial-gradient(ellipse 70% 48% at 82% 18%, rgba(88, 62, 158, 0.28) 0%, transparent 70%),
+        linear-gradient(180deg, #110f1a 0%, #171425 52%, #110f1a 100%);
 }
 
 .inner {

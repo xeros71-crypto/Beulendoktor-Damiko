@@ -4,10 +4,11 @@
     padding: 7.5rem 2rem 3.5rem;
     overflow: hidden;
     background:
-        radial-gradient(ellipse 65% 55% at 78% 28%, rgba(88, 62, 158, 0.34) 0%, rgba(41, 32, 69, 0.16) 52%, transparent 76%),
-        radial-gradient(ellipse 50% 40% at 15% 15%, rgba(254, 245, 121, 0.06) 0%, transparent 65%),
-        linear-gradient(180deg, #13111c 0%, #0e0d14 100%);
-    border-bottom: 1px solid rgba(132, 104, 208, 0.22);
+        radial-gradient(ellipse 62% 52% at 82% 16%, rgba(254, 245, 121, 0.17) 0%, rgba(242, 203, 7, 0.06) 38%, transparent 72%),
+        radial-gradient(ellipse 70% 58% at 72% 36%, rgba(98, 70, 175, 0.38) 0%, rgba(45, 34, 78, 0.2) 54%, transparent 78%),
+        radial-gradient(ellipse 55% 45% at 14% 12%, rgba(254, 245, 121, 0.11) 0%, rgba(88, 62, 158, 0.14) 48%, transparent 74%),
+        linear-gradient(180deg, #171425 0%, #110f1a 100%);
+    border-bottom: 1px solid rgba(254, 245, 121, 0.2);
 }
 
 .ambientGlow {
@@ -326,8 +327,14 @@
     gap: 1rem;
     padding: 1.35rem 1.5rem;
     border-radius: 14px;
-    background: linear-gradient(160deg, rgba(41, 32, 69, 0.5) 0%, rgba(20, 17, 31, 0.92) 100%);
-    border: 1px solid rgba(132, 104, 208, 0.26);
+    background: linear-gradient(
+        135deg,
+        rgba(254, 245, 121, 0.1) 0%,
+        rgba(52, 39, 88, 0.68) 42%,
+        rgba(22, 18, 36, 0.94) 100%
+    );
+    border: 1px solid rgba(254, 245, 121, 0.28);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
 }
 
 .trustItem {

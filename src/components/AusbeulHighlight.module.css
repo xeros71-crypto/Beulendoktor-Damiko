@@ -2,10 +2,11 @@
     padding: 6.5rem 2rem;
     position: relative;
     background:
-        radial-gradient(ellipse 70% 50% at 18% 50%, rgba(88, 62, 158, 0.26) 0%, transparent 70%),
-        linear-gradient(180deg, #110f1a 0%, #171426 50%, #110f1a 100%);
-    border-top: 1px solid rgba(132, 104, 208, 0.18);
-    border-bottom: 1px solid rgba(132, 104, 208, 0.18);
+        radial-gradient(ellipse 58% 46% at 16% 24%, rgba(254, 245, 121, 0.14) 0%, rgba(242, 203, 7, 0.05) 40%, transparent 70%),
+        radial-gradient(ellipse 68% 52% at 78% 55%, rgba(92, 66, 165, 0.3) 0%, transparent 72%),
+        linear-gradient(180deg, #13101d 0%, #191529 50%, #13101d 100%);
+    border-top: 1px solid rgba(254, 245, 121, 0.2);
+    border-bottom: 1px solid rgba(132, 104, 208, 0.22);
 }
 
 .inner {
