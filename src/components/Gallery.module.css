@@ -1,6 +1,6 @@
 .gallery {
     padding: 6.5rem 2rem;
-    background: var(--gradient-damiko-bg-reverse);
+    background-color: var(--bg-dark);
 }
 
 .inner {
@@ -105,7 +105,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #fef579;
+    color: var(--accent-primary);
 }
 
 .itemTitle {
@@ -123,21 +123,20 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.95rem 1.9rem;
-    border-radius: 8px;
-    background: rgba(41, 32, 69, 0.65);
+    padding: 0.9rem 1.9rem;
+    border-radius: 6px;
     border: 1px solid var(--accent-primary);
     color: var(--accent-primary);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    transition: all 0.22s ease;
+    transition: all 0.25s ease;
 }
 
 .moreButton:hover {
     background: var(--accent-primary);
-    color: #0e0d14;
+    color: #140f26;
     transform: translateY(-2px);
 }
 

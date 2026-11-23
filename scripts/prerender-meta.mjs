@@ -170,12 +170,11 @@ function injectRouteHtml(templateHtml, route, appHtml, cssBundles) {
     // Ensure the route's actual LCP hero image gets exclusive fetchpriority="high" (prefer responsive WebP)
     if (route.slug === '') {
         preloadLinks.push(
-            '<link rel="preload" as="image" type="image/webp" imagesrcset="/gallery/arbeit-2-porsche-911-640w.webp 640w, /gallery/arbeit-2-porsche-911-960w.webp 960w" imagesizes="(max-width: 768px) 92vw, 540px" fetchpriority="high">',
+            '<link rel="preload" as="image" type="image/webp" imagesrcset="/images/damiko-lack-beulendoktor-logo-320w.webp 320w, /images/damiko-lack-beulendoktor-logo-480w.webp 480w" imagesizes="(max-width: 768px) 165px, 220px" fetchpriority="high">',
         );
-        seenPreloadHrefs.add('/gallery/arbeit-2-porsche-911.jpg');
-        seenPreloadHrefs.add('/gallery/arbeit-2-porsche-911-640w.webp');
-        seenPreloadHrefs.add('/gallery/arbeit-2-porsche-911-960w.webp');
         seenPreloadHrefs.add('/images/damiko-lack-beulendoktor-logo.png');
+        seenPreloadHrefs.add('/images/lackierung-kabine.jpg');
+        seenPreloadHrefs.add('/images/lackierung-kabine-960w.webp');
     } else if (route.image && !route.image.startsWith('http') && !route.noindex) {
         if (/^\/(?:images|gallery)\/[^/]+\.jpg$/i.test(route.image)) {
             const base = route.image.replace(/\.jpg$/i, '');

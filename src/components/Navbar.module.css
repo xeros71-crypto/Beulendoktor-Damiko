@@ -3,42 +3,37 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10000;
-    padding: 0.95rem 2rem;
-    background: rgba(14, 13, 20, 0.88);
-    border-bottom: 1px solid rgba(132, 104, 208, 0.18);
-    transition: padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.scrolled {
-    padding: 0.65rem 2rem;
-    background: rgba(12, 11, 18, 0.97);
-    border-bottom: 1px solid rgba(254, 245, 121, 0.24);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-}
-
-.navInner {
-    max-width: 1280px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.25rem;
+    padding: 1.35rem 3rem;
+    z-index: 10000;
+    transition: all 0.35s ease;
+    color: var(--text-primary);
+    background: linear-gradient(180deg, rgba(20, 15, 38, 0.88) 0%, rgba(20, 15, 38, 0) 100%);
+}
+
+.scrolled {
+    padding: 0.85rem 3rem;
+    background: rgba(15, 11, 29, 0.96);
+    border-bottom: 1px solid rgba(254, 245, 121, 0.2);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.42);
 }
 
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
+    gap: 0.7rem;
     z-index: 10001;
     flex-shrink: 0;
 }
 
 .brandIcon {
-    width: 34px;
-    height: 42px;
+    width: auto;
+    height: 44px;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0 2px 10px rgba(0, 180, 230, 0.35));
 }
 
 .brandText {
@@ -48,7 +43,7 @@
 }
 
 .brandName {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -56,7 +51,7 @@
 }
 
 .brandAccent {
-    font-size: 1.08rem;
+    font-size: 1.15rem;
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -65,37 +60,35 @@
 
 .navLinks {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.55rem;
     list-style: none;
     align-items: center;
 }
 
 .navLinks a {
     font-weight: 600;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #e4e1f0;
-    transition: color 0.2s ease;
+    letter-spacing: 0.05em;
+    color: #eae6f7;
+    transition: color 0.25s ease;
     position: relative;
     white-space: nowrap;
-    padding: 0.25rem 0;
 }
 
-.navLinks a:hover,
-.navLinks a.active {
+.navLinks a:hover {
     color: var(--accent-primary);
 }
 
 .navLinks a::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
     background: var(--accent-primary);
-    transition: width 0.22s ease;
+    transition: width 0.25s ease;
 }
 
 .navLinks a:hover::after,
@@ -103,61 +96,11 @@
     width: 100%;
 }
 
-.headerActions {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    flex-shrink: 0;
-}
-
-.headerPhone {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    font-size: 0.84rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    padding: 0.45rem 0.75rem;
-    border-radius: 6px;
-    border: 1px solid rgba(132, 104, 208, 0.28);
-    background: rgba(41, 32, 69, 0.45);
-    transition: border-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-}
-
-.headerPhone svg {
-    width: 15px;
-    height: 15px;
+.navLinks a.active {
     color: var(--accent-primary);
 }
 
-.headerPhone:hover {
-    border-color: var(--accent-primary);
-    color: var(--accent-primary);
-}
-
-.headerCta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #0e0d14;
-    background: var(--gradient-accent);
-    border-radius: 6px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    white-space: nowrap;
-}
-
-.headerCta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(254, 245, 121, 0.28);
-}
-
-.mobileConversionBlock {
+.mobilePhoneItem {
     display: none;
 }
 
@@ -166,63 +109,63 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    width: 42px;
-    height: 42px;
-    background: rgba(41, 32, 69, 0.5);
-    border: 1px solid rgba(132, 104, 208, 0.3);
-    border-radius: 8px;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
     cursor: pointer;
     z-index: 10001;
     padding: 0;
 }
 
 .hamburger span {
-    width: 1.35rem;
+    width: 1.85rem;
     height: 2px;
     background: var(--accent-primary);
     border-radius: 2px;
-    transition: all 0.25s ease;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
 }
 
 .hamburger.open span:first-child {
-    transform: translateY(7px) rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
     opacity: 0;
+    transform: translateX(20px);
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
-@media (max-width: 1320px) {
-    .headerPhone span {
-        display: none;
+@media (max-width: 1280px) {
+    .navbar {
+        padding: 1.15rem 1.75rem;
     }
 
-    .headerPhone {
-        padding: 0.5rem;
+    .scrolled {
+        padding: 0.85rem 1.75rem;
     }
 
     .navLinks {
-        gap: 0.95rem;
+        gap: 1.05rem;
     }
 
     .navLinks a {
-        font-size: 0.77rem;
+        font-size: 0.78rem;
     }
 }
 
-@media (max-width: 1120px) {
-    .navbar,
-    .scrolled {
-        padding: 0.7rem 1.25rem;
+@media (max-width: 1080px) {
+    .navbar {
+        padding: 0.95rem 1.35rem;
     }
 
-    .headerActions {
-        display: none;
+    .scrolled {
+        padding: 0.75rem 1.35rem;
     }
 
     .hamburger {
@@ -230,23 +173,23 @@
     }
 
     .navLinks {
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         position: fixed;
         top: 0;
         right: -100%;
         height: 100vh;
         height: 100dvh;
-        width: min(100%, 360px);
-        background: #12101b;
-        border-left: 1px solid rgba(132, 104, 208, 0.28);
-        transition: right 0.28s var(--ease-luxury);
+        width: 100%;
+        background: rgba(13, 10, 26, 0.98);
+        transition: right 0.3s ease-in-out;
         z-index: 10000;
-        padding: 5.25rem 1.5rem 2rem;
-        gap: 0.25rem;
+        padding: 5rem 1.5rem 2.5rem;
+        gap: 0.35rem;
         overflow-y: auto;
-        box-shadow: -16px 0 40px rgba(0, 0, 0, 0.6);
     }
 
     .navLinks.open {
@@ -254,44 +197,25 @@
     }
 
     .navLinks li {
+        margin: 0.5rem 0;
         width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .navLinks a {
-        display: block;
-        font-size: 0.95rem;
-        padding: 0.85rem 0.25rem;
-    }
-
-    .mobileConversionBlock {
-        display: flex;
-        flex-direction: column;
-        gap: 0.65rem;
-        margin-top: 1.25rem;
-        border-bottom: none !important;
-    }
-
-    .mobilePhoneBtn,
-    .mobileWhatsappBtn {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        padding: 0.85rem 1rem !important;
-        border-radius: 8px;
-        font-weight: 800 !important;
-        font-size: 0.88rem !important;
         text-align: center;
     }
 
-    .mobilePhoneBtn {
-        background: var(--gradient-accent);
-        color: #0e0d14 !important;
+    .navLinks a {
+        display: inline-block;
+        font-size: clamp(1rem, 4.2vw, 1.25rem);
+        line-height: 1.4;
     }
 
-    .mobileWhatsappBtn {
-        background: rgba(41, 32, 69, 0.8);
-        border: 1px solid var(--accent-primary);
-        color: var(--accent-primary) !important;
+    .mobilePhoneItem {
+        display: block;
+        margin-top: 1.25rem !important;
+    }
+
+    .mobilePhoneLink {
+        color: var(--accent-secondary) !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.08em;
     }
 }

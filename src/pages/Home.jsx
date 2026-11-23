@@ -1,7 +1,6 @@
 import Hero from '../components/Hero';
 import ServicesOverview from '../components/ServicesOverview';
 import FrankfurtPaintSection from '../components/FrankfurtPaintSection';
-import AusbeulHighlight from '../components/AusbeulHighlight';
 import About from '../components/About';
 import LeasingProcess from '../components/LeasingProcess';
 import GalleryPreview from '../components/GalleryPreview';
@@ -26,10 +25,9 @@ const Home = () => {
             <Hero />
             <ServicesOverview />
             <FrankfurtPaintSection />
-            <AusbeulHighlight />
+            <About />
             <LeasingProcess />
             <GalleryPreview />
-            <About />
             <FaqSection faqs={HOME_FAQS} />
             <Contact />
         </>

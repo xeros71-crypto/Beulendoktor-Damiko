@@ -5,9 +5,10 @@
 }
 
 body {
-    background-color: #22193f;
-    background-image: var(--gradient-damiko-bg);
-    background-attachment: fixed;
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(ellipse 80% 45% at 75% 8%, rgba(254, 245, 121, 0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 45% at 18% 45%, rgba(0, 180, 230, 0.06) 0%, transparent 55%);
     color: var(--text-primary);
     font-family: var(--font-main);
     line-height: 1.6;
@@ -18,11 +19,8 @@ body {
 
 #leistungen,
 #autolackierer-frankfurt,
-#ausbeulservice-highlight,
 #ueber-uns,
-#about,
 #leasing,
-#leasing-service,
 #arbeiten,
 #faq,
 #contact,

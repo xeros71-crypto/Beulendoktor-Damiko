@@ -1,9 +1,5 @@
 import { BUSINESS_INFO } from '../data/businessSchema';
-import { getResponsiveWebpSrcSet } from '../utils/responsiveImage';
 import styles from './About.module.css';
-
-const ABOUT_IMAGE = '/images/smart-repair-1.jpg';
-const ABOUT_WEBP_SRCSET = getResponsiveWebpSrcSet(ABOUT_IMAGE);
 
 const About = () => {
     return (
@@ -11,24 +7,15 @@ const About = () => {
             <div className={styles.container}>
                 <div className={`${styles.imageWrapper} reveal-left`}>
                     <div className={styles.imageFrame}>
-                        <picture>
-                            {ABOUT_WEBP_SRCSET && (
-                                <source
-                                    type="image/webp"
-                                    srcSet={ABOUT_WEBP_SRCSET}
-                                    sizes="(max-width: 768px) 92vw, 520px"
-                                />
-                            )}
-                            <img
-                                src={ABOUT_IMAGE}
-                                alt="Präzise Autolackierung und Smart Repair bei Beulendoktor Damiko"
-                                className={styles.image}
-                                width={640}
-                                height={426}
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </picture>
+                        <img
+                            src="/images/smart-repair-1.jpg"
+                            alt="Präzise Autolackierung und Smart Repair bei Beulendoktor Damiko"
+                            className={styles.image}
+                            width={640}
+                            height={426}
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <div className={styles.imageSheen} aria-hidden="true" />
                     </div>
                     <div className={styles.imageDecor} aria-hidden="true"></div>

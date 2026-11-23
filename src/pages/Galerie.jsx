@@ -75,10 +75,10 @@ const Galerie = () => {
                                     decoding="async"
                                 />
                             </picture>
-                            <span className={galleryStyles.captionBar}>
+                            <div className={galleryStyles.captionBar}>
                                 <span className={galleryStyles.category}>{item.category}</span>
                                 <span className={galleryStyles.itemTitle}>{item.title}</span>
-                            </span>
+                            </div>
                         </button>
                     ))}
                 </div>

@@ -1,7 +1,7 @@
 .section {
     padding: 6rem 2rem;
-    background: var(--gradient-damiko-bg-reverse);
-    border-top: 1px solid rgba(254, 245, 121, 0.22);
+    background: linear-gradient(180deg, #0d0a1a 0%, #140f26 100%);
+    border-top: 1px solid rgba(254, 245, 121, 0.1);
 }
 
 .inner {
@@ -12,7 +12,7 @@
 .kicker {
     display: block;
     text-align: center;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.18em;
@@ -22,9 +22,9 @@
 
 .heading {
     text-align: center;
-    font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+    font-size: clamp(1.65rem, 3.2vw, 2.4rem);
     font-weight: 800;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.75rem;
     background: var(--gradient-heading);
     -webkit-background-clip: text;
     background-clip: text;
@@ -34,26 +34,26 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 0.95rem;
+    gap: 1rem;
 }
 
 .item {
-    background: rgba(34, 27, 58, 0.55);
-    border: 1px solid rgba(132, 104, 208, 0.24);
+    background: rgba(41, 32, 69, 0.55);
+    border: 1px solid rgba(254, 245, 121, 0.16);
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
-    transition: border-color 0.22s ease, background-color 0.22s ease;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .item[open] {
-    border-color: rgba(254, 245, 121, 0.5);
-    background: rgba(45, 35, 76, 0.78);
+    border-color: rgba(254, 245, 121, 0.45);
+    background: rgba(41, 32, 69, 0.78);
 }
 
 .question {
-    font-size: 1.04rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #fff;
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -72,6 +72,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     flex-shrink: 0;
+    transition: transform 0.2s ease;
 }
 
 .item[open] .question::after {
@@ -84,12 +85,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--text-secondary);
     line-height: 1.7;
-    font-size: 0.96rem;
+    font-size: 0.98rem;
 }
 
 @media (max-width: 600px) {
     .section {
-        padding: 4.25rem 1.25rem;
+        padding: 4rem 1.25rem;
     }
 
     .item {

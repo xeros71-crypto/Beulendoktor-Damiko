@@ -1,31 +1,23 @@
 .section {
-    padding: 6.5rem 2rem;
-    background: var(--gradient-damiko-bg);
-    border-bottom: 1px solid rgba(254, 245, 121, 0.22);
+    padding: 7rem 2rem;
+    background: linear-gradient(180deg, #0d0a1a 0%, #1b1433 50%, #0d0a1a 100%);
+    border-top: 1px solid rgba(254, 245, 121, 0.14);
+    border-bottom: 1px solid rgba(254, 245, 121, 0.14);
 }
 
 .container {
-    max-width: 1220px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.topSplit {
-    display: grid;
-    grid-template-columns: 1.12fr 0.88fr;
-    gap: 3rem;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.introCol {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.header {
+    text-align: center;
+    margin-bottom: 3.5rem;
 }
 
 .kicker {
     display: inline-block;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.18em;
@@ -34,10 +26,9 @@
 }
 
 .heading {
-    font-size: clamp(1.85rem, 3.3vw, 2.65rem);
+    font-size: clamp(1.75rem, 3.6vw, 2.75rem);
     font-weight: 800;
-    line-height: 1.16;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
     background: var(--gradient-heading);
     -webkit-background-clip: text;
     background-clip: text;
@@ -45,55 +36,77 @@
 }
 
 .subtitle {
+    max-width: 680px;
+    margin: 0 auto;
     color: var(--text-secondary);
-    font-size: 1.03rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
 }
 
-.topicPills {
+.grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.stepCard {
+    background: var(--gradient-glass);
+    border: 1px solid rgba(254, 245, 121, 0.18);
+    border-radius: 16px;
+    padding: 1.75rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
+    flex-direction: column;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.35s var(--ease-luxury), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
-.topicPill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.4rem 0.85rem;
-    border-radius: 999px;
-    background: rgba(41, 32, 69, 0.65);
-    border: 1px solid rgba(132, 104, 208, 0.35);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #f0edf9;
+.stepCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(254, 245, 121, 0.55);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5), 0 0 24px rgba(254, 245, 121, 0.12);
 }
 
-.pillDot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-primary);
+.stepNumber {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    line-height: 1;
+    margin-bottom: 0.85rem;
+}
+
+.stepTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.55rem;
+}
+
+.stepText {
+    color: var(--text-secondary);
+    font-size: 0.94rem;
+    line-height: 1.6;
 }
 
 .visualCol {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 .imageCard {
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(132, 104, 208, 0.32);
+    border: 1px solid rgba(254, 245, 121, 0.22);
     aspect-ratio: 16 / 10;
-    background: #14121f;
-    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
-}
-
-.imageCard picture {
-    display: block;
-    width: 100%;
-    height: 100%;
+    flex: 1;
+    min-height: 240px;
 }
 
 .imageCard img {
@@ -103,169 +116,58 @@
     display: block;
 }
 
-/* 4-Steps Horizontal Desktop Grid */
-.stepsRow {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 2.25rem;
-}
-
-.stepCard {
-    background: var(--gradient-glass);
-    border: 1px solid rgba(132, 104, 208, 0.24);
+.ctaBox {
+    background: rgba(20, 15, 38, 0.85);
+    border: 1px solid rgba(0, 180, 230, 0.35);
     border-radius: 14px;
-    padding: 1.6rem;
+    padding: 1.4rem 1.6rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34);
-    transition: transform 0.3s var(--ease-luxury), border-color 0.3s ease;
+    gap: 1rem;
 }
 
-.stepCard:hover {
-    transform: translateY(-4px);
-    border-color: rgba(254, 245, 121, 0.5);
-}
-
-.stepHeader {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-.stepNumber {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.3rem 0.65rem;
-    border-radius: 6px;
-    background: rgba(254, 245, 121, 0.14);
-    border: 1px solid rgba(254, 245, 121, 0.45);
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: var(--accent-primary);
-    line-height: 1;
-}
-
-.stepLine {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(254, 245, 121, 0.45), rgba(132, 104, 208, 0.15));
-}
-
-.stepTitle {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-}
-
-.stepText {
+.ctaBox p {
     color: var(--text-secondary);
-    font-size: 0.91rem;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.noticeBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.75rem;
-    padding: 1.5rem 2rem;
-    border-radius: 14px;
-    background: linear-gradient(
-        135deg,
-        rgba(254, 245, 121, 0.11) 0%,
-        rgba(52, 39, 90, 0.85) 45%,
-        rgba(22, 18, 36, 0.96) 100%
-    );
-    border: 1px solid rgba(254, 245, 121, 0.42);
-}
-
-.noticeContent {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-}
-
-.noticeBadge {
-    display: inline-block;
-    width: fit-content;
-    font-size: 0.72rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+.ctaBox strong {
     color: var(--accent-primary);
-}
-
-.noticeText {
-    color: var(--text-secondary);
-    font-size: 0.96rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.noticeText strong {
-    color: #ffffff;
-}
-
-.noticeActions {
-    flex-shrink: 0;
 }
 
 .linkButton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.9rem 1.5rem;
-    border-radius: 8px;
-    background: var(--gradient-accent);
-    color: #0e0d14;
+    padding: 0.85rem 1.4rem;
+    border-radius: 6px;
+    background: var(--accent-primary);
+    color: #140f26;
     font-weight: 800;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-    white-space: nowrap;
+    transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .linkButton:hover {
+    background: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(254, 245, 121, 0.28);
 }
 
-@media (max-width: 1024px) {
-    .topSplit {
+@media (max-width: 960px) {
+    .grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .stepsRow {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .noticeBar {
-        flex-direction: column;
-        align-items: flex-start;
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
     .section {
         padding: 4.5rem 1.25rem;
     }
 
-    .stepsRow {
+    .stepsGrid {
         grid-template-columns: 1fr;
-    }
-
-    .noticeBar {
-        padding: 1.35rem;
-    }
-
-    .noticeActions,
-    .linkButton {
-        width: 100%;
     }
 }

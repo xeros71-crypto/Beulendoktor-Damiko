@@ -7,8 +7,8 @@ const ServicesOverview = () => {
     return (
         <section id="leistungen" className={styles.section}>
             <div className={styles.inner}>
-                <div className={`${styles.header} reveal`}>
-                    <span className={styles.kicker}>Leistungsportfolio · Frankfurt &amp; Rhein-Main</span>
+                <div className="reveal">
+                    <span className={styles.kicker}>Autolackierer &amp; Dellentechnik in Frankfurt</span>
                     <h2 className={styles.heading}>Autolackierung, Smart Repair &amp; Beulendoktor aus einer Hand</h2>
                     <p className={styles.subtitle}>
                         Von der exakten Teillackierung (Stoßstange, Kotflügel, Tür) in unserer Lackierkabine über
@@ -17,7 +17,7 @@ const ServicesOverview = () => {
                 </div>
 
                 <div className={`${styles.grid} reveal-stagger`}>
-                    {services.map((service, index) => (
+                    {services.map((service) => (
                         <Link key={service.slug} to={`/${service.slug}`} className={styles.card}>
                             <div className={styles.imageWrap}>
                                 <picture>
@@ -39,14 +39,13 @@ const ServicesOverview = () => {
                                     />
                                 </picture>
                                 <div className={styles.imageVignette} aria-hidden="true" />
-                                <span className={styles.indexBadge}>0{index + 1}</span>
                                 <span className={styles.badge}>{service.navLabel}</span>
                             </div>
                             <div className={styles.cardBody}>
                                 <h3 className={styles.cardTitle}>{service.shortTitle}</h3>
                                 <p className={styles.cardDesc}>{service.shortDesc}</p>
                                 <span className={styles.cardLink}>
-                                    <span>Leistung ansehen</span>
+                                    <span>Mehr erfahren</span>
                                     <span className={styles.arrow} aria-hidden="true">&rarr;</span>
                                 </span>
                             </div>

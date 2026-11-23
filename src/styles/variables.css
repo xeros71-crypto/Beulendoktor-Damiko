@@ -34,82 +34,36 @@
 }
 
 :root {
-    /* Premium Automotive Design System – Damiko Lila, Akzent-Gelb & Dunkles Anthrazit/Schwarz */
-    --bg-dark: #110f1a;
-    --bg-deep: #0b0a10;
-    --bg-surface: #171424;
+    /* Exklusive Damiko Brand Palette (Obsidian-Indigo, Signature Gold-Gelb & Logo Cyan) */
+    --bg-dark: #0d0a1a;
+    --bg-deep: #090714;
     --bg-brand: #292045;
-    --bg-brand-soft: #3a2c63;
-    --bg-card: #1b172b;
-    --bg-card-hover: #241e38;
+    --bg-card: #17122b;
+    --bg-card-hover: #211a3b;
+    --text-primary: #ffffff;
+    --text-heading: #f7f6fb;
+    --text-secondary: #cfcbe0;
+    --text-muted: #9891b3;
 
-    /* Markenfarbe Lila (Branding, Flächen, Verläufe, Lichtakzente) */
-    --purple-core: #292045;
-    --purple-mid: #473578;
-    --purple-bright: #7357bf;
-    --purple-glow: rgba(115, 87, 191, 0.28);
-    --purple-border: rgba(138, 110, 214, 0.3);
-
-    /* Akzentfarbe Gelb (CTAs, Zahlen, Badges, Icons, feine Akzentlinien) */
     --accent-primary: #fef579;
     --accent-primary-strong: #f2cb07;
     --accent-secondary: #00b4e6;
     --accent-navy: #0d3b82;
 
-    /* Typografie: Weiß & helles Grau */
-    --text-primary: #ffffff;
-    --text-heading: #faf9fd;
-    --text-secondary: #d8d5e6;
-    --text-muted: #a39eb8;
+    /* Luxury Gradients */
+    --gradient-heading: linear-gradient(110deg, #ffffff 0%, #fff8c4 48%, #fef579 82%, #f2cb07 100%);
+    --gradient-accent: linear-gradient(135deg, #fff69a 0%, #fef579 50%, #f2cb07 100%);
+    --gradient-glass: linear-gradient(160deg, rgba(41, 32, 69, 0.56) 0%, rgba(16, 12, 32, 0.78) 100%);
+    --gradient-brand-bar: linear-gradient(130deg, #292046 72%, rgba(254, 245, 121, 0.22) 100%);
 
-    /* Editorial Automotive Gradients (Damiko Diagonal: Tiefes Violett -> Rauchiges Gold -> Warmes Gelb) */
-    --gradient-damiko-bg: linear-gradient(
-        130deg,
-        #22193f 0%,
-        #231b42 42%,
-        #3f3548 64%,
-        #6e6244 82%,
-        #a39355 100%
-    );
-    --gradient-damiko-bg-reverse: linear-gradient(
-        230deg,
-        #22193f 0%,
-        #231b42 42%,
-        #3f3548 64%,
-        #6e6244 82%,
-        #a39355 100%
-    );
-    --gradient-damiko-soft: linear-gradient(
-        130deg,
-        #1e1638 0%,
-        #231a40 46%,
-        #3b3246 68%,
-        #64593f 85%,
-        #8f814c 100%
-    );
-    --gradient-heading: linear-gradient(115deg, #ffffff 0%, #fffbe0 58%, #fef579 100%);
-    --gradient-accent: linear-gradient(135deg, #fef579 0%, #f5d118 100%);
-    --gradient-purple: linear-gradient(135deg, #231a42 0%, #3d3348 65%, #756746 100%);
-    --gradient-glass: linear-gradient(
-        135deg,
-        rgba(34, 25, 63, 0.92) 0%,
-        rgba(38, 29, 68, 0.88) 45%,
-        rgba(96, 85, 60, 0.72) 85%,
-        rgba(155, 140, 82, 0.62) 100%
-    );
-    --gradient-brand-bar: linear-gradient(130deg, #231a42 40%, #4a3f4c 72%, #9a8b51 100%);
-
-    /* Borders & Shadows */
-    --border-color: rgba(132, 104, 208, 0.24);
-    --border-highlight: rgba(254, 245, 121, 0.38);
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --shadow-luxury: 0 20px 48px rgba(0, 0, 0, 0.48);
+    --border-color: rgba(254, 245, 121, 0.2);
+    --border-subtle: rgba(255, 255, 255, 0.09);
+    --shadow-luxury: 0 24px 55px rgba(0, 0, 0, 0.52);
 
     /* Typography */
     --font-main: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
 
-    /* Spacing & Layout */
-    --container-max: 1220px;
+    /* Spacing */
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
@@ -121,8 +75,8 @@
     --breakpoint-desktop: 1024px;
     --breakpoint-wide: 1440px;
 
-    /* Motion */
+    /* Animation */
     --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
-    --transition-fast: 0.2s ease;
-    --transition-smooth: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-fast: 0.22s ease;
+    --transition-smooth: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
