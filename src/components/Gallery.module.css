@@ -1,8 +1,8 @@
 .gallery {
     padding: 6.5rem 2rem;
     background:
-        radial-gradient(ellipse 75% 45% at 50% 10%, rgba(254, 240, 101, 0.22) 0%, transparent 70%),
-        linear-gradient(180deg, #fdfcf7 0%, #fffbe5 50%, #fdfcf7 100%);
+        radial-gradient(ellipse 75% 45% at 50% 10%, rgba(67, 50, 112, 0.24) 0%, transparent 70%),
+        linear-gradient(180deg, #0e0d14 0%, #14121e 50%, #0e0d14 100%);
 }
 
 .inner {
@@ -125,22 +125,21 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.9rem 1.9rem;
+    padding: 0.95rem 1.9rem;
     border-radius: 8px;
-    background: #ffffff;
-    border: 1.5px solid var(--accent-primary);
+    background: rgba(41, 32, 69, 0.65);
+    border: 1px solid var(--accent-primary);
     color: var(--accent-primary);
     font-weight: 700;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    transition: all 0.25s ease;
-    box-shadow: 0 6px 18px rgba(12, 35, 70, 0.06);
+    transition: all 0.22s ease;
 }
 
 .moreButton:hover {
     background: var(--accent-primary);
-    color: #ffffff;
+    color: #0e0d14;
     transform: translateY(-2px);
 }
 

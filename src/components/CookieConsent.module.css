@@ -10,22 +10,18 @@
 }
 
 .banner {
-    --accent-primary: #fef579;
-    --accent-secondary: #25b8eb;
-    --text-secondary: #d7e2f4;
-    --text-muted: #9eb3d1;
     position: fixed;
     bottom: 16px;
     left: 16px;
     right: 16px;
     max-width: 540px;
-    background: #0f2547;
-    border: 1px solid rgba(254, 245, 121, 0.45);
+    background: #151221;
+    border: 1px solid rgba(132, 104, 208, 0.42);
     border-radius: 14px;
     padding: 1.15rem 1.25rem;
     color: #fff;
     z-index: 10002;
-    box-shadow: 0 14px 36px rgba(9, 25, 52, 0.45);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
     display: flex;
     flex-direction: column;
     gap: 0.85rem;

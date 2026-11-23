@@ -1,34 +1,46 @@
 .section {
     padding: 6.5rem 2rem;
     position: relative;
+    background:
+        radial-gradient(ellipse 65% 45% at 85% 20%, rgba(67, 50, 112, 0.26) 0%, transparent 68%),
+        linear-gradient(180deg, #0e0d14 0%, #151221 50%, #0e0d14 100%);
+    border-top: 1px solid rgba(132, 104, 208, 0.16);
 }
 
 .inner {
-    max-width: 1200px;
+    max-width: 1220px;
     margin: 0 auto;
 }
 
-.header {
-    text-align: center;
-    max-width: 820px;
-    margin: 0 auto 3.5rem;
+.topShowcase {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.headerCol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .kicker {
     display: inline-block;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--accent-primary);
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
 }
 
 .heading {
-    font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+    font-size: clamp(1.85rem, 3.3vw, 2.65rem);
     font-weight: 800;
-    line-height: 1.18;
-    margin-bottom: 1.15rem;
+    line-height: 1.16;
+    margin-bottom: 1.1rem;
     background: var(--gradient-heading);
     -webkit-background-clip: text;
     background-clip: text;
@@ -37,103 +49,166 @@
 
 .subtitle {
     color: var(--text-secondary);
-    font-size: 1.06rem;
-    line-height: 1.75;
+    font-size: 1.03rem;
+    line-height: 1.72;
+    margin-bottom: 1.65rem;
 }
 
 .subtitle strong {
-    color: #0c2346;
+    color: #ffffff;
     font-weight: 700;
+}
+
+.priceCallout {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.4rem;
+    border-radius: 12px;
+    background: rgba(41, 32, 69, 0.55);
+    border: 1px solid rgba(254, 245, 121, 0.32);
+}
+
+.priceLabel {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+}
+
+.priceVal {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+}
+
+.priceDivider {
+    width: 1px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.imagesCol {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.mainPhoto,
+.subPhoto {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(132, 104, 208, 0.32);
+    background: #14121f;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.mainPhoto picture,
+.subPhoto picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mainPhoto img,
+.subPhoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: 1.35rem;
     margin-bottom: 2.5rem;
 }
 
 .card {
     background: var(--gradient-glass);
-    border: 1px solid rgba(16, 61, 133, 0.14);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 10px 28px rgba(12, 35, 70, 0.06);
-    transition: transform 0.3s var(--ease-luxury), border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(132, 104, 208, 0.22);
+    border-radius: 14px;
+    padding: 1.75rem 1.85rem;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
+    transition: transform 0.3s var(--ease-luxury), border-color 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    border-color: rgba(16, 61, 133, 0.32);
-    box-shadow: 0 16px 36px rgba(12, 35, 70, 0.11);
+    border-color: rgba(254, 245, 121, 0.45);
 }
 
 .cardBadge {
     display: inline-block;
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #0c2346;
-    background: linear-gradient(135deg, #fff59e 0%, #fef065 100%);
-    border: 1px solid rgba(242, 194, 0, 0.45);
-    padding: 0.3rem 0.72rem;
-    border-radius: 999px;
-    margin-bottom: 1rem;
+    color: #0e0d14;
+    background: var(--accent-primary);
+    padding: 0.26rem 0.7rem;
+    border-radius: 6px;
+    margin-bottom: 0.9rem;
 }
 
 .cardTitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 800;
-    color: #0c2346;
-    margin-bottom: 0.65rem;
+    color: #ffffff;
+    margin-bottom: 0.55rem;
 }
 
 .cardText {
     color: var(--text-secondary);
-    font-size: 0.98rem;
-    line-height: 1.7;
+    font-size: 0.95rem;
+    line-height: 1.68;
 }
 
 .localBox {
-    background: linear-gradient(135deg, #fff9cc 0%, #fffef4 58%, #eef8fd 100%);
-    border: 1px solid rgba(16, 61, 133, 0.18);
-    border-radius: 18px;
-    padding: 2.5rem;
+    background: linear-gradient(140deg, rgba(45, 34, 78, 0.78) 0%, rgba(20, 17, 32, 0.95) 100%);
+    border: 1px solid rgba(132, 104, 208, 0.32);
+    border-radius: 16px;
+    padding: 2.25rem;
     display: grid;
     grid-template-columns: 1.4fr 0.6fr;
     gap: 2.25rem;
     align-items: center;
-    box-shadow: 0 14px 34px rgba(12, 35, 70, 0.07);
 }
 
 .localLabel {
     display: inline-block;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--accent-secondary);
-    margin-bottom: 0.6rem;
+    letter-spacing: 0.14em;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
 }
 
 .localHeading {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 800;
-    color: #0c2346;
-    line-height: 1.3;
-    margin-bottom: 0.9rem;
+    color: #ffffff;
+    line-height: 1.28;
+    margin-bottom: 0.85rem;
 }
 
 .localText {
     color: var(--text-secondary);
-    font-size: 0.98rem;
-    line-height: 1.75;
-    margin-bottom: 1.35rem;
+    font-size: 0.96rem;
+    line-height: 1.72;
+    margin-bottom: 1.25rem;
 }
 
 .localText strong {
-    color: #0c2346;
+    color: #ffffff;
 }
 
 .inlineLink {
@@ -146,23 +221,23 @@
 .districtList {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
+    gap: 0.4rem;
 }
 
 .districtTag {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 600;
-    color: #0c2346;
-    background: #ffffff;
-    border: 1px solid rgba(16, 61, 133, 0.18);
-    padding: 0.28rem 0.65rem;
+    color: #e4e0f2;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(132, 104, 208, 0.25);
+    padding: 0.26rem 0.65rem;
     border-radius: 999px;
 }
 
 .localActions {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.8rem;
 }
 
 .primaryCta {
@@ -170,51 +245,54 @@
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
-    padding: 1rem 1.4rem;
+    padding: 0.95rem 1.35rem;
     background: var(--gradient-accent);
-    color: #ffffff;
+    color: #0e0d14;
     font-weight: 800;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     border-radius: 8px;
     text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 8px 20px rgba(16, 61, 133, 0.2);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .primaryCta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 26px rgba(16, 61, 133, 0.28);
+    box-shadow: 0 10px 24px rgba(254, 245, 121, 0.28);
 }
 
 .secondaryCta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.92rem 1.4rem;
-    background: #ffffff;
-    border: 1.5px solid rgba(16, 61, 133, 0.32);
+    padding: 0.9rem 1.35rem;
+    background: rgba(41, 32, 69, 0.55);
+    border: 1px solid rgba(254, 245, 121, 0.38);
     color: var(--accent-primary);
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     border-radius: 8px;
     text-align: center;
-    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
 }
 
 .secondaryCta:hover {
-    background: #fff6a8;
-    color: #0c2346;
+    background: rgba(67, 50, 112, 0.85);
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
+    .topShowcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .localBox {
         grid-template-columns: 1fr;
-        padding: 2rem;
     }
 
     .localActions {
@@ -237,8 +315,8 @@
         grid-template-columns: 1fr;
     }
 
-    .card {
-        padding: 1.5rem;
+    .imagesCol {
+        grid-template-columns: 1fr 1fr;
     }
 
     .localBox {

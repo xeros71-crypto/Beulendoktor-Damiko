@@ -7,9 +7,8 @@
 body {
     background-color: var(--bg-dark);
     background-image:
-        radial-gradient(ellipse 90% 45% at 50% 0%, rgba(254, 240, 101, 0.45) 0%, rgba(254, 248, 180, 0.2) 48%, transparent 76%),
-        radial-gradient(ellipse 75% 48% at 85% 24%, rgba(254, 242, 115, 0.22) 0%, transparent 65%),
-        radial-gradient(ellipse 70% 48% at 14% 55%, rgba(0, 180, 230, 0.07) 0%, transparent 65%);
+        radial-gradient(ellipse 80% 45% at 78% 6%, rgba(88, 64, 152, 0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 65% 40% at 15% 38%, rgba(41, 32, 69, 0.35) 0%, transparent 62%);
     color: var(--text-primary);
     font-family: var(--font-main);
     line-height: 1.6;
@@ -20,8 +19,11 @@ body {
 
 #leistungen,
 #autolackierer-frankfurt,
+#ausbeulservice-highlight,
 #ueber-uns,
+#about,
 #leasing,
+#leasing-service,
 #arbeiten,
 #faq,
 #contact,

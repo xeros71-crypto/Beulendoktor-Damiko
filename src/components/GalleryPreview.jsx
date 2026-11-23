@@ -48,10 +48,10 @@ const GalleryPreview = () => {
                                 )}
                                 <img src={item.src} alt={item.alt} width={640} height={640} loading="lazy" decoding="async" />
                             </picture>
-                            <div className={styles.captionBar}>
+                            <span className={styles.captionBar}>
                                 <span className={styles.category}>{item.category}</span>
                                 <span className={styles.itemTitle}>{item.title}</span>
-                            </div>
+                            </span>
                         </button>
                     ))}
                 </div>

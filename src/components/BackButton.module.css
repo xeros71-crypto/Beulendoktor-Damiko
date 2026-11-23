@@ -1,5 +1,5 @@
 .container {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
@@ -9,21 +9,19 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    background: #ffffff;
-    border: 1.5px solid var(--accent-primary);
+    padding: 0.82rem 1.85rem;
+    background: rgba(41, 32, 69, 0.55);
+    border: 1px solid rgba(254, 245, 121, 0.4);
     border-radius: 999px;
     color: var(--accent-primary);
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.25s ease;
-    box-shadow: 0 6px 18px rgba(12, 35, 70, 0.06);
+    font-size: 0.92rem;
+    transition: all 0.22s ease;
 }
 
 .button:hover {
     background: var(--accent-primary);
-    color: #ffffff;
-    box-shadow: 0 10px 24px rgba(16, 61, 133, 0.22);
+    color: #0e0d14;
     transform: translateY(-2px);
 }
