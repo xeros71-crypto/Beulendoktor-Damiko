@@ -34,36 +34,34 @@
 }
 
 :root {
-    /* Exklusive Damiko Brand Palette (Helles Royal-Indigo, Champagne-Gold-Verlauf & Logo Cyan) */
-    --bg-dark: #17122e;
-    --bg-deep: #120e24;
-    --bg-brand: #2f2452;
-    --bg-card: #221b42;
-    --bg-card-hover: #2c2354;
-    --text-primary: #ffffff;
-    --text-heading: #fdfcf7;
-    --text-secondary: #e2def2;
-    --text-muted: #b5afd0;
+    /* Freundliches, helles Damiko Daylight-Design mit edlem Sonnengelb-Verlauf & Royal-Navy */
+    --bg-dark: #fdfcf7;
+    --bg-deep: #f4f6fb;
+    --bg-brand: #fff6a8;
+    --bg-card: #ffffff;
+    --bg-card-hover: #fffef5;
+    --text-primary: #0c2346;
+    --text-heading: #091d3e;
+    --text-secondary: #2e4363;
+    --text-muted: #566b8a;
 
-    --accent-primary: #fef579;
-    --accent-primary-strong: #f2cb07;
-    --accent-secondary: #00b4e6;
-    --accent-navy: #0d3b82;
+    --accent-primary: #0f3c85;
+    --accent-primary-strong: #0b2b61;
+    --accent-gold: #fef065;
+    --accent-gold-strong: #f2c200;
+    --accent-secondary: #0088c2;
+    --accent-navy: #0c2346;
 
-    /* Luxury Gradients mit edlem Gelb-/Champagner-Schimmer */
-    --gradient-heading: linear-gradient(110deg, #ffffff 0%, #fff9cc 42%, #fef579 78%, #f2cb07 100%);
-    --gradient-accent: linear-gradient(135deg, #fff8ad 0%, #fef579 50%, #f2cb07 100%);
-    --gradient-glass: linear-gradient(
-        155deg,
-        rgba(254, 245, 121, 0.09) 0%,
-        rgba(52, 40, 90, 0.76) 42%,
-        rgba(28, 21, 54, 0.9) 100%
-    );
-    --gradient-brand-bar: linear-gradient(130deg, #312657 65%, rgba(254, 245, 121, 0.28) 100%);
+    /* Hochwertige helle Verläufe */
+    --gradient-heading: linear-gradient(115deg, #091d3e 0%, #103d85 58%, #0077b6 100%);
+    --gradient-accent: linear-gradient(135deg, #103d85 0%, #0b2859 100%);
+    --gradient-gold: linear-gradient(135deg, #fff59e 0%, #fee84d 55%, #f5c400 100%);
+    --gradient-glass: linear-gradient(160deg, #ffffff 0%, #fffef8 62%, #fff9d9 100%);
+    --gradient-brand-bar: linear-gradient(130deg, #fff7b2 0%, #fef9d6 60%, #ffffff 100%);
 
-    --border-color: rgba(254, 245, 121, 0.28);
-    --border-subtle: rgba(254, 245, 121, 0.13);
-    --shadow-luxury: 0 22px 50px rgba(7, 5, 16, 0.42);
+    --border-color: rgba(16, 61, 133, 0.15);
+    --border-subtle: rgba(16, 61, 133, 0.09);
+    --shadow-luxury: 0 14px 36px rgba(12, 35, 70, 0.08);
 
     /* Typography */
     --font-main: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;

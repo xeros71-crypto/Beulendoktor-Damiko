@@ -2,8 +2,8 @@
     position: relative;
     padding: 7rem 2rem;
     background:
-        radial-gradient(ellipse 75% 45% at 50% 0%, rgba(254, 245, 121, 0.1) 0%, transparent 70%),
-        linear-gradient(180deg, #17122e 0%, #221a42 52%, #191332 100%);
+        radial-gradient(ellipse 75% 45% at 50% 0%, rgba(254, 240, 101, 0.25) 0%, transparent 70%),
+        linear-gradient(180deg, #fdfcf7 0%, #fffbe6 52%, #fdfcf7 100%);
 }
 
 .section::before {
@@ -13,7 +13,7 @@
     left: 10%;
     right: 10%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(254, 245, 121, 0.28), transparent);
+    background: linear-gradient(90deg, transparent, rgba(16, 61, 133, 0.16), transparent);
 }
 
 .inner {
@@ -65,11 +65,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background: var(--gradient-glass);
-    border: 1px solid rgba(254, 245, 121, 0.15);
+    background: #ffffff;
+    border: 1px solid rgba(16, 61, 133, 0.13);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 30px rgba(12, 35, 70, 0.07);
     transition:
         transform 0.4s var(--ease-luxury),
         border-color 0.35s ease,
@@ -82,16 +82,16 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+    height: 3px;
+    background: linear-gradient(90deg, #fef065, #f5c400, #0088c2);
     transform: scaleX(0);
     transition: transform 0.45s var(--ease-luxury);
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(254, 245, 121, 0.55);
-    box-shadow: 0 26px 55px rgba(0, 0, 0, 0.52), 0 0 32px rgba(254, 245, 121, 0.14);
+    transform: translateY(-6px);
+    border-color: rgba(16, 61, 133, 0.32);
+    box-shadow: 0 20px 42px rgba(12, 35, 70, 0.12);
 }
 
 .card:hover::after {
@@ -137,13 +137,14 @@
     left: 1rem;
     padding: 0.34rem 0.85rem;
     border-radius: 999px;
-    background: rgba(13, 10, 26, 0.9);
-    border: 1px solid rgba(254, 245, 121, 0.45);
-    color: var(--accent-primary);
+    background: rgba(255, 248, 175, 0.96);
+    border: 1px solid rgba(242, 194, 0, 0.6);
+    color: #0c2346;
     font-size: 0.72rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    box-shadow: 0 4px 12px rgba(12, 35, 70, 0.18);
 }
 
 .cardBody {
@@ -155,8 +156,8 @@
 
 .cardTitle {
     font-size: 1.24rem;
-    font-weight: 700;
-    color: #fff;
+    font-weight: 800;
+    color: #0c2346;
     margin-bottom: 0.65rem;
     letter-spacing: -0.01em;
 }

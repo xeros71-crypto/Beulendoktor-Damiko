@@ -1,9 +1,9 @@
 .section {
     padding: 6rem 2rem;
     background:
-        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(254, 245, 121, 0.09) 0%, transparent 68%),
-        linear-gradient(180deg, #191332 0%, #231b43 100%);
-    border-top: 1px solid rgba(254, 245, 121, 0.18);
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(254, 240, 101, 0.26) 0%, transparent 68%),
+        linear-gradient(180deg, #fdfcf7 0%, #fffbe3 100%);
+    border-top: 1px solid rgba(16, 61, 133, 0.12);
 }
 
 .inner {
@@ -40,22 +40,24 @@
 }
 
 .item {
-    background: rgba(41, 32, 69, 0.55);
-    border: 1px solid rgba(254, 245, 121, 0.16);
+    background: #ffffff;
+    border: 1px solid rgba(16, 61, 133, 0.14);
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
-    transition: border-color 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 8px 20px rgba(12, 35, 70, 0.05);
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .item[open] {
-    border-color: rgba(254, 245, 121, 0.45);
-    background: rgba(41, 32, 69, 0.78);
+    border-color: rgba(16, 61, 133, 0.35);
+    background: #fffef7;
+    box-shadow: 0 12px 28px rgba(12, 35, 70, 0.08);
 }
 
 .question {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #fff;
+    color: #0c2346;
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -84,7 +86,7 @@
 .answer {
     margin-top: 0.9rem;
     padding-top: 0.85rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(16, 61, 133, 0.1);
     color: var(--text-secondary);
     line-height: 1.7;
     font-size: 0.98rem;

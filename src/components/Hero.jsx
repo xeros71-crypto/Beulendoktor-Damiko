@@ -44,16 +44,9 @@ const Hero = () => {
 
     return (
         <section className={styles.hero}>
-            <div className={styles.background}>
-                <div className={styles.bgImage} aria-hidden="true" />
-                <div className={styles.lightSweep} aria-hidden="true" />
-                <div className={styles.overlay} aria-hidden="true" />
-            </div>
-
             <div className={styles.inner}>
                 <div className={styles.content}>
                     <div className={styles.heroLogoContainer}>
-                        <div className={styles.logoAura} aria-hidden="true" />
                         <picture>
                             <source
                                 type="image/webp"

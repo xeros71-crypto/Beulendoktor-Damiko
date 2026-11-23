@@ -1,53 +1,19 @@
 .hero {
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 92vh;
+    min-height: 92dvh;
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 7.25rem 2rem 2.75rem;
+    padding: 7.25rem 2rem 3.25rem;
     contain: layout paint;
-}
-
-.background {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 65% 22%, #3a2d66 0%, #231b42 55%, #16112c 100%);
-    z-index: -1;
-    overflow: hidden;
-}
-
-.bgImage {
-    position: absolute;
-    inset: 0;
-    background-image: url('/images/lackierung-kabine-960w.webp');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.44;
-}
-
-.lightSweep {
-    position: absolute;
-    inset: 0;
     background:
-        radial-gradient(ellipse 72% 46% at 50% 0%, rgba(254, 245, 121, 0.24) 0%, rgba(242, 203, 7, 0.08) 46%, transparent 74%),
-        radial-gradient(ellipse 55% 48% at 85% 28%, rgba(0, 180, 230, 0.15) 0%, transparent 72%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(22, 17, 44, 0.48) 0%,
-        rgba(34, 26, 66, 0.62) 50%,
-        rgba(23, 18, 46, 0.95) 100%
-    );
-    z-index: 2;
+        radial-gradient(ellipse 85% 58% at 50% 0%, rgba(254, 238, 88, 0.62) 0%, rgba(254, 246, 168, 0.34) 48%, transparent 78%),
+        radial-gradient(ellipse 55% 45% at 88% 20%, rgba(0, 180, 230, 0.1) 0%, transparent 70%),
+        linear-gradient(180deg, #fff6a6 0%, #fefbe2 46%, #fdfcf7 100%);
+    border-bottom: 1px solid rgba(16, 61, 133, 0.1);
 }
 
 .inner {
@@ -71,9 +37,9 @@
 
 .heroLogoContainer {
     position: relative;
-    width: min(100%, 215px);
+    width: min(100%, 205px);
     aspect-ratio: 220 / 269;
-    margin: 0 auto 1.35rem;
+    margin: 0 auto 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,26 +51,13 @@
     height: 100%;
 }
 
-.logoAura {
-    position: absolute;
-    inset: -32%;
-    border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        rgba(254, 245, 121, 0.25) 0%,
-        rgba(0, 180, 230, 0.2) 42%,
-        transparent 72%
-    );
-    pointer-events: none;
-}
-
 .heroLogo {
     position: relative;
     z-index: 1;
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 8px 18px rgba(12, 35, 70, 0.12));
 }
 
 .kicker {
@@ -114,32 +67,32 @@
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.22em;
-    color: var(--accent-primary);
+    letter-spacing: 0.2em;
+    color: #0f3c85;
     margin-bottom: 0.95rem;
 }
 
 .kickerLine {
     width: 34px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+    background: linear-gradient(90deg, transparent, rgba(15, 60, 133, 0.45), transparent);
 }
 
 .title {
-    font-size: clamp(2.05rem, 4.5vw, 3.4rem);
+    font-size: clamp(2.05rem, 4.5vw, 3.35rem);
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
-    line-height: 1.13;
-    background: linear-gradient(180deg, #ffffff 10%, #efeaf9 65%, #fef579 100%);
+    line-height: 1.14;
+    background: linear-gradient(115deg, #091d3e 0%, #103d85 60%, #0077b6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .description {
-    font-size: clamp(1rem, 1.45vw, 1.18rem);
-    color: #ded9ee;
+    font-size: clamp(1.02rem, 1.45vw, 1.18rem);
+    color: #2b3f5c;
     margin-bottom: 2.25rem;
     max-width: 700px;
     line-height: 1.7;
@@ -160,34 +113,19 @@
     font-size: 0.92rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #120d22;
-    background: var(--gradient-accent);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 6px;
-    transition: transform 0.25s var(--ease-luxury), box-shadow 0.25s ease;
-    box-shadow: 0 10px 28px rgba(254, 245, 121, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-}
-
-.ctaPrimary::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 70%;
-    height: 100%;
-    background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.65) 50%, transparent 80%);
-    transform: skewX(-18deg);
-    transition: left 0.7s var(--ease-luxury);
+    letter-spacing: 0.07em;
+    color: #ffffff;
+    background: linear-gradient(135deg, #103d85 0%, #0b2859 100%);
+    border: 1px solid rgba(16, 61, 133, 0.9);
+    border-radius: 8px;
+    transition: transform 0.25s var(--ease-luxury), box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 10px 24px rgba(16, 61, 133, 0.22);
 }
 
 .ctaPrimary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 34px rgba(254, 245, 121, 0.38), inset 0 1px 0 #ffffff;
-}
-
-.ctaPrimary:hover::after {
-    left: 145%;
+    background: linear-gradient(135deg, #154ca3 0%, #0f3575 100%);
+    box-shadow: 0 14px 30px rgba(16, 61, 133, 0.3);
 }
 
 .ctaSecondary {
@@ -198,23 +136,23 @@
     font-size: 0.93rem;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: var(--accent-primary);
-    background: rgba(20, 15, 38, 0.88);
-    border: 1px solid rgba(254, 245, 121, 0.48);
-    border-radius: 6px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    transition: transform 0.25s var(--ease-luxury), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    color: #0c2346;
+    background: #ffffff;
+    border: 1.5px solid rgba(16, 61, 133, 0.28);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(12, 35, 70, 0.06);
+    transition: transform 0.25s var(--ease-luxury), background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .ctaSecondary svg {
     width: 18px;
     height: 18px;
+    color: #103d85;
 }
 
 .ctaSecondary:hover {
-    background: rgba(254, 245, 121, 0.16);
-    color: #fff;
-    border-color: var(--accent-primary);
+    background: #fffbe0;
+    border-color: #103d85;
     transform: translateY(-2px);
 }
 
@@ -225,18 +163,17 @@
     font-size: 0.91rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    color: #e6f9ff;
-    background: rgba(11, 42, 66, 0.85);
-    border: 1px solid rgba(0, 180, 230, 0.58);
-    border-radius: 6px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: transform 0.25s var(--ease-luxury), background-color 0.25s ease, color 0.25s ease;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0095d5 0%, #0077b6 100%);
+    border: 1px solid rgba(0, 136, 194, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 136, 194, 0.2);
+    transition: transform 0.25s var(--ease-luxury), box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .ctaWhatsapp:hover {
-    background: var(--accent-secondary);
-    color: #091321;
-    border-color: var(--accent-secondary);
+    filter: brightness(1.06);
+    box-shadow: 0 12px 26px rgba(0, 136, 194, 0.28);
     transform: translateY(-2px);
 }
 
@@ -254,36 +191,37 @@
     align-items: flex-start;
     gap: 1rem;
     padding: 1.4rem 1.55rem;
-    background: linear-gradient(160deg, rgba(35, 27, 62, 0.92) 0%, rgba(16, 12, 32, 0.95) 100%);
-    border: 1px solid rgba(254, 245, 121, 0.2);
+    background: linear-gradient(160deg, #ffffff 0%, #fffef7 65%, #fff9d6 100%);
+    border: 1px solid rgba(16, 61, 133, 0.14);
     border-radius: 14px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s var(--ease-luxury), border-color 0.3s ease;
+    box-shadow: 0 10px 26px rgba(12, 35, 70, 0.07);
+    transition: transform 0.3s var(--ease-luxury), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .uspCard::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 20%;
-    right: 20%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(254, 245, 121, 0.75), transparent);
-    opacity: 0.6;
+    left: 15%;
+    right: 15%;
+    height: 3px;
+    border-radius: 0 0 4px 4px;
+    background: linear-gradient(90deg, #fef065, #f5c400, #0095d5);
 }
 
 .uspCard:hover {
     transform: translateY(-3px);
-    border-color: rgba(254, 245, 121, 0.55);
+    border-color: rgba(16, 61, 133, 0.32);
+    box-shadow: 0 14px 32px rgba(12, 35, 70, 0.11);
 }
 
 .uspIcon {
     width: 44px;
     height: 44px;
     border-radius: 11px;
-    background: linear-gradient(135deg, rgba(254, 245, 121, 0.16), rgba(0, 180, 230, 0.12));
-    border: 1px solid rgba(254, 245, 121, 0.28);
-    color: var(--accent-primary);
+    background: linear-gradient(135deg, #fff59e 0%, #fef065 100%);
+    border: 1px solid rgba(242, 203, 7, 0.45);
+    color: #0c2346;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -298,13 +236,13 @@
 .uspTitle {
     font-size: 1.03rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #0c2346;
     margin-bottom: 0.25rem;
 }
 
 .uspDesc {
     font-size: 0.87rem;
-    color: var(--text-secondary);
+    color: #3b4f6b;
     line-height: 1.48;
 }
 
@@ -313,8 +251,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.25rem;
-    color: rgba(254, 245, 121, 0.78);
+    color: #0f3c85;
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -323,14 +260,14 @@
 }
 
 .scrollCue:hover {
-    color: #ffffff;
+    color: #0077b6;
     transform: translateY(2px);
 }
 
 .scrollLine {
-    width: 1px;
-    height: 44px;
-    background: linear-gradient(180deg, var(--accent-primary), transparent);
+    width: 2px;
+    height: 38px;
+    background: linear-gradient(180deg, #103d85, transparent);
     transform-origin: top;
     animation: scrollPulse 2.4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
@@ -365,10 +302,6 @@
 }
 
 @media (max-width: 768px) {
-    .bgImage {
-        background-image: url('/images/lackierung-kabine-640w.webp');
-    }
-
     .hero {
         align-items: flex-start;
         padding: 6.25rem 1.25rem 2.5rem;

@@ -1,10 +1,10 @@
 .section {
     padding: 7rem 2rem;
     background:
-        radial-gradient(ellipse 80% 50% at 50% 15%, rgba(254, 245, 121, 0.11) 0%, transparent 70%),
-        linear-gradient(180deg, #181330 0%, #261d47 50%, #181330 100%);
-    border-top: 1px solid rgba(254, 245, 121, 0.22);
-    border-bottom: 1px solid rgba(254, 245, 121, 0.22);
+        radial-gradient(ellipse 80% 50% at 50% 15%, rgba(254, 240, 101, 0.35) 0%, transparent 70%),
+        linear-gradient(180deg, #fffbe2 0%, #fff6b0 50%, #fffdf2 100%);
+    border-top: 1px solid rgba(16, 61, 133, 0.12);
+    border-bottom: 1px solid rgba(16, 61, 133, 0.12);
 }
 
 .container {
@@ -59,20 +59,20 @@
 }
 
 .stepCard {
-    background: var(--gradient-glass);
-    border: 1px solid rgba(254, 245, 121, 0.18);
+    background: #ffffff;
+    border: 1px solid rgba(16, 61, 133, 0.14);
     border-radius: 16px;
     padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 26px rgba(12, 35, 70, 0.06);
     transition: transform 0.35s var(--ease-luxury), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
 .stepCard:hover {
     transform: translateY(-5px);
-    border-color: rgba(254, 245, 121, 0.55);
-    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5), 0 0 24px rgba(254, 245, 121, 0.12);
+    border-color: rgba(16, 61, 133, 0.35);
+    box-shadow: 0 16px 34px rgba(12, 35, 70, 0.11);
 }
 
 .stepNumber {
@@ -85,8 +85,8 @@
 
 .stepTitle {
     font-size: 1.15rem;
-    font-weight: 700;
-    color: #fff;
+    font-weight: 800;
+    color: #0c2346;
     margin-bottom: 0.55rem;
 }
 
@@ -105,7 +105,7 @@
 .imageCard {
     border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(254, 245, 121, 0.22);
+    border: 1px solid rgba(16, 61, 133, 0.16);
     aspect-ratio: 16 / 10;
     flex: 1;
     min-height: 240px;
@@ -119,13 +119,14 @@
 }
 
 .ctaBox {
-    background: rgba(20, 15, 38, 0.85);
-    border: 1px solid rgba(0, 180, 230, 0.35);
+    background: #ffffff;
+    border: 1px solid rgba(0, 136, 194, 0.32);
     border-radius: 14px;
     padding: 1.4rem 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    box-shadow: 0 10px 26px rgba(12, 35, 70, 0.06);
 }
 
 .ctaBox p {
@@ -135,7 +136,7 @@
 }
 
 .ctaBox strong {
-    color: var(--accent-primary);
+    color: #0c2346;
 }
 
 .linkButton {
@@ -143,18 +144,18 @@
     align-items: center;
     justify-content: center;
     padding: 0.85rem 1.4rem;
-    border-radius: 6px;
-    background: var(--accent-primary);
-    color: #140f26;
+    border-radius: 8px;
+    background: var(--gradient-accent);
+    color: #ffffff;
     font-weight: 800;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    transition: filter 0.25s ease, transform 0.25s ease;
 }
 
 .linkButton:hover {
-    background: #ffffff;
+    filter: brightness(1.08);
     transform: translateY(-2px);
 }
 
