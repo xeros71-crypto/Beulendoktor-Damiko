@@ -1,9 +1,6 @@
 .gallery {
     padding: 6.5rem 2rem;
-    background:
-        radial-gradient(ellipse 60% 42% at 20% 10%, rgba(254, 245, 121, 0.11) 0%, transparent 68%),
-        radial-gradient(ellipse 72% 46% at 80% 35%, rgba(88, 62, 158, 0.26) 0%, transparent 70%),
-        linear-gradient(180deg, #110f1a 0%, #171425 50%, #110f1a 100%);
+    background: var(--gradient-damiko-bg-reverse);
 }
 
 .inner {
