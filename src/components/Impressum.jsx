@@ -29,10 +29,10 @@ const Impressum = () => {
                     Hinweis: {BUSINESS_INFO.appointmentNote}.
                 </p>
 
-                <h2>Vertretung &amp; Steuerangaben</h2>
+                <h2>Umsatzsteuer-ID</h2>
                 <p>
-                    Inhaber sowie E-Mail-Adresse und Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG werden vor
-                    finaler Freigabe dieser Domain verbindlich ergänzt.
+                    Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+                    <strong>{BUSINESS_INFO.vatId}</strong>
                 </p>
 
                 <h2>Haftung für Inhalte &amp; Links</h2>

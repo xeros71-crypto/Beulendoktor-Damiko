@@ -23,6 +23,7 @@ export const BUSINESS_INFO = {
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hagebuttenweg+2,+60433+Frankfurt+am+Main',
     appointmentNote: 'Termine erfolgen ausschließlich nach vorheriger Absprache',
     partnerNote: 'Kooperation mit Kfz-Gutachter DK',
+    vatId: 'DE815623156',
 };
 
 export const HOME_SEO = {
@@ -241,6 +242,7 @@ export function buildOrganizationNode({ url, image, description, areaServed, inc
         },
         description: description || HOME_SEO.description,
         foundingDate: String(BUSINESS_INFO.foundedYear),
+        vatID: BUSINESS_INFO.vatId,
         telephone: '+4915140333375',
         priceRange: '€€',
         currenciesAccepted: 'EUR',
