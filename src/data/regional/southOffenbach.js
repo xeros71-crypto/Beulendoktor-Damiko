@@ -551,4 +551,334 @@ export const southOffenbachPages = [
         ctaText:
             'Machen Sie einfach 2–3 Fotos bei Tageslicht und senden Sie sie per WhatsApp – wir melden uns kurzfristig mit der wirtschaftlichsten Lösung.',
     },
+    {
+        slug: 'smart-repair-moerfelden-walldorf',
+        city: 'Mörfelden-Walldorf',
+        shortCity: 'Mörfelden-Walldorf',
+        regionGroup: 'sueden',
+        priority: '0.8',
+        footerLabel: 'Smart Repair Mörfelden-Walldorf',
+        breadcrumbLabel: 'Smart Repair Mörfelden-Walldorf',
+        areaServed: 'Mörfelden-Walldorf',
+        areaType: 'City',
+        postalCode: '64546',
+        distanceKm: 'ca. 24 km',
+        driveTime: 'ca. 22 Min.',
+        routeSummary: 'direkt über die A5',
+        serviceMode: 'Werkstatt & Hol-/Bringservice',
+        title: 'Smart Repair, Beulendoktor & Lackierer Mörfelden-Walldorf | Damiko',
+        description:
+            'Smart Repair, Beulendoktor & Autolackierung für Mörfelden-Walldorf (64546): Dellen ohne Lackieren, Kratzer entfernen, Teillackierung & Leasing-Check über A5!',
+        keywords:
+            'Smart Repair Mörfelden-Walldorf, Beulendoktor Mörfelden-Walldorf, Autolackierer Mörfelden-Walldorf, Autolackiererei Walldorf, Mörfelden, 64546 Mörfelden-Walldorf',
+        image: '/images/smart-repair-1.jpg',
+        imageAlt: 'Smart Repair und lackschadenfreie Dellenentfernung für Kunden aus Mörfelden-Walldorf',
+        kicker: 'Flughafen-Süd / A5 · PLZ 64546 · ca. 22 Min. über A5',
+        heroHeading: 'Smart Repair & Beulendoktor für Mörfelden-Walldorf',
+        intro: 'Südlich des Frankfurter Flughafens direkt an der A5 und B44 gelegen sind Mörfelden und Walldorf in rund 22 Minuten mit unserem Standort in Frankfurt-Nord verbunden. Beulendoktor Damiko bietet Privatfahrern, Airport-Pendlern und Gewerbebetrieben wirtschaftliches Smart Repair, lackschadenfreies Ausbeulen und präzise Teillackierungen.',
+        highlightBox:
+            'Direkte A5-Verbindung aus Mörfelden-Walldorf: Spot Repair ab ca. 150–250 €, bis zu 75 % Ersparnis beim Ausbeulen ohne Lackieren und 4-Schritte Leasing-Service.',
+        highlightsHeading: 'Ihre Vorteile als Kunde aus Mörfelden-Walldorf',
+        highlights: [
+            'Schnelle Autobahn-Anbindung über die A5 (Anschlussstelle Mörfelden-Walldorf / Langen-Mörfelden)',
+            'Wirtschaftliches Spot Repair bei Stoßstangen-Kratzern, Schrammen und Steinschlägen',
+            'Lackschadenfreies Ausbeulen (PDR) bei Park- und Hageldellen unter Erhalt des Werkslacks',
+            'Präzise Teil- & Unfalllackierungen in staubfreier Lackierkabine ohne Farbunterschied',
+            'Leasingrückläufer-Vorbereitung inkl. optionalem Hol- und Bringservice',
+        ],
+        localSectionHeading: 'Schnelle Schadenhilfe für Pendler, Familien- & Firmenwagen in Mörfelden und Walldorf',
+        localParagraphs: [
+            'In der Doppelstadt Mörfelden-Walldorf – zwischen den Gewerbegebieten in Walldorf-Ost und Mörfelden, den S-Bahn-Pendlerparkplätzen und dem starken Verkehr auf B44, B486 und A5 – bleiben Parkrempler, Steinschläge und Türkantendellen im Alltag nicht aus. Gerade bei Leasing- und Dienstfahrzeugen im Flughafen-Umfeld summieren sich solche Spuren bei der Rückgabe schnell zu hohen Nachzahlungen.',
+            'Bei Beulendoktor Damiko prüfen wir anhand Ihrer Fotos vorab ehrlich, welches Verfahren das beste Preis-Leistungs-Verhältnis bietet: Solange der Lack unversehrt ist, drücken wir Dellen per PDR-Technik komplett ohne Spachteln heraus. Bei Lackschäden setzen wir auf gezieltes Spot Repair oder eine fachgerechte Teillackierung in Original-Farbnuance.',
+            'Dank der durchgehenden A5-Verbindung sind Sie aus Mörfelden und Walldorf zügig bei uns – oder wir organisieren nach vorheriger Absprache bequem die Abholung und Rücklieferung Ihres Fahrzeugs.',
+        ],
+        localCasesHeading: 'Typische Reparaturen für Fahrzeuge aus Mörfelden-Walldorf',
+        localCases: [
+            {
+                title: 'Kratzer & Parkrempler an Stoßfänger oder Radlauf',
+                badge: 'Spot Repair · ab ca. 150–250 €',
+                text: 'Lokal begrenzte Lackschäden korrigieren wir punktgenau und mit kurzer Standzeit – ohne teuren Bauteil-Austausch.',
+            },
+            {
+                title: 'Park- & Hageldellen ohne Lackieren',
+                badge: 'PDR · bis 75 % günstiger',
+                text: 'Schonende Dellenentfernung an Türen, Dach und Motorhaube bei vollem Erhalt der originalen Lackdicke.',
+            },
+            {
+                title: 'Leasingrückgabe-Check für Airport- & A5-Pendler',
+                badge: '4-Schritte Komplettpaket',
+                text: 'Alle Dellen, Kratzer und Gebrauchsspuren gebündelt vor dem Gutachtertermin beseitigen.',
+            },
+        ],
+        directionsHeading: 'Direkte Route über die A5 aus Mörfelden-Walldorf',
+        directionsNote:
+            'Von Mörfelden oder Walldorf fahren Sie direkt auf die A5 Richtung Frankfurt / Kassel bis zum Nordwestkreuz Frankfurt und weiter über die Rosa-Luxemburg-Straße / A661 (Ausfahrt Eckenheim / Preungesheim) in ca. 22 Minuten zu unserem Standort in 60433 Frankfurt-Nord.',
+        districts: [
+            'Mörfelden',
+            'Walldorf',
+            'Gewerbegebiet Walldorf-Ost',
+            'Gewerbegebiet Mörfelden',
+            'Nikolauspforte',
+        ],
+        recommendedServices: [
+            {
+                slug: 'smart-repair',
+                localDesc: 'Punktgenaue Kratzer- und Schrammenbeseitigung zum fairen Preis.',
+            },
+            {
+                slug: 'ausbeulservice',
+                localDesc: 'Lackschadenfreies Ausbeulen von Park- und Hageldellen.',
+            },
+            {
+                slug: 'leasingruecklaeufer',
+                localDesc: 'Stressfreie Vorbereitung von Leasing- und Dienstwagen vor der Abgabe.',
+            },
+        ],
+        faqsHeading: 'Häufige Fragen aus Mörfelden-Walldorf',
+        faqs: [
+            {
+                q: 'Wie schnell erhalte ich aus Mörfelden-Walldorf einen Kostenvoranschlag?',
+                a: 'Senden Sie uns einfach 2–3 Fotos des Schadens bei Tageslicht per WhatsApp an 0151 40 3333 75 – Sie erhalten kurzfristig eine ehrliche Einschätzung, noch bevor Sie losfahren.',
+            },
+            {
+                q: 'Bieten Sie für Mörfelden und Walldorf auch einen Hol- und Bringservice an?',
+                a: 'Ja! Nach vorheriger Terminabsprache holen wir Ihr Fahrzeug gerne in Mörfelden oder Walldorf (auch im Gewerbegebiet) ab und bringen es fertig repariert zurück.',
+            },
+            {
+                q: 'Können auch Unfall- oder Hagelschäden über die Versicherung abgewickelt werden?',
+                a: 'Ja, in direkter Kooperation mit Kfz-Gutachter DK unterstützen wir Sie zuverlässig bei der Schadensdokumentation und fachgerechten Instandsetzung.',
+            },
+        ],
+        nearbySlugs: [
+            'smart-repair-langen',
+            'beulendoktor-kelsterbach',
+            'beulendoktor-raunheim',
+            'autolackiererei-ruesselsheim',
+            'autolackiererei-neu-isenburg',
+            'beulendoktor-dreieich',
+        ],
+        ctaHeading: 'Kostenlosen WhatsApp Foto-Check für Mörfelden-Walldorf starten',
+        ctaText:
+            'Schicken Sie uns kurz 2–3 Fotos Ihres Schadens per WhatsApp – wir melden uns rasch mit der wirtschaftlichsten Reparaturlösung.',
+    },
+    {
+        slug: 'beulendoktor-raunheim',
+        city: 'Raunheim',
+        shortCity: 'Raunheim',
+        regionGroup: 'sueden',
+        priority: '0.8',
+        footerLabel: 'Beulendoktor Raunheim',
+        breadcrumbLabel: 'Beulendoktor Raunheim',
+        areaServed: 'Raunheim',
+        areaType: 'City',
+        postalCode: '65479',
+        distanceKm: 'ca. 25 km',
+        driveTime: 'ca. 23 Min.',
+        routeSummary: 'über B43 / A3 & A5',
+        serviceMode: 'Werkstatt & Hol-/Bringservice',
+        title: 'Beulendoktor, Smart Repair & Autolackierer Raunheim | Damiko',
+        description:
+            'Beulendoktor, Smart Repair & Autolackierung für Raunheim (65479): Parkdellen ohne Lackieren, Stoßstange lackieren & Firmenwagen-Service nahe Mönchhof!',
+        keywords:
+            'Beulendoktor Raunheim, Autolackierer Raunheim, Smart Repair Raunheim, Autolackiererei Raunheim, Dellen entfernen Raunheim, Airportstadt Raunheim, 65479 Raunheim',
+        image: '/gallery/arbeit-1-vw-id.jpg',
+        imageAlt: 'Fertig ausgebeultes und lackiertes Fahrzeug für Kunden aus Raunheim am Main',
+        kicker: 'Mainspitze / Airport-West · PLZ 65479 · ca. 23 Min. über A3/A5',
+        heroHeading: 'Beulendoktor & Smart Repair für Raunheim',
+        intro: 'Direkt am Main und dem Mönchhof-Dreieck gelegen ist Raunheim ein dynamischer Wohn- und Wirtschaftsstandort mit tausenden Pendler- und Dienstfahrzeugen. Beulendoktor Damiko beseitigt Parkdellen, Tiefgaragen-Kratzer und Unfallschrammen für Raunheimer Kunden schnell, werterhaltend und zu transparenten Preisen.',
+        highlightBox:
+            'Für Raunheim & Airportstadt: Lackschadenfreie PDR-Dellentechnik (bis 75 % günstiger), Spot Repair ab ca. 150–250 € und komplette Leasingrückläufer-Aufbereitung.',
+        highlightsHeading: 'Was Fahrzeughalter in Raunheim an Damiko schätzen',
+        highlights: [
+            'Schnelle Autobahn-Verbindung über B43 / A3 und A5 nach Frankfurt-Nord (ca. 23 Min.)',
+            'Lackschadenfreies Ausbeulen von Park-, Tür- und Hageldellen ohne Spachteln',
+            'Punktgenaues Spot Repair & hochwertige Kabinen-Teillackierung für alle Marken',
+            '4-Schritte Leasingrückläufer-Service für Dienstwagen in der Airportstadt Raunheim',
+            'Unkomplizierte Vorab-Einschätzung per WhatsApp-Foto und optionaler Hol-/Bringservice',
+        ],
+        localSectionHeading: 'Wirtschaftliche Dellen- & Lackreparatur für Raunheim und die Airportstadt',
+        localParagraphs: [
+            'Zwischen den Einkaufszentren und Wohnquartieren in Raunheim, den Logistik- und Bürostandorten in der Airportstadt sowie dem dichten Berufsverkehr am Mönchhof-Dreieck (A3 / B43) entstehen täglich typische Karosserie- und Lackschäden: eine Parkdelle in der Fahrertür, eine geschrammte Stoßstangen-Ecke im Parkhaus oder Steinschläge auf der Motorhaube.',
+            'Bei Beulendoktor Damiko erhalten Kunden aus Raunheim eine ehrliche Alternative zum teuren Teiletausch in Vertragswerkstätten. Solange der Lack nicht beschädigt ist, drücken wir Dellen spurlos mit spezieller PDR-Technik heraus. Bei Kratzern oder Unfallspuren stellen wir Korrosionsschutz und exakte Werksfarbe durch Spot Repair oder eine saubere Teillackierung wieder her.',
+            'Für Berufstätige und Firmen in Raunheim bieten wir nach vorheriger Absprache auch unseren komfortablen Hol- und Bringservice an – ideal vor einer anstehenden Leasingrückgabe oder einem Fahrzeugverkauf.',
+        ],
+        localCasesHeading: 'Häufige Reparaturaufträge aus Raunheim',
+        localCases: [
+            {
+                title: 'Parkplatz- & Türkantendellen',
+                badge: 'PDR · Originallack bleibt',
+                text: 'Schnelle, lackschadenfreie Entfernung von Dellen an Türen und Kotflügeln mit bis zu 75 % Kostenersparnis.',
+            },
+            {
+                title: 'Stoßstangen- & Radlaufschrammen',
+                badge: 'Spot Repair oder Teillackierung',
+                text: 'Exakte Farbton-Bestimmung und nahtloses Beilackieren für Uni-, Metallic- und Perlmuttlacke.',
+            },
+            {
+                title: 'Dienstwagen- & Leasing-Aufbereitung',
+                badge: 'Alles aus einer Hand',
+                text: 'Dellen, Kratzer und Hochglanzpolitur gebündelt erledigen und teure Gutachter-Abzüge bei der Rückgabe sparen.',
+            },
+        ],
+        directionsHeading: 'Schnelle Anfahrt aus Raunheim über A3 & A5',
+        directionsNote:
+            'Von Raunheim fahren Sie über die B43 / A3 am Frankfurter Kreuz auf die A5 Richtung Kassel und über das Nordwestkreuz / Rosa-Luxemburg-Straße (ca. 23 Minuten) direkt zu unserem Standort im Hagebuttenweg 2 (60433 Frankfurt).',
+        districts: [
+            'Raunheim Zentrum',
+            'Airportstadt Raunheim',
+            'Gewerbegebiet Mönchhof',
+            'Mainvorland',
+            'Flörsheim-Nachbarschaft',
+        ],
+        recommendedServices: [
+            {
+                slug: 'ausbeulservice',
+                localDesc: 'Lackschadenfreies Ausbeulen von Park- und Hageldellen zum fairen Preis.',
+            },
+            {
+                slug: 'smart-repair',
+                localDesc: 'Schnelle Kratzer- und Schrammenreparatur mit minimaler Standzeit.',
+            },
+            {
+                slug: 'leasingruecklaeufer',
+                localDesc: 'Kompletter Rückgabe-Check für Privat- und Firmenwagen in Raunheim.',
+            },
+        ],
+        faqsHeading: 'Häufige Fragen aus Raunheim',
+        faqs: [
+            {
+                q: 'Lohnt sich der Weg von Raunheim zu Beulendoktor Damiko?',
+                a: 'Ja! Über A3 und A5 sind Sie in gut 20 Minuten bei uns – und durch den kostenlosen WhatsApp Foto-Check wissen Sie schon vorab genau, wie viel Sie gegenüber einer klassischen Komplettreparatur sparen.',
+            },
+            {
+                q: 'Holen Sie Fahrzeuge auch in Raunheim oder der Airportstadt ab?',
+                a: 'Ja, nach vorheriger Terminabsprache bieten wir unseren Hol- und Bringservice auch für Privat- und Firmenkunden in Raunheim an.',
+            },
+            {
+                q: 'Reparieren Sie auch Elektro- und Hybridfahrzeuge?',
+                a: 'Selbstverständlich – wir betreuen sämtliche modernen E-Autos, Hybride und Verbrenner aller Marken fachgerecht.',
+            },
+        ],
+        nearbySlugs: [
+            'beulendoktor-kelsterbach',
+            'autolackiererei-ruesselsheim',
+            'smart-repair-moerfelden-walldorf',
+            'smart-repair-hattersheim',
+            'beulendoktor-hofheim',
+            'beulendoktor-main-taunus-kreis',
+        ],
+        ctaHeading: 'WhatsApp Foto-Check für Raunheim anfragen',
+        ctaText:
+            'Senden Sie uns 2–3 Fotos Ihres Schadens per WhatsApp – wir melden uns kurzfristig mit einer ehrlichen Einschätzung und Ihrem Wunschtermin.',
+    },
+    {
+        slug: 'autolackiererei-ruesselsheim',
+        city: 'Rüsselsheim am Main',
+        shortCity: 'Rüsselsheim',
+        regionGroup: 'sueden',
+        priority: '0.8',
+        footerLabel: 'Autolackiererei Rüsselsheim',
+        breadcrumbLabel: 'Autolackiererei Rüsselsheim',
+        areaServed: 'Rüsselsheim am Main',
+        areaType: 'City',
+        postalCode: '65428',
+        distanceKm: 'ca. 29 km',
+        driveTime: 'ca. 25 Min.',
+        routeSummary: 'über A3 / A5 oder A60 / A66',
+        serviceMode: 'Werkstatt & Hol-/Bringservice',
+        title: 'Autolackiererei, Beulendoktor & Smart Repair Rüsselsheim | Damiko',
+        description:
+            'Ihr Autolackierer, Beulendoktor & Smart Repair Profi für Rüsselsheim am Main (65428): Teillackierung, Dellen ohne Lackieren & Leasing-Service!',
+        keywords:
+            'Autolackiererei Rüsselsheim, Autolackierer Rüsselsheim am Main, Beulendoktor Rüsselsheim, Smart Repair Rüsselsheim, Auto lackieren Rüsselsheim, Königstädten, Bauschheim, 65428 Rüsselsheim',
+        image: '/images/lackierung-kabine.jpg',
+        imageAlt: 'Professionelle Autolackierung und Dellentechnik für Fahrzeuge aus Rüsselsheim am Main',
+        kicker: 'Autostadt am Main · PLZ 65428 · ca. 25 Min. über A3 / A5',
+        heroHeading: 'Autolackiererei & Beulendoktor für Rüsselsheim am Main',
+        intro: 'In der traditionsreichen Autostadt Rüsselsheim am Main – von der Innenstadt und Haßloch über Königstädten bis Bauschheim – wissen Fahrzeughalter sauberes Karosserie- und Lackierhandwerk besonders zu schätzen. Beulendoktor Damiko bietet Ihnen präzise Teil- und Unfalllackierungen, lackschadenfreie PDR-Dellentechnik und wirtschaftliches Smart Repair zu fairen Preisen.',
+        highlightBox:
+            'Handwerksqualität für Rüsselsheim am Main: Exakte Farbtonbestimmung für alle Marken (Opel, VW, Audi, BMW, Mercedes, Porsche u. v. m.), PDR-Ausbeulen & Leasing-Service.',
+        highlightsHeading: 'Warum Kunden aus Rüsselsheim zu Damiko kommen',
+        highlights: [
+            'Meisterhafte Teil-, Spot- und Unfalllackierungen in staubfreier Lackierkabine',
+            'Lackschadenfreies Ausbeulen (PDR) bei Park- und Hageldellen – bis 75 % günstiger',
+            'Kompletter 4-Schritte Leasingrückläufer-Service für Werks-, Dienst- und Privatleasing',
+            'Unfall- und Kasko-Instandsetzung in direkter Kooperation mit Kfz-Gutachter DK',
+            'Gute Autobahn-Anbindung über A3/A5 oder A60/A66 (ca. 25 Min.) sowie Hol-/Bringservice',
+        ],
+        localSectionHeading: 'Präzise Lackierung, Dellentechnik & Leasing-Vorbereitung für Rüsselsheim am Main',
+        localParagraphs: [
+            'In Rüsselsheim am Main ist der Anteil an Werksangehörigen-Fahrzeugen, Jahreswagen und Leasingrückläufern traditionell besonders hoch. Gerade vor einer Fahrzeugrückgabe oder einem Weiterverkauf zählt jedes Detail: Eine Parkdelle aus der Innenstadt, eine angeschrammte Stoßstange in Königstädten oder ein tiefer Kratzer am Kotflügel führt bei der Bewertung schnell zu empfindlichen Abzügen.',
+            'Bei Beulendoktor Damiko verbinden wir klassische Kabinenlackierung mit moderner Smart-Repair- und PDR-Dellentechnik. Das bedeutet für Rüsselsheimer Kunden: Wir wählen immer das schonendste und wirtschaftlichste Verfahren – vom spurlosen Ausbeulen ohne Lackieren über Spot Repair ab ca. 150–250 € bis zur vollflächigen Teillackierung einzelner Bauteile (oft ca. 400–600 €).',
+            'Senden Sie uns vorab einfach Fotos per WhatsApp: So erhalten Sie schon vor der Fahrt aus Rüsselsheim, Bauschheim oder Königstädten eine verlässliche Kosteneinschätzung und können auf Wunsch direkt unseren Hol- und Bringservice buchen.',
+        ],
+        localCasesHeading: 'Schwerpunkte für Fahrzeughalter aus Rüsselsheim',
+        localCases: [
+            {
+                title: 'Jahreswagen- & Leasingrückläufer-Check',
+                badge: '4-Schritte Sorglos-Service',
+                text: 'Gezielte Beseitigung von Parkdellen, Kratzern und Lackmängeln inklusive Hochglanzpolitur vor dem Abgabetermin.',
+            },
+            {
+                title: 'Stoßstange, Tür & Kotflügel lackieren',
+                badge: 'Teillackierung · ca. 400–600 €',
+                text: 'Exakte Farbnuancen-Bestimmung und nahtloses Beilackieren für Uni-, Metallic- und Perlmuttlacke aller Marken.',
+            },
+            {
+                title: 'Hagel- & Unfallschaden-Instandsetzung',
+                badge: 'PDR & Kfz-Gutachter DK',
+                text: 'Versicherungsanerkannte Reparatur von Hagel- und Kaskoschäden inklusive strukturierter Gutachter-Unterstützung.',
+            },
+        ],
+        directionsHeading: 'Schnelle Autobahn-Verbindung von Rüsselsheim nach Frankfurt-Nord',
+        directionsNote:
+            'Aus Rüsselsheim am Main erreichen Sie uns über die B43 / A3 und A5 (oder über das Rüsselsheimer Dreieck / A60 / A66) in rund 25 Minuten direkt am Standort Frankfurt-Nord (Hagebuttenweg 2, 60433 Frankfurt). Hol- und Bringservice nach Absprache möglich.',
+        districts: [
+            'Rüsselsheim Innenstadt',
+            'Königstädten',
+            'Bauschheim',
+            'Haßloch',
+            'Dicker Busch',
+        ],
+        recommendedServices: [
+            {
+                slug: 'lackierungen',
+                localDesc: 'Präzise Teil-, Spot- und Unfalllackierungen in exakter Werksfarbqualität.',
+            },
+            {
+                slug: 'leasingruecklaeufer',
+                localDesc: 'Ideale Vorbereitung für Jahreswagen, Werks- und Privatleasing aus Rüsselsheim.',
+            },
+            {
+                slug: 'ausbeulservice',
+                localDesc: 'Lackschadenfreies Entfernen von Park- und Hageldellen ohne Wertverlust.',
+            },
+        ],
+        faqsHeading: 'Häufige Fragen aus Rüsselsheim am Main',
+        faqs: [
+            {
+                q: 'Lohnt sich die Fahrt aus Rüsselsheim zu Beulendoktor Damiko?',
+                a: 'Ja! Durch unsere Kombination aus Dellentechnik, Spot Repair und Kabinenlackierung zahlen Sie nur die technisch wirklich sinnvolle Reparatur – und kennen den Preisrahmen dank WhatsApp Foto-Check schon vor der Abfahrt.',
+            },
+            {
+                q: 'Bereiten Sie auch Werksleasing- und Jahreswagen für die Rückgabe vor?',
+                a: 'Ja, unser 4-Schritte Leasingrückläufer-Service ist optimal auf Jahreswagen und Leasingfahrzeuge abgestimmt, um teure Minderwert-Abzüge bei der Abgabe zu vermeiden.',
+            },
+            {
+                q: 'Bieten Sie für Rüsselsheim, Königstädten und Bauschheim einen Abholservice an?',
+                a: 'Ja, nach vorheriger Terminabsprache holen wir Ihr Fahrzeug gerne in Rüsselsheim am Main ab und liefern es fertig lackiert und aufbereitet wieder zurück.',
+            },
+        ],
+        nearbySlugs: [
+            'beulendoktor-raunheim',
+            'smart-repair-moerfelden-walldorf',
+            'beulendoktor-kelsterbach',
+            'smart-repair-hattersheim',
+            'beulendoktor-hofheim',
+            'smart-repair-rhein-main',
+        ],
+        ctaHeading: 'Kostenlose Foto-Einschätzung für Rüsselsheim am Main',
+        ctaText:
+            'Senden Sie uns 2–3 Fotos Ihres Lackschadens oder Ihrer Delle per WhatsApp – wir melden uns kurzfristig mit einem fairen Angebot.',
+    },
 ];

@@ -142,6 +142,15 @@ export const ALL_AREAS_SERVED = [
     { '@type': 'City', name: 'Maintal' },
     { '@type': 'City', name: 'Hanau' },
     { '@type': 'City', name: 'Mühlheim am Main' },
+    { '@type': 'City', name: 'Niederdorfelden' },
+    { '@type': 'City', name: 'Schöneck (Hessen)' },
+    { '@type': 'City', name: 'Nidderau' },
+    { '@type': 'City', name: 'Bruchköbel' },
+    { '@type': 'City', name: 'Steinbach (Taunus)' },
+    { '@type': 'AdministrativeArea', name: 'Main-Taunus-Kreis' },
+    { '@type': 'City', name: 'Mörfelden-Walldorf' },
+    { '@type': 'City', name: 'Raunheim' },
+    { '@type': 'City', name: 'Rüsselsheim am Main' },
 ];
 
 export const CORE_OFFERS = [

@@ -45,6 +45,7 @@
 - [Beulendoktor Bad Nauheim](https://damiko.de/beulendoktor-bad-nauheim) (PLZ 61231, ca. 26 km)
 
 ### Taunus & Westen (Hochtaunus & Main-Taunus-Kreis)
+- [Beulendoktor Steinbach (Taunus)](https://damiko.de/beulendoktor-steinbach) (PLZ 61449, ca. 8 km)
 - [Smart Repair Schwalbach am Taunus](https://damiko.de/smart-repair-schwalbach) (PLZ 65824, ca. 13 km)
 - [Autolackiererei Kronberg im Taunus](https://damiko.de/autolackiererei-kronberg) (PLZ 61476, ca. 14 km)
 - [Autolackiererei Bad Soden am Taunus](https://damiko.de/autolackiererei-bad-soden) (PLZ 65812, ca. 16 km)
@@ -52,6 +53,7 @@
 - [Beulendoktor Kelkheim (Taunus)](https://damiko.de/beulendoktor-kelkheim) (PLZ 65779, ca. 19 km)
 - [Smart Repair Hattersheim am Main](https://damiko.de/smart-repair-hattersheim) (PLZ 65795, ca. 21 km)
 - [Beulendoktor Hofheim am Taunus](https://damiko.de/beulendoktor-hofheim) (PLZ 65719, ca. 22 km)
+- [Beulendoktor Main-Taunus-Kreis](https://damiko.de/beulendoktor-main-taunus-kreis) (gesamter MTK)
 
 ### Süden & Kreis Offenbach / Flughafen-Umfeld
 - [Autolackiererei Neu-Isenburg](https://damiko.de/autolackiererei-neu-isenburg) (PLZ 63263, ca. 15 km)
@@ -59,8 +61,15 @@
 - [Beulendoktor Kelsterbach](https://damiko.de/beulendoktor-kelsterbach) (PLZ 65451, ca. 21 km)
 - [Beulendoktor Dietzenbach](https://damiko.de/beulendoktor-dietzenbach) (PLZ 63128, ca. 22 km)
 - [Smart Repair Langen (Hessen)](https://damiko.de/smart-repair-langen) (PLZ 63225, ca. 24 km)
+- [Smart Repair Mörfelden-Walldorf](https://damiko.de/smart-repair-moerfelden-walldorf) (PLZ 64546, ca. 24 km)
+- [Beulendoktor Raunheim](https://damiko.de/beulendoktor-raunheim) (PLZ 65479, ca. 25 km)
+- [Autolackiererei Rüsselsheim am Main](https://damiko.de/autolackiererei-ruesselsheim) (PLZ 65428, ca. 29 km)
 
 ### Osten & Main-Kinzig
+- [Beulendoktor Niederdorfelden](https://damiko.de/beulendoktor-niederdorfelden) (PLZ 61138, ca. 9 km)
+- [Beulendoktor Schöneck](https://damiko.de/beulendoktor-schoeneck) (PLZ 61137, ca. 12 km)
 - [Autolackiererei Maintal](https://damiko.de/autolackiererei-maintal) (PLZ 63477, ca. 12 km)
 - [Beulendoktor Mühlheim am Main](https://damiko.de/beulendoktor-muehlheim) (PLZ 63165, ca. 15 km)
+- [Autolackiererei Nidderau](https://damiko.de/autolackiererei-nidderau) (PLZ 61130, ca. 17 km)
+- [Autolackiererei Bruchköbel](https://damiko.de/autolackiererei-bruchkoebel) (PLZ 63486, ca. 20 km)
 - [Autolackiererei Hanau](https://damiko.de/autolackiererei-hanau) (PLZ 63450, ca. 22 km)

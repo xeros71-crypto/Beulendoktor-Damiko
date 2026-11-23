@@ -771,4 +771,233 @@ export const westTaunusPages = [
         ctaText:
             'Erhalten Sie schnell eine ehrliche Kosteneinschätzung per WhatsApp – ganz ohne Anfahrt und unverbindlich.',
     },
+    {
+        slug: 'beulendoktor-steinbach',
+        city: 'Steinbach (Taunus)',
+        shortCity: 'Steinbach',
+        regionGroup: 'westen',
+        priority: '0.8',
+        footerLabel: 'Beulendoktor Steinbach (Taunus)',
+        breadcrumbLabel: 'Beulendoktor Steinbach (Taunus)',
+        areaServed: 'Steinbach (Taunus)',
+        areaType: 'City',
+        postalCode: '61449',
+        distanceKm: 'ca. 8 km',
+        driveTime: 'ca. 10 Min.',
+        routeSummary: 'über L3006 / Rosa-Luxemburg-Str. & A661',
+        serviceMode: 'Mobiler Ausbeulservice & Werkstatt',
+        title: 'Beulendoktor & Autolackierer Steinbach (Taunus) | Damiko',
+        description:
+            'Ihr Beulendoktor & Autolackierer direkt bei Steinbach (Taunus) – nur 10 Min. entfernt: Parkdellen ohne Lackieren, Smart Repair & Teillackierung!',
+        keywords:
+            'Beulendoktor Steinbach Taunus, Autolackierer Steinbach Taunus, Smart Repair Steinbach, Autolackiererei Steinbach, Dellen entfernen Steinbach, 61449 Steinbach',
+        image: '/images/smart-repair-2.jpg',
+        imageAlt: 'Smart Repair und lackschadenfreie Dellentechnik für Fahrzeuge aus Steinbach im Taunus',
+        kicker: 'Hochtaunus · PLZ 61449 · nur ca. 10 Min. entfernt',
+        heroHeading: 'Beulendoktor & Autolackierer direkt bei Steinbach (Taunus)',
+        intro: 'Zwischen Oberursel-Weißkirchen, Eschborn und dem Frankfurter Nordwesten gelegen trennen Steinbach (Taunus) nur rund acht Kilometer von unserer Werkstatt am Frankfurter Berg. Seit 2014 betreuen wir Steinbacher Privat- und Geschäftskunden mit lackschadenfreier Dellentechnik, punktgenauem Smart Repair und makellosen Teillackierungen.',
+        highlightBox:
+            'Direkte Nachbarschaft zu 61449 Steinbach: In ca. 10 Minuten über Kalbach/Riedberg oder die A661 bei uns – auf Wunsch mit mobilem Ausbeulservice oder Hol- und Bringservice.',
+        highlightsHeading: 'Warum Autofahrer aus Steinbach (Taunus) zu Damiko kommen',
+        highlights: [
+            'Kurze Distanz (ca. 8 km / 10 Minuten) über Weißkirchen/Kalbach oder Rosa-Luxemburg-Straße',
+            'Lackschadenfreies Ausbeulen (PDR) von Park- und Türkantendellen bis 75 % günstiger',
+            'Spot Repair ab ca. 150–250 € bei Kratzern an Stoßfänger, Kotflügel und Spiegelkappe',
+            'Präzise Kabinen-Teillackierungen in exakter Hersteller-Farbnuance',
+            'Komplette Leasingrückläufer-Vorbereitung inkl. Hol- und Bringservice in Steinbach',
+        ],
+        localSectionHeading: 'Schnelle Hilfe bei Parkdellen & Lackschrammen für Steinbach (Taunus)',
+        localParagraphs: [
+            'In den dicht geparkten Seitenstraßen rund um die Bahnstraße, den Berliner Platz, im Gewerbegebiet am S-Bahnhof Weißkirchen/Steinbach oder auf Tiefgaragen-Stellplätzen entsteht schnell ein ärgerlicher Schaden am Auto: eine Delle durch eine fremde Autotür, ein Parkrempler am Stoßfänger oder ein Kratzer entlang der Seitenwand.',
+            'Durch die unmittelbare Nähe zu Frankfurt-Nord ist Beulendoktor Damiko für viele Steinbacher Fahrzeughalter die erste Anlaufstelle, wenn solche Schäden ohne überzogene Vertragswerkstatt-Preise behoben werden sollen. Ist der Lack unverletzt, drücken wir die Delle spurlos per PDR-Technik heraus; bei Lackschäden sorgt unser Spot Repair oder eine saubere Teillackierung für Werksoptik.',
+            'Schicken Sie uns einfach zwei bis drei Fotos per WhatsApp: Wir geben Ihnen kurzfristig eine ehrliche Kosteneinschätzung und vereinbaren flexibel einen Termin – gerne auch inklusive Abholung in Steinbach.',
+        ],
+        localCasesHeading: 'Typische Reparaturen für Kunden aus Steinbach',
+        localCases: [
+            {
+                title: 'Türkantenschläge & Parkdellen',
+                badge: 'PDR · ohne Lackieren',
+                text: 'Rückstandsfreie Dellenentfernung an Tür, Kotflügel und Seitenwand bei vollem Erhalt des Originallacks.',
+            },
+            {
+                title: 'Stoßstangen-Kratzer & Tiefgaragen-Schrammen',
+                badge: 'Spot Repair · ab ca. 150–250 €',
+                text: 'Punktgenaue Lackkorrektur ohne Demontage oder Austausch des gesamten Stoßfängers.',
+            },
+            {
+                title: 'Leasingrückgabe-Check für Pendler',
+                badge: '4-Schritte Sorglos-Service',
+                text: 'Kombination aus Dellen-, Kratzer- und Lackaufbereitung verhindert teure Nachforderungen bei der Rückgabe.',
+            },
+        ],
+        directionsHeading: 'Nur ca. 10 Minuten von Steinbach (Taunus) zu Damiko',
+        directionsNote:
+            'Von Steinbach (Taunus) fahren Sie über Oberursel-Weißkirchen / Kalbach-Riedberg oder über die Rosa-Luxemburg-Straße und A661 (Ausfahrt Eckenheim / Preungesheim) in rund 10 Minuten direkt zu unserem Standort im Hagebuttenweg 2 (60433 Frankfurt).',
+        districts: [
+            'Steinbach Zentrum / Bahnstraße',
+            'Steinbach-Nord',
+            'Steinbach-Süd',
+            'Gewerbegebiet Am Bahnhof',
+            'Weißkirchen-Nachbarschaft',
+        ],
+        recommendedServices: [
+            {
+                slug: 'ausbeulservice',
+                localDesc: 'Lackschadenfreies Ausbeulen direkt für Steinbach – auf Wunsch auch mobil.',
+            },
+            {
+                slug: 'smart-repair',
+                localDesc: 'Schnelle, wirtschaftliche Beseitigung von Park- und Tiefgaragenkratzern.',
+            },
+            {
+                slug: 'lackierungen',
+                localDesc: 'Teil- und Unfalllackierungen in exakter Werksfarbqualität.',
+            },
+        ],
+        faqsHeading: 'Häufige Fragen aus Steinbach (Taunus)',
+        faqs: [
+            {
+                q: 'Wie weit ist Beulendoktor Damiko von Steinbach (Taunus) entfernt?',
+                a: 'Nur rund 8 Kilometer bzw. etwa 10 Fahrminuten! Außerdem bieten wir nach Terminabsprache sowohl unseren mobilen Ausbeulservice als auch einen bequemen Hol- und Bringservice direkt in Steinbach an.',
+            },
+            {
+                q: 'Was kostet eine kleine Lackreparatur per Spot Repair?',
+                a: 'Lokal begrenzte Kratzer und Schrammen an Stoßstangen oder Kanten lassen sich per Spot Repair oft bereits ab ca. 150–250 € fachgerecht beheben.',
+            },
+            {
+                q: 'Wie schnell bekomme ich aus Steinbach eine Einschätzung?',
+                a: 'Senden Sie uns einfach 2–3 Fotos bei Tageslicht per WhatsApp an 0151 40 3333 75 – Sie erhalten kurzfristig eine ehrliche Rückmeldung.',
+            },
+        ],
+        nearbySlugs: [
+            'autolackiererei-oberursel',
+            'autolackiererei-eschborn',
+            'autolackiererei-kronberg',
+            'smart-repair-schwalbach',
+            'autolackiererei-bad-homburg',
+            'autolackiererei-frankfurt',
+        ],
+        ctaHeading: 'In 10 Minuten aus Steinbach zur sauberen Lösung',
+        ctaText:
+            'Kurz Fotos per WhatsApp schicken, ehrlichen Preisrahmen erhalten und Wunschtermin direkt bei Steinbach sichern.',
+    },
+    {
+        slug: 'beulendoktor-main-taunus-kreis',
+        city: 'Main-Taunus-Kreis',
+        shortCity: 'Main-Taunus-Kreis',
+        regionGroup: 'westen',
+        priority: '0.85',
+        footerLabel: 'Beulendoktor Main-Taunus-Kreis',
+        breadcrumbLabel: 'Beulendoktor Main-Taunus-Kreis',
+        areaServed: 'Main-Taunus-Kreis',
+        areaType: 'AdministrativeArea',
+        postalCode: '65719–65843',
+        distanceKm: 'ca. 8–24 km',
+        driveTime: 'ca. 10–22 Min.',
+        routeSummary: 'über A66, A5 & B8',
+        serviceMode: 'Werkstatt, Mobil & Hol-/Bringservice',
+        title: 'Beulendoktor, Autolackierer & Smart Repair Main-Taunus-Kreis | Damiko',
+        description:
+            'Ihr Beulendoktor, Smart Repair & Autolackierer für den gesamten Main-Taunus-Kreis (MTK): Dellen ohne Lackieren, Teillackierung & Leasing-Service inkl. Abholung!',
+        keywords:
+            'Beulendoktor Main-Taunus-Kreis, Autolackierer Main-Taunus-Kreis, Smart Repair MTK, Autolackiererei Main-Taunus, Leasingrückläufer MTK, Hagelschaden Main-Taunus-Kreis',
+        image: '/gallery/arbeit-5-porsche-cayenne.jpg',
+        imageAlt: 'Autolackierung, Smart Repair und Dellentechnik für den gesamten Main-Taunus-Kreis',
+        kicker: 'Region Main-Taunus-Kreis (MTK) · A66 & A5 Achse · seit 2014',
+        heroHeading: 'Beulendoktor, Smart Repair & Autolackierer für den Main-Taunus-Kreis',
+        intro: 'Im gesamten Main-Taunus-Kreis – von Eschborn, Schwalbach, Sulzbach und Bad Soden über Kelkheim, Liederbach und Kriftel bis Hofheim, Hattersheim, Eppstein, Flörsheim und Hochheim – ist Beulendoktor Damiko seit 2014 Ihr verlässlicher Spezialist für lackschadenfreie Dellentechnik, präzise Autolackierungen und den 4-Schritte Leasingrückläufer-Service.',
+        highlightBox:
+            'Zentral für den gesamten MTK über A66 & A5 erreichbar: Bis zu 75 % Ersparnis beim lackschadenfreien Ausbeulen, Spot Repair ab ca. 150–250 € und bequemer Hol- und Bringservice.',
+        highlightsHeading: 'Unsere Stärken für Privat- & Firmenkunden im Main-Taunus-Kreis',
+        highlights: [
+            'Schnelle Erreichbarkeit aus dem gesamten MTK über A66, A5 und Rosa-Luxemburg-Straße',
+            'Präzise Teil-, Spot- und Unfalllackierungen in exakter Hersteller-Farbqualität',
+            'Lackschadenfreie Dellen- und Hagelschaden-Entfernung (PDR) ohne Wertverlust',
+            'Spezialisierter Leasingrückläufer-Service für Pendler und Firmenflotten im MTK',
+            'Persönlicher Hol- und Bringservice direkt ab Wohnadresse oder Bürostandort',
+        ],
+        localSectionHeading: 'Wirtschaftlicher Lack- & Dellenservice für alle 12 Städte und Gemeinden im MTK',
+        localParagraphs: [
+            'Der Main-Taunus-Kreis zählt zu den wirtschaftsstärksten Pendlerräumen Deutschlands – mit einer besonders hohen Dichte an hochwertigen Privatfahrzeugen, Leasingwagen und Unternehmensflotten zwischen Eschborn, Hofheim-Wallau, dem Main-Taunus-Zentrum in Sulzbach und der A66-Achse.',
+            'Ob Parkhaus-Rempler im MTZ, Türkantendelle am Bahnhof, Steinschläge von der A66 oder ein Hagelschauer am Vordertaunus: Bei Beulendoktor Damiko erhalten Fahrzeughalter aus dem Main-Taunus-Kreis alle Spezialverfahren aus einer Hand. Wir empfehlen immer die technisch sauberste und zugleich günstigste Lösung – ohne unnötigen Bauteil-Austausch.',
+            'Über unseren kostenlosen WhatsApp Foto-Check wissen Sie bereits vor der Fahrt oder Abholung genau, mit welchem Kostenrahmen und welcher Standzeit Sie rechnen können.',
+        ],
+        localCasesHeading: 'Wofür uns Kunden aus dem Main-Taunus-Kreis beauftragen',
+        localCases: [
+            {
+                title: 'Parkhaus- & Einkaufsdellen (z. B. MTZ Sulzbach)',
+                badge: 'PDR · 100 % Originallack',
+                text: 'Spurloses Herausarbeiten von Dellen an Türen und Seitenteilen ohne Spachteln und ohne Nachlackierung.',
+            },
+            {
+                title: 'Stoßfänger- & Kotflügellackierung',
+                badge: 'Spot Repair & Teillackierung',
+                text: 'Exakte Farbnuancen-Bestimmung für Uni-, Metallic-, Perlmutt- und Sonderlacke aller Fahrzeugmarken.',
+            },
+            {
+                title: 'Leasingrückgabe & Unfall-Instandsetzung',
+                badge: 'Inkl. Hol-/Bringservice & Gutachter DK',
+                text: 'Rundum-Vorbereitung vor dem Leasingende sowie Kasko-/Unfallabwicklung mit unabhängigem Gutachter.',
+            },
+        ],
+        directionsHeading: 'Alle Städte & Gemeinden im Main-Taunus-Kreis im Einzugsgebiet',
+        directionsNote:
+            'Über die A66 Richtung Frankfurt und das Nordwestkreuz / Rosa-Luxemburg-Straße (oder über die A5 / A661) erreichen Sie unseren Standort in 60433 Frankfurt-Nord aus dem Main-Taunus-Kreis in ca. 10 bis 22 Minuten. Auf Wunsch nutzen Sie unseren Hol- und Bringservice.',
+        districts: [
+            'Eschborn',
+            'Schwalbach am Taunus',
+            'Sulzbach (Taunus)',
+            'Bad Soden am Taunus',
+            'Kelkheim (Taunus)',
+            'Liederbach am Taunus',
+            'Kriftel',
+            'Hofheim am Taunus',
+            'Hattersheim am Main',
+            'Eppstein',
+            'Flörsheim am Main',
+            'Hochheim am Main',
+        ],
+        recommendedServices: [
+            {
+                slug: 'lackierungen',
+                localDesc: 'Teil-, Spot- und Unfalllackierungen für Privat- und Dienstwagen im MTK.',
+            },
+            {
+                slug: 'ausbeulservice',
+                localDesc: 'Lackschadenfreie PDR-Dellentechnik mit bis zu 75 % Kostenersparnis.',
+            },
+            {
+                slug: 'leasingruecklaeufer',
+                localDesc: '4-Schritte Leasing-Check inklusive Hol- und Bringservice im Main-Taunus-Kreis.',
+            },
+        ],
+        faqsHeading: 'Häufige Fragen aus dem Main-Taunus-Kreis',
+        faqs: [
+            {
+                q: 'Welche Orte im Main-Taunus-Kreis deckt Ihr Service ab?',
+                a: 'Wir betreuen Kunden aus allen 12 Städten und Gemeinden des Main-Taunus-Kreises: Eschborn, Schwalbach, Sulzbach, Bad Soden, Kelkheim, Liederbach, Kriftel, Hofheim, Hattersheim, Eppstein, Flörsheim und Hochheim.',
+            },
+            {
+                q: 'Bieten Sie im Main-Taunus-Kreis auch einen Hol- und Bringservice an?',
+                a: 'Ja! Nach vorheriger Terminabsprache holen wir Ihr Fahrzeug direkt bei Ihnen Zuhause oder an Ihrem Arbeitsplatz im Main-Taunus-Kreis ab und liefern es fertig instandgesetzt zurück.',
+            },
+            {
+                q: 'Wie funktioniert der Vorab-Kostenvoranschlag per WhatsApp?',
+                a: 'Senden Sie uns einfach 2–3 Fotos des Schadens bei Tageslicht an 0151 40 3333 75 – wir melden uns kurzfristig mit einer ehrlichen Einschätzung.',
+            },
+        ],
+        nearbySlugs: [
+            'autolackiererei-eschborn',
+            'smart-repair-schwalbach',
+            'autolackiererei-bad-soden',
+            'beulendoktor-kelkheim',
+            'beulendoktor-hofheim',
+            'smart-repair-hattersheim',
+            'beulendoktor-steinbach',
+            'autolackiererei-frankfurt',
+        ],
+        ctaHeading: 'WhatsApp Foto-Check für den Main-Taunus-Kreis',
+        ctaText:
+            'Senden Sie uns 2–3 Fotos Ihres Dellen- oder Lackschadens – wir beraten Sie ehrlich und organisieren auf Wunsch direkt die Abholung im MTK.',
+    },
 ];
